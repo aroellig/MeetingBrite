@@ -1,22 +1,10 @@
-import React, { Component } from 'react';
+import React from "react";
+import Navbar from '../navbar/navbar';
+import GreetingContainer from '../greeting/greeting_container'
 
-class Splash extends React.Component{
-  constructor(props){
-      super(props)
-  }
-    componentDidMount() {
-        this.props.fetchRestaurants();
-      }
-    
-    render(){
-        console.log(this.props)
-        const { restaurants, fetchRestaurants } = this.props;
-        return(
-            <div>
-                {/* <img src="https://reservationo-seeds.s3.us-west-1.amazonaws.com/burger.png" /> */}
-            </div>
-        )
-    }
-}
-
-export default Splash;
+const Splash = () => {    return(
+        <div className="homepage">
+            <GreetingContainer />
+        </div>
+    )}
+    export default Splash;

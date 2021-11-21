@@ -1,0 +1,77 @@
+#nav {
+   
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 16px;
+        padding-right: 16px;
+        padding-bottom: 0px;
+        padding-left: 16px;
+    height: 1.75rem;
+    background-color: #f1f2f4;
+    padding-top: 0px;
+    padding-right: 16px;
+    padding-bottom: 0px;
+    padding-left: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    
+    } 
+      
+    
+      #nav li a {
+        display: inline;
+        color: #fff;
+        font-size: 14px;
+        background-color: #247f9e;
+        border-top-color: rgb(36, 127, 158);
+        border-top-style: solid;
+        border-top-width: 0.0625rem;
+        border-right-color: rgb(36, 127, 158);
+        border-right-style: solid;
+        border-right-width: 0.0625rem;
+        border-bottom-color: rgb(36, 127, 158);
+        border-bottom-style: solid;
+        border-bottom-width: 0.0625rem;
+        border-left-color: rgb(36, 127, 158);
+        border-left-style: solid;
+        border-left-width: 0.0625rem;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        justify-content: space-evenly;
+        margin-top: 0px;
+        margin-right: 8px;
+        margin-bottom: 0px;
+        margin-left: 8px;
+        padding-top: 0px;
+    padding-right: 16px;
+    padding-bottom: 0px;
+    padding-left: 16px;
+    cursor: pointer;
+    line-height: 2rem;
+    border-radius: .1875rem;
+        border-top-left-radius: 0.1875rem;
+        border-top-right-radius: 0.1875rem;
+        border-bottom-right-radius: 0.1875rem;
+        border-bottom-left-radius: 0.1875rem;
+        -webkit-appearance: button;
+        font-style: italic;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: x-large;
+    }
+    
+       #nav li a:hover {
+            color: blue;
+        }

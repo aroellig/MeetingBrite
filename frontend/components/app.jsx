@@ -1,27 +1,35 @@
-import GreetingContainer from "./greeting/greeting_container";
+
+
 import React from 'react';
-import SignupFormContainer from './session/signup_form_container';
-import LoginFormContainer from './session/login_form_container';
-import LogoutFormContainer from './session/logout_form_container'
+import { Provider } from 'react-redux';
 import {
   Route,
-Routes,
-Switch,
-Link
+  Redirect,
+  Switch,
+  Link,
+  HashRouter
 } from 'react-router-dom';
-import { AuthRoute } from '../util/route_util';
+
+import GreetingContainer from './greeting/greeting_container';
+import SignupFormContainer from './session/signup_form_container';
+import LoginFormContainer from './session/login_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Splash from './splash/splash'
 
 const App = () => (
   <div>
     <header>
-        <h1>MeetingBrite</h1>
-       <GreetingContainer />
-      </header>
+      <Link to="/" className="header-link">
+        <h1>Bench BnB</h1>
+      </Link>
+    </header>
     <Switch>
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+     
+      <Route exact path="/" component={Splash} />
     </Switch>
-    </div>
+  </div>
 );
 
 export default App;

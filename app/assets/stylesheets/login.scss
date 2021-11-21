@@ -1,0 +1,91 @@
+.login-form {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    background-color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+line-height: 1.165;
+font-weight: 700;
+text-rendering: optimizeLegibility;
+color: #333;
+margin: 0 0 .2rem;
+    margin-top: 0px;
+    margin-bottom: 0.2rem;
+line-height: 1em;
+
+}
+  
+  
+
+  .form-textarea{
+    padding: 1rem;
+    color: #333;
+margin: 0 0 .2rem;
+    margin-top: 0px;
+    margin-bottom: 0.2rem;
+line-height: 1em;
+  }
+ 
+  .margin-top {
+    margin-top: 1rem;
+}
+  .login-input {
+    margin-left: 20px;
+    margin-right: 20px;
+    -webkit-appearance: none !important;
+    outline: 0;
+    font-weight: 500;
+    display: block;
+    background: #fff;
+    font-size: .875rem;
+    margin-bottom: .5rem;
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 3px;
+    width: 75%;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+input{
+  line-height: normal;
+  color: rgb(43, 42, 42);
+  font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+  
+ 
+  .login-form-box {
+      background-color: white;
+    outline: 1px solid ;
+    padding: 20px;
+    height: 500px;
+    width: 200px;
+    margin-left: 40%;
+    box-sizing: border-box;
+    position: center;
+top: 100px;
+left: 150px;
+width: 500px;
+  }
+
+  .login-form-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .session-submit {
+    text-transform: capitalize;
+  }
+
+ .login-button {
+    color: blue;
+  }
