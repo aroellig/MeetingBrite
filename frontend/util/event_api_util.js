@@ -17,7 +17,7 @@ export const createEvent = event => (
         data: { event }
     })
 )
-export const upddateEvent = event => (
+export const updateEvent = event => (
     $.ajax({
         url: `/api/events/${event.id}`,
         method: 'PATCH',

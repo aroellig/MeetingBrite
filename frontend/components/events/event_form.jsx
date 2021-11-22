@@ -9,7 +9,7 @@ class EventForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault()
-        this.event.action(this.state)
+        this.props.submitEvent(this.state)
     }
 
     update(field){
@@ -20,31 +20,41 @@ class EventForm extends React.Component{
             <div>
                 <h3>{this.props.formType}</h3>
                 <form onSubmit={this.handleSubmit}>
+                    <label>Title
+                    <input 
+                    type='text'
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    /> 
+                    </label>
+                    <label>Description
                     <input 
                     type="text"
                     value={this.state.description}
                     onChange={this.update('description')}
                     />
+                    </label>
+                    <label>Date
                     <input 
                     type='date'
                     value={this.state.date}
                     onChange={this.update('date')}
                     />
-                    <input 
-                    type='text'
-                    value={this.state.title}
-                    onChange={this.update('title')}
-                    />
+                  </label>
+                  <label>Location
                     <input 
                     type='text'
                     value={this.state.location}
                     onChange={this.update('location')}
                     />
+                    </label>
+                    <label>Capacity
                     <input 
                     type='integer'
                     value={this.state.capacity}
                     onChange={this.update('capacity')}
                     />
+                    </label>
                     <button type='submit' onChange={this.props.formType}/>
                 </form>
             </div>

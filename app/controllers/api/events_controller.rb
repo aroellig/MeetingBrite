@@ -8,7 +8,7 @@ class Api::EventsController < ApplicationController
     end
   
     def create
-      @event = event.create!(event_params)
+      @event = Event.create(event_params)
       render :show
     else
         render json: @event.errors.full_messages, status: 422

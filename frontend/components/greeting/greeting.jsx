@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import CreateEventFormContainer from '../events/create_event_form_container';
+import EventForm from '../events/event_form';
 
 
 const Greeting = ({ currentUser, logout }) => {
@@ -15,6 +16,7 @@ const Greeting = ({ currentUser, logout }) => {
     <div className="header-group">
       <h2 className="header-name">Hi, {currentUser.username}!</h2>
       <button className="header-button" onClick={logout}>Log Out</button>
+      <CreateEventFormContainer/>
     </div>
 
   );

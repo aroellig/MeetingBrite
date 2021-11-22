@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props
     .loginDemoUser()
-      .then(() => this.props.history.push("/splash"));
+      .then(() => this.props.history.push("/"));
   }
 
   render() {
