@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 
 class EventShow extends React.Component {
     componentDidMount(){
-        this.props.fetchEvent(this.props.match.params.eventId)
+        this.props.fetchEvent()
     }
     render(){
+        if (!this.props.event){
+            return null
+        }
         const { event } = this.props;
         return(
             <div>

@@ -17,9 +17,13 @@ class EventForm extends React.Component{
     }
     render(){
         return(
-            <div>
-                <h3>{this.props.formType}</h3>
+            <div className="Main-Event-Form">
+                <div className="header">
+                <h3>Basic Info</h3>
+                </div>
+                <div className="Event-Form">
                 <form onSubmit={this.handleSubmit}>
+                    <br/>
                     <label>Title
                     <input 
                     type='text'
@@ -27,6 +31,7 @@ class EventForm extends React.Component{
                     onChange={this.update('title')}
                     /> 
                     </label>
+                    <br/>
                     <label>Description
                     <input 
                     type="text"
@@ -34,6 +39,7 @@ class EventForm extends React.Component{
                     onChange={this.update('description')}
                     />
                     </label>
+                    <br/>
                     <label>Date
                     <input 
                     type='date'
@@ -41,6 +47,7 @@ class EventForm extends React.Component{
                     onChange={this.update('date')}
                     />
                   </label>
+                  <br/>
                   <label>Location
                     <input 
                     type='text'
@@ -48,6 +55,7 @@ class EventForm extends React.Component{
                     onChange={this.update('location')}
                     />
                     </label>
+                    <br/>
                     <label>Capacity
                     <input 
                     type='integer'
@@ -55,8 +63,10 @@ class EventForm extends React.Component{
                     onChange={this.update('capacity')}
                     />
                     </label>
-                    <button type='submit' value={this.props.formType}/>
+                    <br />
+                    <button type='submit' value={this.props.formType}>Create Event</button>
                 </form>
+                </div>
             </div>
         )
     }
