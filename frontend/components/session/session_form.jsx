@@ -48,6 +48,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <img src="https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"/>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
            {this.props.formType} 
