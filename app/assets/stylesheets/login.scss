@@ -88,6 +88,27 @@ font-weight: 800;
 
   }
 
+  .divider {
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+font-weight: 400;
+-moz-osx-font-smoothing: grayscale;
+color: #39364f;
+color: var(--eds-ui-800,#39364f);
+
+}
+
   .login-form-button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -130,6 +151,6 @@ transition: all .4s cubic-bezier(.4,0,.3,1);
 }
   
 
- .login-button {
-    color: blue;
-  }
+.login-demo {
+  font-size: medium;
+}

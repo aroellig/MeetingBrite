@@ -1,10 +1,14 @@
 class ApplicationController < ActionController::Base
-    skip_before_action :verify_authenticity_token
-  
+    # skip_before_action :verify_authenticity_token
+    before_action :underscore_params!
   
     helper_method :current_user, :logged_in?
   
     private
+
+    def underscore_params!
+      params.instance_variable_get(:@parameters).deep_transform_keys!(&:underscore)
+    end
   
     def current_user
       return nil unless session[:session_token]

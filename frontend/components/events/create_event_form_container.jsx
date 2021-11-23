@@ -8,7 +8,8 @@ const mSTP = state => ({
         date: '',
         title: '',
         capacity: '',
-        location: ''
+        location: '',
+        creatorId: state.session.id
     },
     formType: 'Create Event'
 })

@@ -80,13 +80,15 @@ class SessionForm extends React.Component {
                 placeholder="email address"
               />
             </label>
-            <input className="session-submit" type="submit" value={this.props.formType} />
-
-            <div className="login-demo" onClick={this.demoLogin}>
-            <button>Demo Login</button>
+            <input className="session-submit" type="submit" value="continue" />
+            <div className="divider">
+              <h1>or</h1>
+            </div>
+            <div className="login-demo" >
+            <button onClick={this.demoLogin}>Login Demo User</button>
             <br/>
             
-            or {this.props.navLink}
+             {this.props.navLink}
            
            
           </div>
