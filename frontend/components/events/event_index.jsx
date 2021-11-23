@@ -9,6 +9,7 @@ class EventIndex extends React.Component{
     }
     render(){
         const { events, deleteEvent } = this.props;
+       
         return (
             <div>
                 <ul>
@@ -16,7 +17,7 @@ class EventIndex extends React.Component{
                         events.map(event => <EventIndexItem event={event} deleteEvent={deleteEvent}/>)
                     }
                 </ul>
-                <Link to='/events/new'>New Event</Link>
+            <Link to='/events/new'>Create Event</Link>
             </div>
         )
     }

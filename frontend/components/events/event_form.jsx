@@ -55,7 +55,7 @@ class EventForm extends React.Component{
                     onChange={this.update('capacity')}
                     />
                     </label>
-                    <button type='submit' onChange={this.props.formType}/>
+                    <button type='submit' value={this.props.formType}/>
                 </form>
             </div>
         )

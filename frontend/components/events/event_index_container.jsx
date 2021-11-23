@@ -3,7 +3,7 @@ import { fetchEvents, deleteEvent } from '../../actions/event_action';
 import EventIndex from './event_index';
 
 const mSTP = state => ({
-    events: Object.values(state.events)
+    events: Object.values(state.entities.events)
 })
 
 const mDTP = dispatch => ({

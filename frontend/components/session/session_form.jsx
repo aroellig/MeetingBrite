@@ -47,14 +47,17 @@ class SessionForm extends React.Component {
 
   render() {
     return (
+      <div className="main-login-form-div">
       <div className="login-form-container">
-        <img src="https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"/>
+        
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
+          
            {this.props.formType} 
           {this.renderErrors()}
           <div className="login-form">
             <br/>
+
             <label>
               <input type="text"
                 value={this.state.username}
@@ -90,12 +93,16 @@ class SessionForm extends React.Component {
             <br/>
             
              {this.props.navLink}
-           
-           
+          
           </div>
           </div>
         </form>
-      </div>
+      
+      </div>  
+      <div className="photo">
+            <img className="photo" src="https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"/>
+            </div>
+        </div>
     );
   }
 }

@@ -1,3 +1,7 @@
+.main-login-form-div{
+  display: flex;
+}
+
 .login-form {
     display: flex;
     justify-content: left;
@@ -15,11 +19,11 @@ margin: 0 0 .2rem;
     margin-top: 0px;
     margin-bottom: 0.2rem;
 line-height: 1em;
-
+image-orientation: flip;
+// border: 1px solid black;
+width: 400px;
 }
   
-  
-
   .form-textarea{
     padding: 1rem;
     color: #333;
@@ -85,6 +89,7 @@ line-height: 2.5rem;
 letter-spacing: 1px;
 margin-right: -1px;
 font-weight: 800;
+image-orientation: flip;
 
   }
 
@@ -150,7 +155,10 @@ transition: all .4s cubic-bezier(.4,0,.3,1);
 -webkit-appearance: button;
 }
   
-
-.login-demo {
-  font-size: medium;
+.photo {
+ position: relative;
+ left: 100px;
+ 
+ height: 750px;
+ width: 750px;
 }

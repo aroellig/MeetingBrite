@@ -22,7 +22,7 @@ class EditEventForm extends React.Component {
   }
   
   const mSTP = (state, ownProps) => ({
-    event: state.events[ownProps.match.params.eventId],
+    event: state.entities.events[ownProps.match.params.eventId],
     formType: 'Update Event'
   })
   
