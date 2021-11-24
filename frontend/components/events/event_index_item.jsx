@@ -5,9 +5,18 @@ const EventIndexItem = ({ event, deleteEvent }) => {
     return (
         <li>
             
-            <Link to={`/events/${event.id}`}>{event.description}</Link>
-            <Link to={`/events/${event.id}/edit`}>Edit</Link>
-            <button onClick={() => deleteEvent(event.id)}></button>
+                <div className="event-title">
+            <Link to={`/events/${event.id}`}>{event.title}</Link>
+            </div>
+            <br/>
+            <div className="event-edit">
+            <Link to={`/events/${event.id}/edit`}>Edit Event</Link>
+            </div>
+            <br/>
+            <div className="delete-event">
+            <button onClick={() => deleteEvent(event.id)}>Delete Event</button>
+            </div>
+            
         </li>
     )
 }

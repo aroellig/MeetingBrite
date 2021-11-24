@@ -29,6 +29,7 @@ class EventForm extends React.Component{
                     type='text'
                     value={this.state.title}
                     onChange={this.update('title')}
+                    placeholder="title"
                     /> 
                     </label>
                     <br/>
@@ -64,7 +65,7 @@ class EventForm extends React.Component{
                     />
                     </label>
                     <br />
-                    <button type='submit' value={this.props.formType}>Create Event</button>
+                    <button type='submit' value={this.props.formType}>{this.props.formType}</button>
                 </form>
                 </div>
             </div>

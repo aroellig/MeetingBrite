@@ -1,17 +1,4 @@
-.Main-Event-Form{
-    display: flex;
-}
-
-.header{
-    white-space: nowrap;
-font-size: 24px;
-font-weight: 400;
-letter-spacing: -.1px;
-line-height: 1.5;
-color: #1e0a3c;
-}
-
-.Event-Form{
+.event-info{
     background: none;
     border: none;
     color: #39364f;
@@ -29,12 +16,3 @@ height: 100%;
 cursor: pointer;
 position: absolute;
 }
-
-.Form-textarea{
-    padding: 1rem;
-    color: #333;
-margin: 0 0 .2rem;
-    margin-top: 0px;
-    margin-bottom: 0.2rem;
-line-height: 1em;
-  }

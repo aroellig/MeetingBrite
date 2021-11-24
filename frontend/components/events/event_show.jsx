@@ -11,8 +11,12 @@ class EventShow extends React.Component {
         }
         const { event } = this.props;
         return(
-            <div>
+            <div className="event-info">
             <h1>{event.title}</h1>
+            <h2>{event.description}</h2>
+            <h3>{event.location}</h3>
+            <h4>{event.date}</h4>
+            <h5>{event.capacity}</h5>
             </div>
         )
     }
