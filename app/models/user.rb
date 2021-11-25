@@ -9,8 +9,8 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     
     has_many :rsvps,
-    through  :rsvps,
-    source:   :event
+    through :rsvps,
+    source: :event
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
