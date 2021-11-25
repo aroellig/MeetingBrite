@@ -1,44 +1,31 @@
-// .event-title {
-//     color: #39364f;
-//     color: var(--eds-ui-800,#39364f);
-//     font-size: 16px;
-//     line-height: 23px;
-//     min-height: 23px;
-//     white-space: nowrap;
-//     padding: 12px;
-//     width: 100%;
-//     height: 100%;
-//     cursor: pointer;
-//     position: absolute;
-//     font-size: xx-large;
-// }
+.event{
+    display: flex;
+}
 
-// .event-edit {
-//     color: #39364f;
-//     color: var(--eds-ui-800,#39364f);
-//     font-size: 16px;
-//     line-height: 23px;
-//     min-height: 23px;
-//     white-space: nowrap;
-//     padding: 12px;
-//     width: 100%;
-//     height: 100%;
-//     cursor: pointer;
-//     position: relative;
-//     top: 25px;
+.event-title {
+    padding: 12px;
+    cursor: pointer;
+    position: absolute;
+    font-size: xx-large;
+}
+
+.event-edit {
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+    top: 25px;
+    font-size: large;
   
-// }
+}
 
-// .delete-event{
-//     background: none;
-//     border: none;
-//     color: #39364f;
-//     color: var(--eds-ui-800,#39364f);
-//     font-size: 16px;
-//     line-height: 23px;
-//     min-height: 23px;
-//     white-space: nowrap;
-//     outline: none;
-//     padding: 12px;
+.delete-event-button{
+    color: #39364f;
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+    top: 25px;
+    font-size: large;
+ }
 
-//  }
+
+

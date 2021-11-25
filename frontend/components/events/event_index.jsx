@@ -20,7 +20,7 @@ class EventIndex extends React.Component{
                         events.map(event => <EventIndexItem event={event} deleteEvent={deleteEvent} key={event.id}/>)
                     }
                 </ul> 
-                <br />
+                <br/>
                 <div className="create-event">
             <Link to='/events/new'>Create Event</Link>
             </div>

@@ -3,7 +3,6 @@ import { fetchEvent } from '../../actions/event_action';
 import EventShow from './event_show';
 
 const mSTP = (state, ownProps) => {
-    console.log(ownProps)
     return {
     event: state.entities.events[ownProps.match.params.eventId]
     }

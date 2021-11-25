@@ -6,9 +6,6 @@ class EventShow extends React.Component {
         this.props.fetchEvent()
     }
     render(){
-        if (!this.props.event){
-            return null
-        }
         const { event } = this.props;
         return(
             <div className="event-info">

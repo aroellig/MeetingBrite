@@ -6,16 +6,16 @@ import EventForm from '../events/event_form';
 
 const Greeting = ({ currentUser, logout, event }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
+    <div className="entry-page">
       <Link to="/login">Login</Link>
       &nbsp;or&nbsp;
       <Link to="/signup">Sign up!</Link>
-    </nav>
+    </div>
   );
   const personalGreeting = () => (
-    <div className="header-group">
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
+    <div className="greeting">
+      <h2 className="name">Hi, {currentUser.username}!</h2>
+      <button className="logout-button" onClick={logout}>Log Out</button>
       <Link to={`/events`}>Your Events</Link>
       
     </div>

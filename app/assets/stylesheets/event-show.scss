@@ -1,13 +1,8 @@
 .event-info{
     color: #39364f;
-    color: var(--eds-ui-800,#39364f);
-    font-size: 16px;
+    font-size: larger;
     line-height: 23px;
-    min-height: 23px;
-    white-space: nowrap;
-    outline: none;
     padding: 12px;
-    height: 100%;
     cursor: pointer;
     position: absolute;
 }

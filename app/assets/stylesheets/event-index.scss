@@ -1,51 +1,25 @@
+.title{
+font-family: Helvetica;
+font-size: xx-large;
+}
+
 .events-list{
-    background: none;
-    border: none;
-    color: #39364f;
-    color: var(--eds-ui-800,#39364f);
-    font-size: 16px;
     line-height: 23px;
     min-height: 23px;
-    white-space: nowrap;
     padding: 12px;
-    width: 100%;
-    height: 100%;
     cursor: pointer;
     position: absolute;
 }
 
 .create-event{
     display: inline-block;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-color: var(--eds-primary-brand,#d1410c);
-    background-color: #d1410c;
-    background-color: var(--eds-primary-brand,#d1410c);
-    transform: translateZ(0);
-    height: 44px;padding: 0 30px 1px;
-    padding-top: 0px;
-    padding-bottom: 1px;
-    box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    line-height: 24px;
-    font-weight: 600;
-    letter-spacing: .2px;
-    color: #39364f;
-    color: var(--eds-ui-800,#39364f);
-    fill: #39364f;
-    fill: var(--eds-ui-800,#39364f);
+    background-color: #d1410c;;
+    height: 44px;
+    padding: 0 30px 1px;
     border: 2px solid #a9a8b3;
-    border: 2px solid var(--eds-ui-500,#a9a8b3);
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-// left: 500px;
-   top: 100px;
-}
-
-.title{
-    font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
-font-weight: 400;
--moz-osx-font-smoothing: grayscale;
+    left: 750px;
+    // top: -150px;
 }

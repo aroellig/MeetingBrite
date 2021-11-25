@@ -1,5 +1,14 @@
-.main-login-form-div{
+.main-login-form{
   display: flex;
+}
+.login-form-box {
+  width: 500px;
+  margin-top: 56px;
+  font-size: xx-large;
+  line-height: 2.5rem;
+  letter-spacing: 1px;
+  margin-right: -1px;
+  font-weight: 800;
 }
 
 .login-form {
@@ -11,46 +20,32 @@
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.5rem;
-  line-height: 1.165;
-  font-weight: 700;
   color: #333;
-  margin: 0 0 .2rem;
-  margin-top: 0px;
-  margin-bottom: 0.2rem;
-  line-height: 1em;
   width: 400px;
 }
   
   .login-input {
   padding: 18px 12px 6px;
-  background: none;
-  border: none;
+  border: 2px solid #a9a8b3;
+  border-radius: 4px;
   color: #39364f;
-  color: var(--eds-ui-800,#39364f);
-  font-size: 16px;
-  line-height: 23px;
-  min-height: 23px;
-  white-space: nowrap;
-  padding: 12px;
+  font-size: medium;
 }
 
-input{
-  line-height: normal;
-  color: rgb(43, 42, 42);
-  font-style: italic;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-  
- 
-.login-form-box {
-  max-width: 360px;
-  width: 100%;
-  margin-top: 56px;
-  font-size: 2rem;
-  line-height: 2.5rem;
-  letter-spacing: 1px;
-  margin-right: -1px;
-  font-weight: 800;
+
+
+.submit {
+  display: block;
+  color: #fff;
+  border-color: #d1410c;
+  background-color: #d1410c;
+  height: 44px;
+  padding: 0 30px 1px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  cursor: pointer;
+  position: relative;
+  top: 15px;
 }
 
 .divider {
@@ -58,41 +53,23 @@ input{
   justify-content: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+  font-family: Helvetica; 
   font-weight: 400;
-  -moz-osx-font-smoothing: grayscale;
   color: #39364f;
-  color: var(--eds-ui-800,#39364f);
 }
 
-
-.session-submit {
-  display: block;
-  width: 100%;
-  color: #fff;
-  color: var(--eds-inverse-primary-brand,#fff);
-  fill: #fff;
-  fill: var(--eds-inverse-primary-brand,#fff);
-  border-color: #d1410c;
-  border-color: var(--eds-primary-brand,#d1410c);
-  background-color: #d1410c;
-  background-color: var(--eds-primary-brand,#d1410c);
-  transform: translateZ(0);
-  position: relative;
-  height: 44px;
-  padding: 0 30px 1px;
-  box-sizing: border-box;
-  text-align: center;
-  text-decoration: none;
-  line-height: 24px;
-  font-weight: 600;
-  letter-spacing: .2px;
-  cursor: pointer;
-}
-  
 .photo {
  position: relative;
  left: 100px;
  height: 750px;
  width: 750px;
+}
+
+.demo-login-button{
+  color: #39364f;
+  padding: 12px;
+  cursor: pointer;
+  position: relative;
+  top: 25px;
+  font-size: large;
 }
