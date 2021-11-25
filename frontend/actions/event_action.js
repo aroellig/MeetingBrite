@@ -3,6 +3,7 @@ import * as APIUtil from '../util/event_api_util';
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const REMOVE_EVENT = 'REMOVE_EVENT';
+export const RECEIVE_REVIEW = 'RECEIVE_REVIEW'
 
 const receiveEvents = events => {
     return{
@@ -11,10 +12,11 @@ const receiveEvents = events => {
     }
 }
 
-const receiveEvent = event => {
+const receiveEvent = ({event, reviews }) => {
     return{
         type: RECEIVE_EVENT,
-        event
+        event,
+        reviews
     }
 }
 
@@ -24,6 +26,12 @@ const removeEvent = eventId => {
         eventId
     }
 }
+
+const receiveReview = ({ review, user }) => ({
+    type: RECEIVE_REVIEW,
+    review,
+    user
+})
 
 export const fetchEvents = () => dispatch => (
     APIUtil.fetchEvents()
@@ -48,4 +56,9 @@ export const updateEvent = event => dispatch => (
 export const deleteEvent = eventId => dispatch => (
     APIUtil.removeEvent(eventId)
     .then(() => dispatch(removeEvent(eventId)))
+)
+
+export const createReview = review => dispatch => (
+    APIUtil.createReview(review)
+    .then(review => dispatch(receiveReview(review)))
 )
