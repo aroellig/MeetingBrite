@@ -6,6 +6,6 @@ class Event < ApplicationRecord
     class_name: 'User'
 
     has_many :rsvps,
-    through: rsvps,
+    through: :rsvps,
     source: :user 
 end
