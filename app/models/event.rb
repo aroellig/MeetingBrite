@@ -7,5 +7,5 @@ class Event < ApplicationRecord
 
     has_many :rsvps,
     through  :rsvps,
-    source   :user 
+    source:   :user 
 end

@@ -10,7 +10,7 @@ class User < ApplicationRecord
     
     has_many :rsvps,
     through  :rsvps,
-    source   :event
+    source:   :event
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
