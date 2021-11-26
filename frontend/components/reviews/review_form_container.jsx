@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import { createReview } from '../../actions/event_action';
-import ReviewForm from 'review_form';
+import ReviewForm from './review_form';
 
-const mSTP = state => ({
-    review: {
+const mSTP = (state, ownProps) => ({
+    reviews: {
         review: '',
-        rating: 10
-        // creatorId: state.session.id
+        rating: 10,
+        user_id: state.session.id,
+        event_id: ownProps.eventId
     },
-    formType: 'Create Review'
+    formType: 'Create Review',
+    currentUser: state.session.id
 })
 
 const mDTP = dispatch => ({

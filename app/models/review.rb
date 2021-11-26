@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
-    validates :rating, :user_id, :event_id inclusion: { in: (1..10) }
+    validate :rating, :review
+    
     
     belongs_to :event, 
     foreign_key: :event_id,

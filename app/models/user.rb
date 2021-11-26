@@ -12,6 +12,11 @@ class User < ApplicationRecord
     through: :rsvps,
     source: :event
 
+    has_many :reviews, 
+    foreign_key: :user_id,
+    class_name: 'Review'
+
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
 

@@ -18,7 +18,8 @@ import Splash from './splash/splash';
 import EventShowContainer from './events/event_show_container';
 import EditEventFormContainer from './events/edit_event_form_container';
 import CreateEventFormContainer from './events/create_event_form_container';
-import EventIndexContainer from './events/event_index_container'
+import EventIndexContainer from './events/event_index_container';
+import CreateReviewFormContainer from './reviews/review_form_container';
 
 const App = () => (
   <div>
@@ -37,6 +38,7 @@ const App = () => (
       <Route path="/events/:eventId/edit" component={EditEventFormContainer} />
       <Route exact path="/" component={Splash} />
       <Route path="/events" component={EventIndexContainer}/>
+      <Route path="/reviews/new" component={CreateReviewFormContainer} />
     </Switch>
   </div>
 );

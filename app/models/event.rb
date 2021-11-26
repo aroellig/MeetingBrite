@@ -5,6 +5,10 @@ class Event < ApplicationRecord
     foreign_key: :creator_id,
     class_name: 'User'
 
+    has_many :reviews, 
+    foreign_key: :user_id,
+    class_name: 'Review'
+
     has_many :rsvps,
     through: :rsvps,
     source: :user 
