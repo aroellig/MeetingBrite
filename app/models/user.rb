@@ -9,8 +9,13 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     
     has_many :rsvps,
-    through: :rsvps,
-    source: :event
+    foreign_key: :user_id,
+    class_name: 'Rsvp'
+
+    has_many :events,
+    foreign_key: :event_id,
+    class_name: 'Event'
+
 
     has_many :reviews, 
     foreign_key: :user_id,

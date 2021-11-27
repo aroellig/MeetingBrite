@@ -16,6 +16,9 @@ const EventIndexItem = ({ event, deleteEvent }) => {
             <div className="Review-event">
                 <Link to='/reviews/new'>Review Event</Link>
             </div>
+            <div className="Rsvp-event">
+                <Link to='/rsvps/new'>RSVP to Event</Link>
+            </div>
             <br/>
                 <button className="delete-event-button" onClick={() => deleteEvent(event.id)}>Delete Event</button>
             </div>

@@ -10,6 +10,6 @@ class Event < ApplicationRecord
     class_name: 'Review'
 
     has_many :rsvps,
-    through: :rsvps,
-    source: :user 
+    foreign_key: :user_id,
+    class_name: 'Rsvp'
 end

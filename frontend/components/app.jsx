@@ -20,15 +20,17 @@ import EditEventFormContainer from './events/edit_event_form_container';
 import CreateEventFormContainer from './events/create_event_form_container';
 import EventIndexContainer from './events/event_index_container';
 import CreateReviewFormContainer from './reviews/review_form_container';
+import CreateRsvpFormContainer from './rsvp/create_rsvp_container'
 
 const App = () => (
   <div>
     <header>
-      <Link to="/" className="header-link">
+      <div className="title">
         <h1>Meeting Brite</h1>
-      </Link>
+        </div>
       <a href='https://github.com/aroellig'><button>Github</button></a>
     <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/'><button>Linkedin</button></a>
+   
     </header>
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -39,6 +41,7 @@ const App = () => (
       <Route exact path="/" component={Splash} />
       <Route path="/events" component={EventIndexContainer}/>
       <Route path="/reviews/new" component={CreateReviewFormContainer} />
+      <Route path="/rsvps/new" component={CreateRsvpFormContainer}/>
     </Switch>
   </div>
 );

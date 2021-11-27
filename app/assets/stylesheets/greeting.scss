@@ -1,0 +1,51 @@
+.create-event{
+    display: inline-block;
+    background-color: #d1410c;;
+    height: 44px;
+    padding: 0 30px 1px;
+    border: 2px solid #a9a8b3;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    left: 1000px;
+    // top: -150px;
+}
+
+.events-list{
+    display: inline-block;
+    background-color: #d1410c;;
+    height: 44px;
+    padding: 0 30px 1px;
+    // border: 2px solid #a9a8b3;
+    // border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    // left: 750px;
+    top: -50px;
+}
+
+.cover-photo{
+    position: relative;
+    height: 500px;
+    width: 1500px;
+}
+
+.name{
+    color: #39364f;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    left: 1250px;
+}
+
+.logout-button{
+    display: inline-block;
+    background-color: #d1410c;;
+    height: 44px;
+    border: 2px solid #a9a8b3;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    // left: 1250px;
+    // top: -150px;
+}

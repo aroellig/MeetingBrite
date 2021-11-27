@@ -11,8 +11,8 @@ class EventIndex extends React.Component{
         const { events, deleteEvent } = this.props;
        
         return (
-            <div className="events-list">
-                <div className="title">
+            <div className="events-list-class">
+                <div className="title-of-all-events">
                 <h1>Events</h1>
                 </div>
                 <ul>
@@ -21,9 +21,7 @@ class EventIndex extends React.Component{
                     }
                 </ul> 
                 <br/>
-                <div className="create-event">
-            <Link to='/events/new'>Create Event</Link>
-            </div>
+
             </div>
         )
     }

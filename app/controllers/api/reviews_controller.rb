@@ -2,12 +2,12 @@ class Api::ReviewsController < ApplicationController
     before_action :require_logged_in
 
     def show
-        @review = Review.find(params[:id]);
+        @review = current_user.reviews.find(params[:id]);
         render :show
     end
 
     def create 
-    @review = current_user.reviews.new(review_params)
+    @review = Review.new(review_params)
     if @review.save!
         render :show
     else
@@ -17,6 +17,6 @@ class Api::ReviewsController < ApplicationController
 
     private 
     def review_params
-        params.require(:review).permit(:review, :rating, :event_id)
+        params.require(:review).permit(:review, :rating, :event_id, :user_id)
     end
 end

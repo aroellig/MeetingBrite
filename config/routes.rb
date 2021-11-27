@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :events
     resources :reviews
+    resources :rsvps
   end
 end

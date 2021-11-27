@@ -14,10 +14,21 @@ const Greeting = ({ currentUser, logout, event }) => {
   );
   const personalGreeting = () => (
     <div className="greeting">
-      <h2 className="name">Hi, {currentUser.username}!</h2>
+      <div className="Hello">
+      <h2 className="name">{currentUser.email}</h2>
+      </div>
+      <div className="logout-button">
       <button className="logout-button" onClick={logout}>Log Out</button>
-      <Link to={`/events`}>Your Events</Link>
-      
+      </div>
+      <div className="create-event">
+            <Link to='/events/new'>Create Event</Link>
+            </div>
+            <div className="cover-photo">
+              <img className="cover-photo" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jrTut3pr3F-umVIuN61epgHaE7%26pid%3DApi&f=1"></img>
+            </div>
+      <div className="events-list">
+      <Link to={`/events`}>Events List</Link>
+      </div>
     </div>
 
   );

@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
               <h1>or</h1>
             </div>
             <div className="login-demo" >
-            <button classname="demo-login" onClick={this.demoLogin}>Login Demo User</button>
+            <button className="demo-login" onClick={this.demoLogin}>Login Demo User</button>
             <br/>
              {this.props.navLink}
           </div>

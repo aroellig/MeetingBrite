@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => ({
         event_id: ownProps.eventId
     },
     formType: 'Create Review',
-    currentUser: state.session.id
+    current_user: state.session.id
 })
 
 const mDTP = dispatch => ({
