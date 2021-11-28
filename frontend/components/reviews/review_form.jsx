@@ -4,18 +4,19 @@ import { withRouter } from 'react-router';
 class ReviewForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = this.props.reviews;
+        this.state = this.props.review;
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e){
         e.preventDefault()
-        const eventId = parseInt(this.props.match.params.eventId)
+        const eventId = this.props.event.id
         const review = Object.assign({}, this.state, {
-            event_id: eventId
-        })
-        this.props.submitReview(this.state)
-        .then(() => this.props.history.push("/events"));
+            eventId
+        });
+        if (this.props.currentUser) {
+            this.props.submitReview(review);
+        }
     }
 
     update(field){

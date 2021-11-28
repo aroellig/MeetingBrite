@@ -6,7 +6,7 @@ class Event < ApplicationRecord
     class_name: 'User'
 
     has_many :reviews, 
-    foreign_key: :user_id,
+    foreign_key: :event_id,
     class_name: 'Review'
 
     has_many :rsvps,

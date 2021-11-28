@@ -1,6 +1,7 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
 import { Link } from 'react-router-dom';
+import CreateReviewFormContainer from '../reviews/review_form_container'
 
 
 class EventIndex extends React.Component{
@@ -21,7 +22,7 @@ class EventIndex extends React.Component{
                     }
                 </ul> 
                 <br/>
-
+                {/* <CreateReviewFormContainer eventId={event.id} /> */}
             </div>
         )
     }

@@ -5,11 +5,10 @@ const reviewsReducer = (state = {}, action) => {
      let newState = Object.assign({}, state);
      switch (action.type) {
          case RECEIVE_REVIEW:
-             newState[action.review.id] = action.review 
-             return newState
+            const { review } = action;
+             return Object.assign({}, state, { [review.id]: review} )
          case RECEIVE_EVENT:
-             newState[action.event.id] = action.event;
-             return newState
+             return Object.assign({}, state, action.reviews)
          default:
              return state
      }

@@ -1,5 +1,22 @@
-.event{
-    display: flex;
+.event-index-items{
+    float: left;
+    padding: 50px;
+}
+
+.event-index-item{
+    display: block;
+    align-self: center;
+    width: 500px;
+    margin-top: 56px;
+    font-size: xx-large;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+    margin-right: -1px;
+    font-weight: 800;
+    border-style: groove; 
+    border-width: 5px;
+    border-color: black;
+    border-radius: 5px;
 }
 
 .event-title {
@@ -10,6 +27,7 @@
 }
 
 .event-edit {
+    align-self: center;
     padding: 12px;
     cursor: pointer;
     position: relative;
@@ -18,12 +36,28 @@
   
 }
 
-.delete-event-button{
-    color: #39364f;
+.Review-event {
     padding: 12px;
     cursor: pointer;
     position: relative;
-    top: 25px;
+    left: -5px;
+    font-size: large;
+}
+
+.Rspv-event{
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+    left: -10px;
+    font-size: large;
+}
+
+.delete-event-button{
+    color: #39364f;
+    // padding: 12px;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
     font-size: large;
  }
 

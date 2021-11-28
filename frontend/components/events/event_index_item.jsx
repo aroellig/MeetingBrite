@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CreateReviewFormContainer from '../reviews/review_form_container'
 
 const EventIndexItem = ({ event, deleteEvent }) => {
     return (
-        <div>
+        <div className="event-index-items">
         <li> 
-            <div className="event">
+            <div className="event-index-item">
             <div className="event-title">
                 <Link to={`/events/${event.id}`}>{event.title}</Link>
             </div>
@@ -13,15 +14,15 @@ const EventIndexItem = ({ event, deleteEvent }) => {
             <div className="event-edit">
                 <Link to={`/events/${event.id}/edit`}>Edit Event</Link>
             </div>
-            <div className="Review-event">
-                <Link to='/reviews/new'>Review Event</Link>
-            </div>
+
+            <br/>
             <div className="Rsvp-event">
                 <Link to='/rsvps/new'>RSVP to Event</Link>
             </div>
             <br/>
                 <button className="delete-event-button" onClick={() => deleteEvent(event.id)}>Delete Event</button>
             </div>
+            
         </li>
         </div>
     )

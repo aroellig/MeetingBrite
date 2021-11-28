@@ -6,9 +6,15 @@ class Api::ReviewsController < ApplicationController
         render :show
     end
 
+    def new
+        @review = Review.new
+        @user = User.new
+        @user = User.find_by id: params["user_id"]
+      end
+
     def create 
-    @review = Review.new(review_params)
-    if @review.save!
+    @review = current_user.reviews.new(review_params)
+    if @review.save
         render :show
     else
         render json: @review, status: :unprocessable_entity
