@@ -6,6 +6,11 @@ class Api::ReviewsController < ApplicationController
         render :show
     end
 
+    def index 
+        @reviews = Review.all
+        render :index
+      end
+
     def create 
     @review = current_user.reviews.new(review_params)
     if @review.save

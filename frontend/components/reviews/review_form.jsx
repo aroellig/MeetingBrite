@@ -15,7 +15,8 @@ class ReviewForm extends React.Component{
             eventId
         });
         if (this.props.currentUser) {
-            this.props.submitReview(review);
+            this.props.submitReview(review)
+            .then(() => this.props.history.push("/events"));
         }
     }
 

@@ -11,6 +11,9 @@ const EventIndexItem = ({ event, deleteEvent }) => {
                 <Link to={`/events/${event.id}`}>{event.title}</Link>
             </div>
             <br/>
+            <div className="reviews">
+                <Link to='/reviews'>Reviews</Link>
+            </div>
             <div className="event-edit">
                 <Link to={`/events/${event.id}/edit`}>Edit Event</Link>
             </div>

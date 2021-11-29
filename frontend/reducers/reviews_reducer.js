@@ -1,4 +1,4 @@
-import { RECEIVE_EVENT, RECEIVE_REVIEW } from '../actions/event_action'
+import { RECEIVE_REVIEWS, RECEIVE_REVIEW } from '../actions/event_action'
 
 const reviewsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -7,7 +7,8 @@ const reviewsReducer = (state = {}, action) => {
          case RECEIVE_REVIEW:
             newState[action.review.id] = action.review;
             return newState
-    
+        case RECEIVE_REVIEWS:
+            return action.reviews
          default:
              return state
      }

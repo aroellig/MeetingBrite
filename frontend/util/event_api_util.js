@@ -39,3 +39,15 @@ export const createReview = review => (
         data: { review }
     })
 )
+
+export const fetchReviews = () => (
+    $.ajax({
+        url: '/api/reviews'
+    })
+)
+
+export const fetchReview = reviewId => (
+    $.ajax({
+        url:`/api/reviews/${reviewId}`
+    })
+)
