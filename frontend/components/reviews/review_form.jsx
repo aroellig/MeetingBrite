@@ -33,11 +33,14 @@ class ReviewForm extends React.Component{
             <div className="Review-Form">
             <form onSubmit={this.handleSubmit}>
                 <br/>
-                <label>Review
+                 <label>Review
+                <div className="textarea">
                 <textarea
+                className="textarea"
                 value={this.state.review}
                 onChange={this.update('review')}
                 /> 
+                </div>
                 </label>
                 <br/>
                 <label>Rating

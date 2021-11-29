@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validate :rating, :review
+    validate :review, :rating inclusion: { in: (1..10) }
     
     
     belongs_to :event, 
