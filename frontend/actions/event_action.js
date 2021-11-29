@@ -27,7 +27,7 @@ const removeEvent = eventId => {
     }
 }
 
-const receiveReview = ({ review }) => ({
+const receiveReview =  review  => ({
     type: RECEIVE_REVIEW,
     review,
     

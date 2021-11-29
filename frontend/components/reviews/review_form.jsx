@@ -27,33 +27,26 @@ class ReviewForm extends React.Component{
         if (!this.props.event) return null
         return(
             <div className="Main-Review-Form">
-            <div className="review-header">
-            <h3>Leave a review</h3>
-            </div>
-            <div className="Review-Form">
-            <form onSubmit={this.handleSubmit}>
-                <br/>
-                 <label>Review
-                <div className="textarea">
-                <textarea
-                className="textarea"
-                value={this.state.review}
-                onChange={this.update('review')}
-                /> 
-                </div>
-                </label>
-                <br/>
-                <label>Rating
-                <input 
-                type="number"
-                value={this.state.rating}
-                onChange={this.update('rating')}
-                />
-                </label>
-                <br />
-                <button type='submit' value={this.props.formType}>{this.props.formType}</button>
-            </form>
-            </div>
+                <h3>Leave a review</h3>
+                <form onSubmit={this.handleSubmit}>
+                    <br/>
+                        <label>Review
+                        <textarea
+                        value={this.state.review}
+                        onChange={this.update('review')}
+                        /> 
+                        </label>
+                    <br/>
+                        <label>Rating
+                        <input 
+                        type="number"
+                        value={this.state.rating}
+                        onChange={this.update('rating')}
+                        />
+                        </label>
+                    <br />
+                        <button type='submit' value={this.props.formType}>{this.props.formType}</button>
+                </form>
             </div>
         )
     }

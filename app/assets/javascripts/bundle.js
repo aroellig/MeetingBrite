@@ -52,8 +52,7 @@ var removeEvent = function removeEvent(eventId) {
   };
 };
 
-var receiveReview = function receiveReview(_ref2) {
-  var review = _ref2.review;
+var receiveReview = function receiveReview(review) {
   return {
     type: RECEIVE_REVIEW,
     review: review
@@ -1256,26 +1255,19 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
       if (!this.props.event) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "Main-Review-Form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "review-header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Leave a review")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "Review-Form"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "Leave a review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Review", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "textarea"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
-        className: "textarea",
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Review", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
         value: this.state.review,
         onChange: this.update('review')
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Rating", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Rating", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "number",
         value: this.state.rating,
         onChange: this.update('rating')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         type: "submit",
         value: this.props.formType
-      }, this.props.formType))));
+      }, this.props.formType)));
     }
   }]);
 
@@ -1913,10 +1905,6 @@ var reviewsReducer = function reviewsReducer() {
   switch (action.type) {
     case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_REVIEW:
       newState[action.review.id] = action.review;
-      return newState;
-
-    case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_EVENT:
-      newState[action.event.id] = action.event;
       return newState;
 
     default:

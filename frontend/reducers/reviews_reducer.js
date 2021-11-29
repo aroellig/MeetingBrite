@@ -7,9 +7,7 @@ const reviewsReducer = (state = {}, action) => {
          case RECEIVE_REVIEW:
             newState[action.review.id] = action.review;
             return newState
-         case RECEIVE_EVENT:
-            newState[action.event.id] = action.event;
-            return newState
+    
          default:
              return state
      }
