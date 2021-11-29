@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { createReview } from '../../actions/event_action';
 import ReviewForm from './review_form';
+import {withRouter} from "react-router-dom"
 
 const mSTP = (state, ownProps) => ({
     review: {
@@ -18,4 +19,4 @@ const mDTP = dispatch => ({
     submitReview: review => dispatch(createReview(review))
 })
 
-export default connect(mSTP, mDTP)(ReviewForm)
+export default withRouter(connect(mSTP, mDTP)(ReviewForm))

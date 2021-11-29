@@ -25,6 +25,11 @@ class RsvpForm extends React.Component{
         return (
         <div className="rsvp-form">
             <form onSubmit={this.handleSubmit}>
+            <input 
+                    type='text'
+                    value={this.state.attendee_name}
+                    onChange={this.update('attendee_name')}
+                    />
                 <div className="rsvp-button">
                     <button type='submit' value={this.props.formType}>{this.props.formType}</button>
                 </div>

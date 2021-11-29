@@ -12,3 +12,10 @@ User.delete_all
 u0 = User.create({username: "guestas3", password: "password13", email: 'emailA@'})
 
 
+Event1 = Event.create(
+    title: 'Pizza Party',
+    description: 'A fun pizza party',
+    creator_id: 1,
+    capacity: 10,
+    location: "Andrew's house"
+)

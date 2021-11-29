@@ -1,0 +1,24 @@
+.Main-Review-Form{
+    display: flex;
+}
+
+.review-header{
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: #1e0a3c;
+}
+
+.Review-Form{
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 24px;
+    color: #333;
+    width: 500px;
+}

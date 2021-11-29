@@ -5,10 +5,13 @@ import RspvForm from './rsvp_form';
 
 const mSTP = (state, ownProps) => ({
     rsvp: {
+        attendee_name: "",
         user_id: state.session.id,
         event_id: ownProps.event_id
     },
-    formType: 'Join Event'
+    formType: 'Join Event',
+    currentUser: state.session.id,
+    event: state.entities.events[ownProps.eventId]
 })
 
 const mDTP = dispatch => ({

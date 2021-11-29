@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch, ownProps) => ({
-    fetchEvent: () => dispatch(fetchEvent(ownProps.match.params.eventId))
+    fetchEvent: eventId => dispatch(fetchEvent(eventId))
 })
 
 export default connect(mSTP, mDTP)(EventShow)

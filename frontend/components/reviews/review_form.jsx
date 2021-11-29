@@ -23,6 +23,8 @@ class ReviewForm extends React.Component{
         return e => this.setState({ [field]: e.currentTarget.value })
     }
     render(){
+
+        if (!this.props.event) return null
         return(
             <div className="Main-Review-Form">
             <div className="review-header">

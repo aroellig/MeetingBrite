@@ -6,14 +6,14 @@ class Api::RsvpsController < ApplicationController
         render :show
       end
     
-      def create
-        @rsvp = RSVP.new(rsvp_params)
+      def create 
+        @rsvp = current_user.rsvps.new(rsvp_params)
         if @rsvp.save
-          render :show
-        else
-          render json: @rsvp.errors.full_messages, status: 422
+            render :show
+            else
+            render json: @rsvp, status: :unprocessable_entity
         end
-      end
+            end
         
       def index 
         @rsvps = RSVP.all
@@ -29,6 +29,6 @@ class Api::RsvpsController < ApplicationController
 
     private 
     def rsvp_params
-        params.require(:rsvp).permit(:user_id, :event_id)
+        params.require(:rsvp).permit(:user_id, :event_id, :attendee_name)
     end
 end

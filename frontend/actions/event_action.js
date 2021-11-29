@@ -27,10 +27,10 @@ const removeEvent = eventId => {
     }
 }
 
-const receiveReview = ({ review, user }) => ({
+const receiveReview = ({ review }) => ({
     type: RECEIVE_REVIEW,
     review,
-    user
+    
 })
 
 export const fetchEvents = () => dispatch => (
