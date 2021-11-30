@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 
 class ReviewIndex extends React.Component{
     componentDidMount(){
-        this.props.fetchReviews()
+        console.log(this.props.event_id)
+        this.props.fetchReviews(this.props.event_id)
     }
     render(){
-        const { reviews } = this.props;
-       
+        const { reviews, event_id, user_id } = this.props
         return (
             <div className="reviews-list-class">
                 <div className="title-of-all-reviews">
@@ -18,7 +18,7 @@ class ReviewIndex extends React.Component{
                 </div>
                 <ul>
                     {
-                        reviews.map(event => <ReviewIndexItem review={review}  key={review.id}/>)
+                        reviews.map(review => <ReviewIndexItem review={review} user_id={user_id} event_id={event_id}  key={review.id}/>)
                     }
                 </ul> 
                 <br/>

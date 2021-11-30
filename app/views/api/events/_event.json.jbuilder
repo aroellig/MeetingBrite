@@ -1,1 +1,1 @@
-json.extract! event, :id, :title, :capacity, :description, :date, :location
+json.extract! event, :id, :title, :capacity, :description, :date, :location, :review_ids

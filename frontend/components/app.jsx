@@ -29,8 +29,8 @@ const App = () => (
       <div className="title">
         <h1>Meeting Brite</h1>
         </div>
-      <a href='https://github.com/aroellig'><button>Github</button></a>
-    <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/'><button>Linkedin</button></a>
+      <a href='https://github.com/aroellig'><button className="Github">Github</button></a>
+    <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/'><button className="Linkedin">Linkedin</button></a>
    
     </header>
     <Switch>
@@ -40,10 +40,10 @@ const App = () => (
       <Route exact path="/events/:eventId" component={EventShowContainer} />
       <Route path="/events/:eventId/edit" component={EditEventFormContainer} />
       <Route exact path="/" component={Splash} />
-      <Route path="/events" component={EventIndexContainer}/>
+      <Route exact path="/events" component={EventIndexContainer}/>
       <Route path="/reviews/new" component={CreateReviewFormContainer} />
       <Route path="/rsvps/new" component={CreateRsvpFormContainer}/>
-      <Route path="/reviews" component={ReviewIndexContainer}/>
+      <Route exact path="/events/:eventId/reviews" component={ReviewIndexContainer}/>
     </Switch>
   </div>
 );

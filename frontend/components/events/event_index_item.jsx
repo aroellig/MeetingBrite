@@ -7,21 +7,15 @@ const EventIndexItem = ({ event, deleteEvent }) => {
         <div className="event-index-items">
         <li> 
             <div className="event-index-item">
-            <div className="event-title">
-                <Link to={`/events/${event.id}`}>{event.title}</Link>
+            <div>
+                <Link to={`/events/${event.id}`} className="event-title">{event.title}</Link>
             </div>
             <br/>
-            <div className="reviews">
-                <Link to='/reviews'>Reviews</Link>
-            </div>
-            <div className="event-edit">
-                <Link to={`/events/${event.id}/edit`}>Edit Event</Link>
-            </div>
-
+                <Link to={`/events/${event.id}/reviews`} className="reviews">Reviews</Link>
+            <br />
+                <Link to={`/events/${event.id}/edit`} className="event-edit">Edit Event</Link>
             <br/>
-            <div className="Rsvp-event">
-                <Link to='/rsvps/new'>RSVP to Event</Link>
-            </div>
+                <Link to='/rsvps/new' className="Rsvp-event">RSVP to Event</Link>
             <br/>
                 <button className="delete-event-button" onClick={() => deleteEvent(event.id)}>Delete Event</button>
             </div>

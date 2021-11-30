@@ -7,18 +7,23 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index 
-        @reviews = Review.all
+        puts '======='
+        puts 'params'
+        puts params
+        puts '======='
+        event = Event.find(params[:event_id])
+        @reviews = event.reviews
         render :index
-      end
+    end
 
     def create 
     @review = current_user.reviews.new(review_params)
-    if @review.save
-        render :show
-        else
-        render json: @review, status: :unprocessable_entity
-    end
+        if @review.save
+            render :show
+            else
+            render json: @review, status: :unprocessable_entity
         end
+    end
 
         private 
         def review_params

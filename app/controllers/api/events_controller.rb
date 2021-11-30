@@ -23,7 +23,6 @@ class Api::EventsController < ApplicationController
 
     def update
       @event = Event.find_by(id: params[:id])
-      debugger
       if @event.update(event_params)
         render :show
       else

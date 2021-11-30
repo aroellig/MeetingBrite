@@ -40,9 +40,10 @@ export const createReview = review => (
     })
 )
 
-export const fetchReviews = () => (
+export const fetchReviews = eventId => (
     $.ajax({
-        url: '/api/reviews'
+        url: '/api/reviews',
+        data: { eventId }
     })
 )
 

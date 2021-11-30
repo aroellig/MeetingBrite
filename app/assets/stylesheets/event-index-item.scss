@@ -7,6 +7,7 @@
     display: block;
     align-self: center;
     width: 500px;
+    height: 300px;
     margin-top: 56px;
     font-size: xx-large;
     line-height: 2.5rem;
@@ -24,16 +25,28 @@
     cursor: pointer;
     position: absolute;
     font-size: xx-large;
+    color: #1E0A3C;
+    font-weight: 600;
 }
 
 .event-edit {
-    align-self: center;
-    padding: 12px;
+    padding: 30px;
     cursor: pointer;
-    position: relative;
-    top: 25px;
+    position: absolute;
     font-size: large;
-  
+    color: #1E0A3C;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.reviews{
+    padding: 30px;
+    cursor: pointer;
+    position: absolute;
+    font-size: large;
+    color: #1E0A3C;
+    font-weight: 600;
+    padding: 20px;;
 }
 
 .Review-event {
@@ -42,22 +55,29 @@
     position: relative;
     left: -5px;
     font-size: large;
+    
 }
 
 .Rsvp-event{
     padding: 12px;
     cursor: pointer;
     position: relative;
-    left: -10px;
+    top: 10px;
+    left: -5px;
     font-size: large;
+    color: whitesmoke;
+    background-color: #0D8547;
 }
 
 .delete-event-button{
-    color: #39364f;
-    // padding: 12px;
+    display: inline-block;
+    background-color: #d1410c;;
+    height: 44px;
+    border: 2px solid #a9a8b3;
+    border-radius: 4px;
     cursor: pointer;
     position: relative;
-    top: 5px;
+    top: 30px;
     font-size: large;
  }
 

@@ -8,7 +8,6 @@
     cursor: pointer;
     position: relative;
     left: 1000px;
-    // top: -150px;
 }
 
 .events-list{
@@ -16,11 +15,8 @@
     background-color: #d1410c;;
     height: 44px;
     padding: 0 30px 1px;
-    // border: 2px solid #a9a8b3;
-    // border-radius: 4px;
     cursor: pointer;
     position: relative;
-    // left: 750px;
     top: -50px;
 }
 
@@ -46,6 +42,26 @@
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-    // left: 1250px;
-    // top: -150px;
+}
+
+.entry-page{
+    position: relative;
+    left: 1250px;
+}
+
+.Login-entry{
+    color: #6F7287;
+    font-size: 24px;
+}
+
+.Signup-entry{
+    color: #6F7287;
+    font-size: 24px;
+}
+
+.entry-photo{
+    position: relative;
+    right: 1200px;
+    height: 700px;
+    width: 1500px;
 }

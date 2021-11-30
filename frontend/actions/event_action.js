@@ -71,8 +71,8 @@ export const createReview = review => dispatch => (
     .then(review => dispatch(receiveReview(review)))
 )
 
-export const fetchReviews = () => dispatch => (
-    APIUtil.fetchReviews()
+export const fetchReviews = eventId => dispatch => (
+    APIUtil.fetchReviews(eventId)
     .then(reviews => dispatch(receiveReviews(reviews)))
 )
 

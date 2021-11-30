@@ -1,4 +1,4 @@
-import { RECEIVE_EVENTS, RECEIVE_EVENT, REMOVE_EVENT } from '../actions/event_action'
+import { RECEIVE_EVENTS, RECEIVE_EVENT, REMOVE_EVENT, RECEIVE_REVIEWS } from '../actions/event_action'
 
 const eventsReducer = (state = {}, action) => {
    Object.freeze(state);

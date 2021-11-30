@@ -7,9 +7,13 @@ import EventForm from '../events/event_form';
 const Greeting = ({ currentUser, logout, event }) => {
   const sessionLinks = () => (
     <div className="entry-page">
-      <Link to="/login">Login</Link>
-      &nbsp;or&nbsp;
-      <Link to="/signup">Sign up!</Link>
+        <Link to="/login" className="Login-entry">Login</Link>
+        &nbsp;or&nbsp;
+        <Link to="/signup" className="Signup-entry">Sign up</Link>
+        {/* <br /> */}
+      <div className="entry-photo">
+        <img className="cover-photo" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontent.ticketarena.co.uk%2Fmedia%2F15419%2F69096385_2914891898585163_3454151439771762688_o.jpg&f=1&nofb=1"></img>
+      </div>
     </div>
   );
   const personalGreeting = () => (
