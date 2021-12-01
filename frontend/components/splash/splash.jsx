@@ -7,7 +7,6 @@ import CreateEventFormContainer from '../events/create_event_form_container';
 const Splash = () => {    return(
         <div className="homepage">
             <GreetingContainer />
-            {/* <CreateEventFormContainer/> */}
         </div>
     )}
     export default Splash;

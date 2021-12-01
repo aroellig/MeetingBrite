@@ -46,7 +46,7 @@ class ReviewForm extends React.Component{
                         />
                         </label>
                     <br />
-                        <button type='submit' value={this.props.formType}>{this.props.formType}</button>
+                        <button type='submit' value={this.props.formType} className="Create-Review-Button">{this.props.formType}</button>
                 </form>
             </div>
         )

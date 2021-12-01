@@ -7,17 +7,13 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index 
-        puts '======='
-        puts 'params'
-        puts params
-        puts '======='
         event = Event.find(params[:event_id])
         @reviews = event.reviews
         render :index
     end
 
     def create 
-    @review = current_user.reviews.new(review_params)
+        @review = current_user.reviews.new(review_params)
         if @review.save
             render :show
             else
@@ -25,8 +21,8 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
-        private 
-        def review_params
-            params.require(:review).permit(:review, :rating, :event_id, :user_id)
-        end
+    private 
+    def review_params
+        params.require(:review).permit(:review, :rating, :event_id, :user_id)
+    end
 end

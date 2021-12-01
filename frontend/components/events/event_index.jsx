@@ -9,7 +9,7 @@ class EventIndex extends React.Component{
         this.props.fetchEvents()
     }
     render(){
-        const { events, deleteEvent } = this.props;
+        const { events, deleteEvent, current_user } = this.props;
        
         return (
             <div className="events-list-class">
@@ -18,7 +18,7 @@ class EventIndex extends React.Component{
                 </div>
                 <ul>
                     {
-                        events.map(event => <EventIndexItem event={event} deleteEvent={deleteEvent} key={event.id}/>)
+                        events.map(event => <EventIndexItem event={event} deleteEvent={deleteEvent} current_user={current_user} key={event.id}/>)
                     }
                 </ul> 
                 <br/>

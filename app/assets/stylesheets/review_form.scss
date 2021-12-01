@@ -34,10 +34,27 @@
         height: 120px;
         border: 3px solid #cccccc;
         padding: 5px;
-        font-family: Tahoma, sans-serif;
-        // background-image: url(bg.gif);
+        font-family: Tahoma;
         background-position: bottom right;
         background-repeat: no-repeat;
     }
+
+    input{
+        display: -webkit-flex;
+        color: blue;
+        background-color: lightblue;
+
+    }
+}
+
+.Create-Review-Button{
+    padding: 12px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+    left: -5px;
+    font-size: large;
+    color: whitesmoke;
+    background-color: #0D8547;
 }
 

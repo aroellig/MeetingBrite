@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const EventIndexItem = ({ event, deleteEvent }) => {
-    return (
+const EventIndexItem = ({ event, deleteEvent, current_user }) => {
+        return (
         <div className="event-index-items">
         <li> 
             <div className="event-index-item">
@@ -12,16 +12,11 @@ const EventIndexItem = ({ event, deleteEvent }) => {
             </div>
             <br/>
                 <Link to={`/events/${event.id}/reviews`} className="reviews">Reviews</Link>
-            <br />
-                <Link to={`/events/${event.id}/edit`} className="event-edit">Edit Event</Link>
             <br/>
                 <Link to='/rsvps/new' className="Rsvp-event">RSVP to Event</Link>
-            <br/>
-                <button className="delete-event-button" onClick={() => deleteEvent(event.id)}>Delete Event</button>
             </div>
-            
         </li>
         </div>
-    )
+        )
 }
 export default EventIndexItem

@@ -697,7 +697,8 @@ var EventIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           events = _this$props.events,
-          deleteEvent = _this$props.deleteEvent;
+          deleteEvent = _this$props.deleteEvent,
+          current_user = _this$props.current_user;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "events-list-class"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -706,6 +707,7 @@ var EventIndex = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_event_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           event: event,
           deleteEvent: deleteEvent,
+          current_user: current_user,
           key: event.id
         });
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
@@ -739,7 +741,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state) {
   return {
-    events: Object.values(state.entities.events)
+    events: Object.values(state.entities.events),
+    current_user: state.session.id
   };
 };
 
@@ -779,7 +782,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var EventIndexItem = function EventIndexItem(_ref) {
   var event = _ref.event,
-      deleteEvent = _ref.deleteEvent;
+      deleteEvent = _ref.deleteEvent,
+      current_user = _ref.current_user;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "event-index-items"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -791,17 +795,9 @@ var EventIndexItem = function EventIndexItem(_ref) {
     to: "/events/".concat(event.id, "/reviews"),
     className: "reviews"
   }, "Reviews"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/events/".concat(event.id, "/edit"),
-    className: "event-edit"
-  }, "Edit Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: "/rsvps/new",
     className: "Rsvp-event"
-  }, "RSVP to Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: "delete-event-button",
-    onClick: function onClick() {
-      return deleteEvent(event.id);
-    }
-  }, "Delete Event"))));
+  }, "RSVP to Event"))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (EventIndexItem);
@@ -820,6 +816,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reviews/review_form_container */ "./frontend/components/reviews/review_form_container.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -871,24 +868,51 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       if (!this.props.event) return null;
       var _this$props = this.props,
           event = _this$props.event,
-          eventId = _this$props.eventId;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "event-info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
-        className: "show-title"
-      }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
-        className: "show-description"
-      }, event.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
-        className: "show-location"
-      }, event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
-        className: "show-date"
-      }, event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
-        className: "show-capacity"
-      }, event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
-        className: "show-event"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        eventId: event.id
-      })));
+          eventId = _this$props.eventId,
+          currentUser = _this$props.currentUser,
+          deleteEvent = _this$props.deleteEvent;
+
+      if (parseInt(currentUser) !== event.creator_id) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+          className: "show-title"
+        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+          className: "show-description"
+        }, event.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+          className: "show-location"
+        }, event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+          className: "show-date"
+        }, event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
+          className: "show-capacity"
+        }, event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+          className: "show-event"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          eventId: event.id
+        })));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+          className: "show-title"
+        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+          className: "show-description"
+        }, event.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+          className: "show-location"
+        }, event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+          className: "show-date"
+        }, event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
+          className: "show-capacity"
+        }, event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+          to: "/events/".concat(event.id, "/edit"),
+          className: "event-edit"
+        }, "Edit Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+          className: "delete-event-button",
+          onClick: function onClick() {
+            return deleteEvent(event.id);
+          }
+        }, "Delete Event"));
+      }
     }
   }]);
 
@@ -919,7 +943,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    event: state.entities.events[ownProps.match.params.eventId]
+    event: state.entities.events[ownProps.match.params.eventId],
+    currentUser: state.session.id
   };
 };
 
@@ -927,6 +952,9 @@ var mDTP = function mDTP(dispatch, ownProps) {
   return {
     fetchEvent: function fetchEvent(eventId) {
       return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.fetchEvent)(eventId));
+    },
+    deleteEvent: function deleteEvent(eventId) {
+      return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.deleteEvent)(eventId));
     }
   };
 };
@@ -1154,7 +1182,8 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('rating')
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         type: "submit",
-        value: this.props.formType
+        value: this.props.formType,
+        className: "Create-Review-Button"
       }, this.props.formType)));
     }
   }]);
