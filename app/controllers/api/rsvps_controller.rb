@@ -16,7 +16,8 @@ class Api::RsvpsController < ApplicationController
             end
         
       def index 
-        @rsvps = RSVP.all
+        user = User.find(params[:user_id])
+        @users = user.reviews
         render :index
       end
 
