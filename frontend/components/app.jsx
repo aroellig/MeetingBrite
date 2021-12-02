@@ -22,6 +22,7 @@ import EventIndexContainer from './events/event_index_container';
 import CreateReviewFormContainer from './reviews/review_form_container';
 import CreateRsvpFormContainer from './rsvp/create_rsvp_container';
 import ReviewIndexContainer from './reviews/review_index_container';
+import RsvpIndexContainer from './rsvp/rsvp_index_container'
 
 const App = () => (
   <div>
@@ -44,6 +45,7 @@ const App = () => (
       <Route path="/reviews/new" component={CreateReviewFormContainer} />
       <Route path="/rsvps/new" component={CreateRsvpFormContainer}/>
       <Route exact path="/events/:eventId/reviews" component={ReviewIndexContainer}/>
+      <Route exact path="/rspvs" component={RsvpIndexContainer}/>
     </Switch>
   </div>
 );

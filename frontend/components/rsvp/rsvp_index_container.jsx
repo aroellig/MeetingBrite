@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchRsvp, fetchRsvps } from '../../actions/rsvp_actions';
 import { fetchEvents, fetchEvent } from '../../actions/event_action'
-import RsvpShow from './event_show';
+import RsvpIndex from './rsvp_index';
 
 const mSTP = (state, ownProps) => {
     return {

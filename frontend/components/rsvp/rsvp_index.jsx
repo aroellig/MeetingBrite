@@ -10,7 +10,12 @@ class RsvpIndex extends React.Component{
     }
     render(){
         const { rsvps, user_id, event_id, events } = this.props
-        return (
+        for(let i = 0; i < rsvps.length; i++){
+            let response = rsvps[i];
+            for(let j = 0; j < events.length; j++ ){
+                let event = events[j]
+                if(response.event_id === event.id ){
+                            return (
             <div className="rsvp-list-class">
                 <div className="title-of-all-rsvps">
                 <h1>RSVPs</h1>
@@ -23,6 +28,10 @@ class RsvpIndex extends React.Component{
                 <br/>
             </div>
         )
+                }
+            }
+        }
+
     }
 }
 

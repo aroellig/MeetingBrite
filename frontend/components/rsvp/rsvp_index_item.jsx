@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 
 class RsvpIndexItem extends React.Component{
-    componentDidMount(){
-
-    }
+   render(){
+       return (
+           <h1>hi</h1>
+       )
+   }
 }
 
-export default ReviewIndexItem
+export default RsvpIndexItem
