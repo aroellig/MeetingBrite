@@ -1,5 +1,5 @@
 class Rsvp < ApplicationRecord
-    validate :attendee_name
+    validate :attendee_name, :num_attendees
 
     belongs_to :user,
     foreign_key: :user_id,

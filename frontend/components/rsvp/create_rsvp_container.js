@@ -5,8 +5,9 @@ import RspvForm from './rsvp_form';
 
 const mSTP = (state, ownProps) => ({
     rsvp: {
-        attendee_name: "",
-        user_id: state.session.id,
+        attendee_name: '',
+        num_attendees: 0,
+        user_id: parseInt(state.session.id),
         event_id: ownProps.event_id
     },
     formType: 'Join Event',

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 class ReviewIndex extends React.Component{
     componentDidMount(){
-        console.log(this.props.event_id)
         this.props.fetchReviews(this.props.event_id)
     }
     render(){

@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
 import { fetchRsvp, fetchRsvps } from '../../actions/rsvp_actions';
-import { fetchEvents } from '../../actions/event_action'
+import { fetchEvents, fetchEvent } from '../../actions/event_action'
 import RsvpShow from './event_show';
 
 const mSTP = (state, ownProps) => {
     return {
-    event: state.entities.events[ownProps.match.params.eventId],
-    currentUser: state.entities.users[state.session.id],
-    currentUserRsvp: Object.values(
-      state.entities.users[state.session.id].rsvps),
-    reservations: Object.values(state.entities.reservations),
+      rsvps: Object.values(state.entities.rsvps),
+      user_id: state.session.id,
+      event_id: ownProps.match.params.eventId,
+      events: Object.values(state.entities.events)
+      }
     }
-}
+
 
 const mDTP = dispatch => ({
-    fetchRsvps: () => dispatch(fetchRsvps()),
+    fetchRsvps: (userId, eventId) => dispatch(fetchRsvps(userId, eventId)),
     fetchRsvp: rsvpId => dispatch(fetchRsvp(rsvpId)),
     fetchEvents: () => dispatch(fetchEvents())
 })
 
-export default connect(mSTP, mDTP)(RsvpShow)
+export default connect(mSTP, mDTP)(RsvpIndex)

@@ -6,30 +6,30 @@ class Api::RsvpsController < ApplicationController
         render :show
       end
     
-      def create 
-        @rsvp = current_user.rsvps.new(rsvp_params)
-        if @rsvp.save
-            render :show
-            else
-            render json: @rsvp, status: :unprocessable_entity
-        end
-            end
-        
-      def index 
-        user = User.find(params[:user_id])
-        @users = user.reviews
-        render :index
+    def create 
+      @rsvp = current_user.rsvps.new(rsvp_params)
+      if @rsvp.save
+          render :show
+          else
+          render json: @rsvp, status: :unprocessable_entity
       end
+    end
+      
+    def index 
+      user = User.find(params[:user_id])
+      @users = user.reviews
+      render :index
+    end
 
-      def destroy
-        @rsvp = RSVP.find(params[:id])
-        @rsvp.destroy
-    
-        render :show
-      end
+    def destroy
+      @rsvp = RSVP.find(params[:id])
+      @rsvp.destroy
+  
+      render :show
+    end
 
     private 
     def rsvp_params
-        params.require(:rsvp).permit(:user_id, :event_id, :attendee_name)
+        params.require(:rsvp).permit(:user_id, :event_id, :attendee_name, :num_attendees)
     end
 end

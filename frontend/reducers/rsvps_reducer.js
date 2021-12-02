@@ -8,14 +8,14 @@ const rsvpsReducer = (state = {}, action) => {
      switch (action.type) {
          case RECEIVE_RSVPS:
              return action.rsvps;
-         case RECEIVE_EVENT:
-             newState[action.event.id] = action.event;
-             return newState
+        //  case RECEIVE_EVENT:
+        //      newState[action.event.id] = action.event;
+        //      return newState
          case RECEIVE_RSVP:
-             newState[action.rsvp.id] = action.rsvp;
+             newState[action.rsvp.rsvp.id] = action.rsvp.rsvp;
              return newState 
-        case RECEIVE_CURRENT_USER:
-            return { id: action.currentUser.id };
+        // case RECEIVE_CURRENT_USER:
+        //     return { id: action.currentUser.id };
          default:
              return state
      }

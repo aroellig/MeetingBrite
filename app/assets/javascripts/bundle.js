@@ -173,17 +173,17 @@ var removeRsvp = function removeRsvp(rsvpId) {
   };
 };
 
-var fetchRsvps = function fetchRsvps() {
+var fetchRsvps = function fetchRsvps(userId) {
   return function (dispatch) {
-    return _util_rsvp_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchRsvps().then(function (rsvps) {
+    return _util_rsvp_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchRsvps(userId).then(function (rsvps) {
       return dispatch(receiveRsvps(rsvps));
     });
   };
 };
 var fetchRsvp = function fetchRsvp(rsvpId) {
   return function (dispatch) {
-    return _util_rsvp_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchRsvp(rspvId).then(function (rspv) {
-      return dispatch(receiveRsvp(rspv));
+    return _util_rsvp_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchRsvp(rsvpId).then(function (rsvp) {
+      return dispatch(receiveRsvp(rsvp));
     });
   };
 };
@@ -887,7 +887,12 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "show-capacity"
         }, event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-          to: "/rsvps/new",
+          to: {
+            pathname: '/rsvps/new',
+            state: {
+              event_id: this.props.match.params.eventId
+            }
+          },
           className: "Rsvp-event"
         }, "RSVP to Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "show-event"
@@ -1298,7 +1303,6 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log(this.props.event_id);
       this.props.fetchReviews(this.props.event_id);
     }
   }, {
@@ -1454,8 +1458,9 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     rsvp: {
-      attendee_name: "",
-      user_id: state.session.id,
+      attendee_name: '',
+      num_attendees: 0,
+      user_id: parseInt(state.session.id),
       event_id: ownProps.event_id
     },
     formType: 'Join Event',
@@ -1539,7 +1544,7 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
 
       e.preventDefault();
       var rsvps = Object.assign({}, this.state, {
-        event_id: this.props.eventId
+        event_id: this.props.location.state.event_id
       });
       this.props.createRsvp(rsvps).then(function () {
         return _this2.props.history.push("/events");
@@ -1561,11 +1566,15 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
         className: "rsvp-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "attendee_name", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "text",
         value: this.state.attendee_name,
         onChange: this.update('attendee_name')
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, "Number of persons attending", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+        type: "number",
+        value: this.state.num_attendees,
+        onChange: this.update('num_attendees')
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "rsvp-button"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         type: "submit",
@@ -1928,6 +1937,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _actions_event_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/event_action */ "./frontend/actions/event_action.js");
+/* harmony import */ var _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/rsvp_actions */ "./frontend/actions/rsvp_actions.js");
+
 
 
 var eventsReducer = function eventsReducer() {
@@ -1946,6 +1957,10 @@ var eventsReducer = function eventsReducer() {
 
     case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.REMOVE_EVENT:
       delete newState[action.eventId];
+      return newState;
+
+    case _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.RECEIVE_RSVP:
+      newState[action.rsvp.event.id] = action.rsvp.event;
       return newState;
 
     default:
@@ -2049,19 +2064,15 @@ var rsvpsReducer = function rsvpsReducer() {
   switch (action.type) {
     case _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_RSVPS:
       return action.rsvps;
-
-    case _actions_event_action__WEBPACK_IMPORTED_MODULE_2__.RECEIVE_EVENT:
-      newState[action.event.id] = action.event;
-      return newState;
+    //  case RECEIVE_EVENT:
+    //      newState[action.event.id] = action.event;
+    //      return newState
 
     case _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_RSVP:
-      newState[action.rsvp.id] = action.rsvp;
+      newState[action.rsvp.rsvp.id] = action.rsvp.rsvp;
       return newState;
-
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__.RECEIVE_CURRENT_USER:
-      return {
-        id: action.currentUser.id
-      };
+    // case RECEIVE_CURRENT_USER:
+    //     return { id: action.currentUser.id };
 
     default:
       return state;
@@ -2119,6 +2130,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/rsvp_actions */ "./frontend/actions/rsvp_actions.js");
+
 
 
 var _nullUser = Object.freeze({
@@ -2129,6 +2142,7 @@ var sessionReducer = function sessionReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_CURRENT_USER:
@@ -2138,6 +2152,10 @@ var sessionReducer = function sessionReducer() {
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.LOGOUT_CURRENT_USER:
       return _nullUser;
+
+    case _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.RECEIVE_RSVP:
+      newState[action.rsvp.user.id] = action.rsvp.user;
+      return newState;
 
     default:
       return state;
@@ -2365,9 +2383,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "createRsvp": () => (/* binding */ createRsvp),
 /* harmony export */   "deleteRSVP": () => (/* binding */ deleteRSVP)
 /* harmony export */ });
-var fetchRsvps = function fetchRsvps() {
+var fetchRsvps = function fetchRsvps(userId) {
   return $.ajax({
-    url: '/api/rsvps'
+    url: '/api/rsvps',
+    data: {
+      userId: userId
+    }
   });
 };
 var fetchRsvp = function fetchRsvp(rsvpId) {

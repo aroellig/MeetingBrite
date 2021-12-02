@@ -11,7 +11,7 @@ class RsvpForm extends React.Component{
     handleSubmit(e){
         e.preventDefault()
         const rsvps = Object.assign({}, this.state, {
-            event_id: this.props.eventId,
+            event_id: this.props.location.state.event_id,
           });
         this.props.createRsvp(rsvps)
         .then(() => this.props.history.push("/events"));
@@ -25,11 +25,21 @@ class RsvpForm extends React.Component{
         return (
         <div className="rsvp-form">
             <form onSubmit={this.handleSubmit}>
-            <input 
+            <label>attendee_name
+                    <input 
                     type='text'
                     value={this.state.attendee_name}
                     onChange={this.update('attendee_name')}
                     />
+            </label>
+            <br/>
+            <label>Number of persons attending
+                    <input 
+                    type="number"
+                    value={this.state.num_attendees}
+                    onChange={this.update('num_attendees')}
+                    />
+            </label>
                 <div className="rsvp-button">
                     <button type='submit' value={this.props.formType}>{this.props.formType}</button>
                 </div>

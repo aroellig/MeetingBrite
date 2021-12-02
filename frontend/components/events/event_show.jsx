@@ -18,7 +18,7 @@ class EventShow extends React.Component {
             <h3 className="show-location">{event.location}</h3>
             <h4 className="show-date">{event.date}</h4>
             <h5 className="show-capacity">{event.capacity}</h5>
-            <Link to='/rsvps/new' className="Rsvp-event">RSVP to Event</Link>
+            <Link to={{pathname: '/rsvps/new', state: {event_id: this.props.match.params.eventId}}} className="Rsvp-event">RSVP to Event</Link>
             <br/>
             <h6 className="show-event">
                 <CreateReviewFormContainer eventId={event.id} />
