@@ -43,5 +43,10 @@ One feature that I am particularly proud of is how my app produces different opt
         }
 ```
 
-Another challenge which I faced was setting up my RSVPs so that a user could RSVP to an event they wished to. This was because I had difficulty setting the event_id of the RSVP to the id of the Event which the user was responding too. 
+Another challenge which I faced was setting up my RSVPs so that a user could RSVP to an event they wished to. This was because I had difficulty setting the event_id of the RSVP to the id of the Event which the user was responding too. Eventually I was able to solve this by using the state in my link method to pull out the event's id.
+```javascript
+ <Link to={{pathname: '/rsvps/new', state: {event_id: this.props.match.params.eventId}}} className="Rsvp-event">RSVP to Event</Link>
+ ```
+
+ this enabled me to then use the event's id to successfully complete the RSVP.
         
