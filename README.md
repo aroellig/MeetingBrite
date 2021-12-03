@@ -3,10 +3,15 @@
 ## Overview
 MeetingBrite is a web application which allows users to create Events for their friends and family to attend. A user can create, update and destroy their own events as well as review events that other users have created as well as RSVP to those events.
 
+## Livelink
 A live version of the website can be found here: https://meetingbrite.herokuapp.com/#/
 
+
+## Technologies
 This is a rails application with the backend using Ruby and the frontend using React. 
 
+
+## Issues confronted and Solved
 One feature that I am particularly proud of is how my app produces different options for each event depending on if that user created the event or not. If they are that events creator they can update the event or delete it. If they are not that events creator they can review it or rsvp to it. The example of how I can solved this can be seen in the first code snippet below. Mainly I solved it by using an if statement and a parseInt to check the user's id against the event_creator's id.
 ```javascript
   render(){
