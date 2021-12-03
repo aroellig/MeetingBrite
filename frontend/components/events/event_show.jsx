@@ -14,10 +14,10 @@ class EventShow extends React.Component {
         return(
             <div className="event-info">
             <h1 className="show-title">{event.title}</h1>
-            <h2 className="show-description">{event.description}</h2>
-            <h3 className="show-location">{event.location}</h3>
-            <h4 className="show-date">{event.date}</h4>
-            <h5 className="show-capacity">{event.capacity}</h5>
+            <h2 className="show-description">About: {event.description}</h2>
+            <h3 className="show-location">Location: {event.location}</h3>
+            <h4 className="show-date">Date and Time: {event.date}</h4>
+            <h5 className="show-capacity">Capacity: {event.capacity}</h5>
             <Link to={{pathname: '/rsvps/new', state: {event_id: this.props.match.params.eventId}}} className="Rsvp-event">RSVP to Event</Link>
             <br/>
             <h6 className="show-event">
@@ -29,10 +29,10 @@ class EventShow extends React.Component {
             return(
                 <div className="event-info">
                 <h1 className="show-title">{event.title}</h1>
-                <h2 className="show-description">{event.description}</h2>
-                <h3 className="show-location">{event.location}</h3>
-                <h4 className="show-date">{event.date}</h4>
-                <h5 className="show-capacity">{event.capacity}</h5>
+                <h2 className="show-description">About: {event.description}</h2>
+                <h3 className="show-location">Location: {event.location}</h3>
+                <h4 className="show-date">Date and Time: {event.date}</h4>
+                <h5 className="show-capacity">Capacity: {event.capacity}</h5>
                 <br/>
                 <Link to={`/events/${event.id}/edit`} className="event-edit">Edit Event</Link>
                 <br/>

@@ -25,24 +25,21 @@ class RsvpForm extends React.Component{
         return (
         <div className="rsvp-form">
             <form onSubmit={this.handleSubmit}>
-            <label>attendee_name
                     <input 
                     type='text'
                     value={this.state.attendee_name}
                     onChange={this.update('attendee_name')}
+                    placeholder="name"
                     />
-            </label>
             <br/>
-            <label>Number of persons attending
                     <input 
                     type="number"
                     value={this.state.num_attendees}
                     onChange={this.update('num_attendees')}
+                    placeholder="number of attendees"
                     />
-            </label>
-                <div className="rsvp-button">
-                    <button type='submit' value={this.props.formType}>{this.props.formType}</button>
-                </div>
+            <br />
+                    <button type='submit' value={this.props.formType} className="rsvp-button">{this.props.formType}</button>
             </form>
         </div>
         )

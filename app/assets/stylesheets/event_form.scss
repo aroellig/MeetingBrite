@@ -1,8 +1,23 @@
 .Main-Event-Form{
     display: flex;
+
+    input{
+        position: relative;
+        margin-top: 32px;
+        left: 500px;
+        padding: 36px 24px 12px;
+        border: 2px solid #a9a8b3;
+        border-radius: 4px;
+        color: #39364f;
+        font-size: medium;
+        line-height: 2.5rem;
+        letter-spacing: 1px;
+    }
 }
 
-.header{
+.header2{
+    position: relative;
+    left: 630px;
     font-size: 24px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -11,14 +26,31 @@
 }
 
 .Event-Form{
-    position: absolute;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-direction: column;
+    background-color: white;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #333;
-    width: 500px;
+    width: 50%;
+    height: 100%;
+    padding: 18px 12px 6px;
+ 
+}
+
+.submit-event-button{
+    position: relative;
+    left: 650px;
+    display: inline-block;
+    background-color: whitesmoke;
+    height: 50px;
+    width: 90px;
+    border: 2px solid #a9a8b3;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 32px;
 }

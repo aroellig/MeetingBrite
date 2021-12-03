@@ -42,10 +42,11 @@
     }
 
     input{
-        display: -webkit-flex;
         color: blue;
         background-color: lightblue;
-
+        box-sizing: border-box;
+        font-family: Helvetica; 
+        font-weight: 400;
     }
 }
 

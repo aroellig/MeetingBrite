@@ -20,13 +20,13 @@ class EventForm extends React.Component{
     render(){
         return(
             <div className="Main-Event-Form">
-                <div className="header">
+                <div className="header2">
                 <h3>Basic Info</h3>
                 </div>
                 <div className="Event-Form">
                 <form onSubmit={this.handleSubmit}>
                     <br/>
-                    <label>Title
+                    <label>
                     <input 
                     type='text'
                     value={this.state.title}
@@ -35,15 +35,16 @@ class EventForm extends React.Component{
                     /> 
                     </label>
                     <br/>
-                    <label>Description
+                    <label>
                     <input 
                     type="text"
                     value={this.state.description}
                     onChange={this.update('description')}
+                    placeholder="description"
                     />
                     </label>
                     <br/>
-                    <label>Date
+                    <label>
                     <input 
                     type='date'
                     value={this.state.date}
@@ -51,23 +52,25 @@ class EventForm extends React.Component{
                     />
                   </label>
                   <br/>
-                  <label>Location
+                  <label>
                     <input 
                     type='text'
                     value={this.state.location}
                     onChange={this.update('location')}
+                    placeholder="location"
                     />
                     </label>
                     <br/>
-                    <label>Capacity
+                    <label>
                     <input 
                     type='integer'
                     value={this.state.capacity}
                     onChange={this.update('capacity')}
+                    placeholder="capacity"
                     />
                     </label>
                     <br />
-                    <button type='submit' value={this.props.formType}>{this.props.formType}</button>
+                    <button type='submit' value={this.props.formType} className="submit-event-button">{this.props.formType}</button>
                 </form>
                 </div>
             </div>

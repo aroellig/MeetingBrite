@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'open-uri'
+Review.delete_all
 Event.delete_all
 User.delete_all
 
@@ -101,4 +102,74 @@ event10 = Event.create(
     capacity: 8,
     location: "Bob's house",
     date: "24-11-2021"
+)
+
+review1 = Review.create(
+    review: "A really fun pizza party!",
+    rating: 10, 
+    event_id: event1.id,
+    user_id: u0.id
+)
+
+review2 = Review.create(
+    review: "An awful birthday party!",
+    rating: 2, 
+    event_id: event2.id,
+    user_id: u0.id
+)
+
+review3 = Review.create(
+    review: "Was ok but I think that this club is not challenging enough for me",
+    rating: 5, 
+    event_id: event3.id,
+    user_id: u0.id
+)
+
+review4 = Review.create(
+    review: "I love disco, this was so much fun!",
+    rating: 9, 
+    event_id: event4.id,
+    user_id: u0.id
+)
+
+review5 = Review.create(
+    review: "This was so boring",
+    rating: 1, 
+    event_id: event5.id,
+    user_id: u0.id
+)
+
+review6 = Review.create(
+    review: "This is one of my favorite parts of the week",
+    rating: 7, 
+    event_id: event6.id,
+    user_id: u0.id
+)
+
+review7 = Review.create(
+    review: "They hit me too hard",
+    rating: 3, 
+    event_id: event7.id,
+    user_id: u0.id
+)
+
+review8 = Review.create(
+    review: "I could only figure out half of the clues",
+    rating: 5, 
+    event_id: event8.id,
+    user_id: u0.id
+)
+
+review9 = Review.create(
+    review: "I love to dance!",
+    rating: 10, 
+    event_id: event9.id,
+    user_id: u0.id
+)
+
+review10 = Review.create(
+    review: "They chose really boring games",
+    rating: 2, 
+    event_id: event10.id,
+    user_id: u0.id
 )
