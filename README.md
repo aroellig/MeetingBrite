@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MeetingBrite is a web application which allows users to create Events for their friends and family to attend. A user can create, update and destroy their own events as well as review events that other users have created as well as RSVP to those events.
 
-Things you may want to cover:
+A live version of the website can be found here: https://meetingbrite.herokuapp.com/#/
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a rails application with the backend using Ruby and the frontend using React. 
