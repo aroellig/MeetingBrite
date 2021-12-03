@@ -6,7 +6,7 @@ A live version of the website can be found here: https://meetingbrite.herokuapp.
 
 This is a rails application with the backend using Ruby and the frontend using React. 
 
-One feature that I am particularly proud of is how my app produces different options for each event depending on if that user created the event or not. If they are that events creator they can update the event or delete it. If they are not that events creator they can review it or rsvp to it. 
+One feature that I am particularly proud of is how my app produces different options for each event depending on if that user created the event or not. If they are that events creator they can update the event or delete it. If they are not that events creator they can review it or rsvp to it. The example of how I can solved this can be seen in the first code snippet below. Mainly I solved it by using an if statement and a parseInt to check the user's id against the event_creator's id.
 ```javascript
   render(){
         if (!this.props.event) return null
@@ -41,5 +41,7 @@ One feature that I am particularly proud of is how my app produces different opt
                 </div>
             )
         }
+```
 
+Another challenge which I faced was setting up my RSVPs so that a user could RSVP to an event they wished to. This was because I had difficulty setting the event_id of the RSVP to the id of the Event which the user was responding too. 
         
