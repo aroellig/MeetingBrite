@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const ReviewIndexItem = ({ review, event_id }) => {
+    
     return (
         <div>
             <div className="review-index-items">
