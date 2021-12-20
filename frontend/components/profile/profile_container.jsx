@@ -6,7 +6,8 @@ import Profile from './profile'
 
 const mSTP = state => ({
     events: Object.values(state.entities.events),
-    current_user: state.session.id
+    current_user: state.session.id,
+    rsvps: Object.values(state.entities.rsvps)
 })
 
 const mDTP = dispatch => ({
