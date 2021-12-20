@@ -27,7 +27,7 @@ class Profile extends React.Component{
                 <p>Welcome {current_user.username}!!</p>
               </div>
               <div>
-                {userEventss.length === 0 ? (
+                {userEvents.length === 0 ? (
                     <div className="detail-no-event">
                       <div className="no-details">
                         <p className="p-no-details">
