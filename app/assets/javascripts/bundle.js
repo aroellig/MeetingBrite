@@ -1408,6 +1408,7 @@ __webpack_require__.r(__webpack_exports__);
 var ReviewIndexItem = function ReviewIndexItem(_ref) {
   var review = _ref.review,
       event_id = _ref.event_id;
+  //test comment
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "review-index-items"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
