@@ -11,11 +11,12 @@ class Profile extends React.Component{
         const {current_user, events, rsvps} = this.props;
         let userEvents = [];
         debugger
-        events.forEach((event) => {
-            if(event.creator_id === current_user.id){
+        for(let i = 0; i << events.length; i++) {
+            let event = events[i];
+            if(toString(event.creator_id) === current_user.id){
                 userEvents.push(event)
             }
-        })
+        }
         let userRsvps = [];
         rsvps.forEach((rsvp) => {
             if(rsvp.user_id === current_user.id){
@@ -28,7 +29,7 @@ class Profile extends React.Component{
                 <p>Welcome {current_user.username}!!</p>
               </div>
               <div>
-                {userEvents.length !== 0 ? (
+                {userEvents.length === 0 ? (
                     <div className="detail-no-event">
                       <div className="no-details">
                         <p className="p-no-details">

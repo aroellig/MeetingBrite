@@ -1181,11 +1181,15 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           rsvps = _this$props.rsvps;
       var userEvents = [];
       debugger;
-      events.forEach(function (event) {
-        if (event.creator_id === current_user.id) {
+
+      for (var i = 0; i << events.length; i++) {
+        var event = events[i];
+
+        if (toString(event.creator_id) === current_user.id) {
           userEvents.push(event);
         }
-      });
+      }
+
       var userRsvps = [];
       rsvps.forEach(function (rsvp) {
         if (rsvp.user_id === current_user.id) {
@@ -1196,7 +1200,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "profile-outer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "profile-username"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Welcome ", current_user.username, "!!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, userEvents.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Welcome ", current_user.username, "!!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, userEvents.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "detail-no-event"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "no-details"
@@ -1260,7 +1264,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state) {
   return {
     events: Object.values(state.entities.events),
-    current_user: state.session.id,
+    current_user: state.session,
     rsvps: Object.values(state.entities.rsvps)
   };
 };
