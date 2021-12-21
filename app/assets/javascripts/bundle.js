@@ -173,9 +173,9 @@ var removeRsvp = function removeRsvp(rsvpId) {
   };
 };
 
-var fetchRsvps = function fetchRsvps(userId) {
+var fetchRsvps = function fetchRsvps() {
   return function (dispatch) {
-    return _util_rsvp_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchRsvps(userId).then(function (rsvps) {
+    return _util_rsvp_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchRsvps().then(function (rsvps) {
       return dispatch(receiveRsvps(rsvps));
     });
   };
@@ -1170,8 +1170,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchEvents();
-      this.props.fetchRsvps(this.props.current_user.id);
+      this.props.fetchEvents(); // this.props.fetchRsvps()
     }
   }, {
     key: "render",
@@ -1181,6 +1180,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           events = _this$props.events,
           rsvps = _this$props.rsvps;
       var userEvents = [];
+      debugger;
       events.forEach(function (event) {
         if (event.creator_id === current_user.id) {
           userEvents.push(event);
@@ -1196,7 +1196,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "profile-outer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "profile-username"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Welcome ", current_user.username, "!!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, userEvents.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Welcome ", current_user.username, "!!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, userEvents.length !== 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "detail-no-event"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "no-details"
@@ -1270,8 +1270,8 @@ var mDTP = function mDTP(dispatch) {
     fetchEvents: function fetchEvents() {
       return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.fetchEvents)());
     },
-    fetchRsvps: function fetchRsvps(userId) {
-      return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.fetchRsvps)(userId));
+    fetchRsvps: function fetchRsvps() {
+      return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.fetchRsvps)());
     }
   };
 };
@@ -2778,7 +2778,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "createRsvp": () => (/* binding */ createRsvp),
 /* harmony export */   "deleteRSVP": () => (/* binding */ deleteRSVP)
 /* harmony export */ });
-var fetchRsvps = function fetchRsvps(userId) {
+var fetchRsvps = function fetchRsvps() {
   return $.ajax({
     url: '/api/rsvps',
     data: {

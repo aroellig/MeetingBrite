@@ -25,8 +25,8 @@ const removeRsvp = rsvpId => {
     }
 }
 
-export const fetchRsvps = (userId) => dispatch => (
-    APIUtil.fetchRsvps(userId)
+export const fetchRsvps = () => dispatch => (
+    APIUtil.fetchRsvps()
     .then(rsvps => dispatch(receiveRsvps(rsvps)))
 )
 

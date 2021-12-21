@@ -12,7 +12,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
     fetchEvents: () => dispatch(fetchEvents()),
-    fetchRsvps: userId => dispatch(fetchRsvps(userId))
+    fetchRsvps: () => dispatch(fetchRsvps())
 })
 
 export default connect(mSTP, mDTP)(Profile)
