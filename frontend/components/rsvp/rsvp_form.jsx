@@ -20,7 +20,7 @@ class RsvpForm extends React.Component{
     update(field){
         return e => this.setState({ [field]: e.currentTarget.value })
     }
-
+    a
     render(){
         return (
         <div className="rsvp-form">

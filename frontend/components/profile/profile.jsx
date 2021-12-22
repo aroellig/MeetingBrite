@@ -23,6 +23,15 @@ class Profile extends React.Component{
                 userRsvps.push(rsvp)
             }
         })
+        let rsvpEvents = []
+        for(let i = 0; i < userRsvps.length; i++){
+          let userRsvp = userRsvps[i];
+          for(let j = 0; j < events.length; j++){
+            if(userRsvp.event_id === events[j].id){
+                  rsvpEvents.push(events[j])
+            }
+          }
+        }
         return (
             <div className="profile-outer">
               <div className="profile-username">
