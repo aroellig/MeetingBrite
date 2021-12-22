@@ -27,7 +27,7 @@ class Profile extends React.Component{
         for(let i = 0; i < userRsvps.length; i++){
           let userRsvp = userRsvps[i];
           for(let j = 0; j < events.length; j++){
-            if(userRsvp.event_id === events[j].id){
+            if(userRsvp.event_id === events[j].id && !rsvpEvents.includes(events[j])){
                   rsvpEvents.push(events[j])
             }
           }
