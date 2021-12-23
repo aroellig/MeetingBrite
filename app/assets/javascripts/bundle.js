@@ -1585,23 +1585,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var _this = undefined;
-
 
 
 
 var ReviewIndexItem = function ReviewIndexItem(_ref) {
-  var review = _ref.review,
-      event_id = _ref.event_id;
-  var reviews = _this.props.reviews;
-  var total_score = 0;
-
-  for (var i = 0; i < reviews.length; i++) {
-    var _review = reviews[i];
-    total_score += _review.score;
-  }
-
-  var avg_score = total_score / reviews.length;
+  var review = _ref.review;
+  // // const reviews = this.props.reviews
+  // let total_score = 0
+  // // for(let i = 0; i < reviews.length; i++){
+  // //   let review = reviews[i];
+  // //   total_score += review.score
+  // // }
+  // const avg_score = total_score / reviews.length
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "review-index-items"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1610,9 +1605,7 @@ var ReviewIndexItem = function ReviewIndexItem(_ref) {
     className: "review-title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, review.review)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "review-rating"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, review.rating)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "avg_score"
-  }, avg_score)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, review.rating)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ReviewIndexItem);

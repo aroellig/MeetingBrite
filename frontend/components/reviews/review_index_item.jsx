@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const ReviewIndexItem = ({ review, event_id }) => {
-    const reviews = this.props.reviews
-    let total_score = 0
-    for(let i = 0; i < reviews.length; i++){
-      let review = reviews[i];
-      total_score += review.score
-    }
-    const avg_score = total_score / reviews.length
+const ReviewIndexItem = ({ review }) => {
+    // // const reviews = this.props.reviews
+    // let total_score = 0
+    // // for(let i = 0; i < reviews.length; i++){
+    // //   let review = reviews[i];
+    // //   total_score += review.score
+    // // }
+    // const avg_score = total_score / reviews.length
     return (
         <div>
             <div className="review-index-items">
@@ -25,11 +25,11 @@ const ReviewIndexItem = ({ review, event_id }) => {
                     <br/>
                     </div>
                 </li>
-                <div className="avg_score">
+                {/* <div className="avg_score">
                     {
                         avg_score
                     }
-                </div>
+                </div> */}
             </div>
         </div>
     )
