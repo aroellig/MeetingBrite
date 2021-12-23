@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchEvents } from '../../actions/event_action';
-import { fetchRsvps } from '../../actions/event_action';
+import { fetchRsvps } from '../../actions/rsvp_actions';
 import Profile from './profile'
 
 
