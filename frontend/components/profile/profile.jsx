@@ -11,12 +11,11 @@ class Profile extends React.Component{
         const {current_user, events, rsvps} = this.props;
         let userEvents = [];
         debugger
-        for(let i = 0; i << events.length; i++) {
-            let event = events[i];
-            if(toString(event.creator_id) === current_user.id){
-                userEvents.push(event)
-            }
-        }
+        events.forEach((event) => {
+          if(event.creator_id === Number(current_user.id)){
+              userEvents.push(event)
+          }
+      })
         let userRsvps = [];
         rsvps.forEach((rsvp) => {
             if(rsvp.user_id === current_user.id){

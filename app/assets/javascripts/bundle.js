@@ -1181,15 +1181,11 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           rsvps = _this$props.rsvps;
       var userEvents = [];
       debugger;
-
-      for (var i = 0; i << events.length; i++) {
-        var event = events[i];
-
-        if (toString(event.creator_id) === current_user.id) {
+      events.forEach(function (event) {
+        if (event.creator_id === Number(current_user.id)) {
           userEvents.push(event);
         }
-      }
-
+      });
       var userRsvps = [];
       rsvps.forEach(function (rsvp) {
         if (rsvp.user_id === current_user.id) {
@@ -1198,8 +1194,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       });
       var rsvpEvents = [];
 
-      for (var _i = 0; _i < userRsvps.length; _i++) {
-        var userRsvp = userRsvps[_i];
+      for (var i = 0; i < userRsvps.length; i++) {
+        var userRsvp = userRsvps[i];
 
         for (var j = 0; j < events.length; j++) {
           if (userRsvp.event_id === events[j].id && !rsvpEvents.includes(events[j])) {
