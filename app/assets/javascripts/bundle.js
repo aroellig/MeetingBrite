@@ -1170,7 +1170,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
   _createClass(Profile, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchEvents(); // this.props.fetchRsvps()
+      this.props.fetchEvents();
+      this.props.fetchRsvps();
     }
   }, {
     key: "render",
@@ -1180,7 +1181,6 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           events = _this$props.events,
           rsvps = _this$props.rsvps;
       var userEvents = [];
-      debugger;
       events.forEach(function (event) {
         if (event.creator_id === Number(current_user.id)) {
           userEvents.push(event);
@@ -2801,10 +2801,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var fetchRsvps = function fetchRsvps() {
   return $.ajax({
-    url: '/api/rsvps',
-    data: {
-      userId: userId
-    }
+    url: '/api/rsvps'
   });
 };
 var fetchRsvp = function fetchRsvp(rsvpId) {

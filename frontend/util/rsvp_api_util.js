@@ -1,7 +1,6 @@
 export const fetchRsvps = () => (
     $.ajax({
-        url:'/api/rsvps',
-        data: { userId }
+        url:'/api/rsvps'
     })
 )
 

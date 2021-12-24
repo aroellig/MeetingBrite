@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 class Profile extends React.Component{
     componentDidMount(){
         this.props.fetchEvents()
-        // this.props.fetchRsvps()
+        this.props.fetchRsvps()
     }
 
     render(){
         const {current_user, events, rsvps} = this.props;
         let userEvents = [];
-        debugger
         events.forEach((event) => {
           if(event.creator_id === Number(current_user.id)){
               userEvents.push(event)
