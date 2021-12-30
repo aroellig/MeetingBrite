@@ -14,6 +14,7 @@ class RsvpForm extends React.Component{
         //     eventId: this.props.location.state.event_id,
         //   });
         // this.props.createRsvp(rsvps)
+        debugger
         const eventId = this.props.event.id
         const rsvp = Object.assign({}, this.state, {
             eventId

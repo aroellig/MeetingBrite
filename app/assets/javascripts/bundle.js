@@ -839,9 +839,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reviews/review_form_container */ "./frontend/components/reviews/review_form_container.jsx");
+/* harmony import */ var _rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../rsvp/create_rsvp_container */ "./frontend/components/rsvp/create_rsvp_container.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -863,6 +864,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -908,17 +910,11 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-date"
         }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "show-capacity"
-        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-          to: {
-            pathname: '/rsvps/new',
-            state: {
-              event_id: this.props.match.params.eventId
-            }
-          },
-          className: "Rsvp-event"
-        }, "RSVP to Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "show-event"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          eventId: event.id
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           eventId: event.id
         })));
       } else {
@@ -934,7 +930,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-date"
         }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "show-capacity"
-        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
+        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/events/".concat(event.id, "/edit"),
           className: "event-edit"
         }, "Edit Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -1656,9 +1652,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/rsvp_actions */ "./frontend/actions/rsvp_actions.js");
-/* harmony import */ var _util_event_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/event_api_util */ "./frontend/util/event_api_util.js");
-/* harmony import */ var _rsvp_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./rsvp_form */ "./frontend/components/rsvp/rsvp_form.jsx");
-
+/* harmony import */ var _rsvp_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./rsvp_form */ "./frontend/components/rsvp/rsvp_form.jsx");
 
 
 
@@ -1685,7 +1679,7 @@ var mDTP = function mDTP(dispatch) {
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_rsvp_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_rsvp_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1755,6 +1749,7 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
       //   });
       // this.props.createRsvp(rsvps)
 
+      debugger;
       var eventId = this.props.event.id;
       var rsvp = Object.assign({}, this.state, {
         eventId: eventId

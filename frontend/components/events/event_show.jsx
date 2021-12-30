@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { logoutCurrentUser } from '../../actions/session_actions';
-import CreateReviewFormContainer from '../reviews/review_form_container'
+import CreateReviewFormContainer from '../reviews/review_form_container';
+import CreateRsvpFormContainer from '../rsvp/create_rsvp_container';
 
 class EventShow extends React.Component {
     componentDidMount(){
@@ -18,9 +19,9 @@ class EventShow extends React.Component {
             <h3 className="show-location">Location: {event.location}</h3>
             <h4 className="show-date">Date and Time: {event.date}</h4>
             <h5 className="show-capacity">Capacity: {event.capacity}</h5>
-            <Link to={{pathname: '/rsvps/new', state: {event_id: this.props.match.params.eventId}}} className="Rsvp-event">RSVP to Event</Link>
             <br/>
             <h6 className="show-event">
+                <CreateRsvpFormContainer eventId={event.id} />
                 <CreateReviewFormContainer eventId={event.id} />
             </h6>
             </div>

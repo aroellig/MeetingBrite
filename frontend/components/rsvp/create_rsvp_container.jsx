@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { createRsvp } from '../../actions/rsvp_actions';
-import { createEvent } from '../../util/event_api_util';
 import RspvForm from './rsvp_form';
 
 const mSTP = (state, ownProps) => ({
