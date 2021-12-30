@@ -8,7 +8,7 @@ const mSTP = (state, ownProps) => ({
         attendee_name: '',
         num_attendees: 0,
         user_id: parseInt(state.session.id),
-        event_id: ownProps.event_id
+        event_id: ownProps.eventId
     },
     formType: 'Join Event',
     currentUser: state.session.id,
@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => ({
 })
 
 const mDTP = dispatch => ({
-    createRsvp: event => dispatch(createRsvp(event))
+    createRsvp: rsvp => dispatch(createRsvp(rsvp))
 })
 
 export default connect (mSTP, mDTP)(RspvForm)

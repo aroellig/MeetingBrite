@@ -300,7 +300,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _events_create_event_form_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./events/create_event_form_container */ "./frontend/components/events/create_event_form_container.jsx");
 /* harmony import */ var _events_event_index_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./events/event_index_container */ "./frontend/components/events/event_index_container.jsx");
 /* harmony import */ var _reviews_review_form_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./reviews/review_form_container */ "./frontend/components/reviews/review_form_container.jsx");
-/* harmony import */ var _rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./rsvp/create_rsvp_container */ "./frontend/components/rsvp/create_rsvp_container.js");
+/* harmony import */ var _rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./rsvp/create_rsvp_container */ "./frontend/components/rsvp/create_rsvp_container.jsx");
 /* harmony import */ var _reviews_review_index_container__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./reviews/review_index_container */ "./frontend/components/reviews/review_index_container.jsx");
 /* harmony import */ var _rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./rsvp/rsvp_index_container */ "./frontend/components/rsvp/rsvp_index_container.jsx");
 /* harmony import */ var _profile_profile_container__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./profile/profile_container */ "./frontend/components/profile/profile_container.jsx");
@@ -1643,10 +1643,10 @@ var Root = function Root(props) {
 
 /***/ }),
 
-/***/ "./frontend/components/rsvp/create_rsvp_container.js":
-/*!***********************************************************!*\
-  !*** ./frontend/components/rsvp/create_rsvp_container.js ***!
-  \***********************************************************/
+/***/ "./frontend/components/rsvp/create_rsvp_container.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/rsvp/create_rsvp_container.jsx ***!
+  \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1669,7 +1669,7 @@ var mSTP = function mSTP(state, ownProps) {
       attendee_name: '',
       num_attendees: 0,
       user_id: parseInt(state.session.id),
-      event_id: ownProps.event_id
+      event_id: ownProps.eventId
     },
     formType: 'Join Event',
     currentUser: state.session.id,
@@ -1679,8 +1679,8 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    createRsvp: function createRsvp(event) {
-      return dispatch((0,_actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.createRsvp)(event));
+    createRsvp: function createRsvp(rsvp) {
+      return dispatch((0,_actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.createRsvp)(rsvp));
     }
   };
 };
@@ -1750,13 +1750,21 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      e.preventDefault();
-      var rsvps = Object.assign({}, this.state, {
-        event_id: this.props.location.state.event_id
+      e.preventDefault(); // const rsvps = Object.assign({}, this.state, {
+      //     eventId: this.props.location.state.event_id,
+      //   });
+      // this.props.createRsvp(rsvps)
+
+      var eventId = this.props.event.id;
+      var rsvp = Object.assign({}, this.state, {
+        eventId: eventId
       });
-      this.props.createRsvp(rsvps).then(function () {
-        return _this2.props.history.push("/events");
-      });
+
+      if (this.props.currentUser) {
+        this.props.createRsvp(rsvp).then(function () {
+          return _this2.props.history.push("/events");
+        });
+      }
     }
   }, {
     key: "update",
