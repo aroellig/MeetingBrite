@@ -16,8 +16,8 @@ class Api::RsvpsController < ApplicationController
     end
       
     def index 
-      event = Event.find(params[:event_id])
-      @reviews = event.reviews
+      event = User.find(params[:user_id])
+      @rsvps = user.rsvps
       render :index
     end
 

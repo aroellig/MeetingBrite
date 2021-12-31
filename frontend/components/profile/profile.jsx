@@ -30,7 +30,7 @@ class Profile extends React.Component{
             }
           }
         }
-        debugger
+     debugger
         return (
             <div className="profile-outer">
               <div className="profile-username">
