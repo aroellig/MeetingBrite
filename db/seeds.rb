@@ -11,7 +11,7 @@ Review.delete_all
 Event.delete_all
 User.delete_all
 
-u0 = User.create({username: "guestas3", password: "password13", email: 'emailA@'})
+u0 = User.create!({username: "guestas3", password: "password13", email: 'emailA@'})
 
 
 event1 = Event.create(
@@ -23,6 +23,7 @@ event1 = Event.create(
     date: "24-11-2021"
 )
 
+event1.save
 
 event2 = Event.create(
     title: 'Birthday Party',
