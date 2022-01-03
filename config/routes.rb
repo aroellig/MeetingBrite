@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'static_pages#root'
   namespace :api, defaults: {format: :json} do
     resource :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
@@ -7,4 +6,5 @@ Rails.application.routes.draw do
     resources :reviews
     resources :rsvps
   end
+  root to: 'static_pages#root'
 end
