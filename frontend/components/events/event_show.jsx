@@ -19,6 +19,9 @@ class EventShow extends React.Component {
             <h3 className="show-location">Location: {event.location}</h3>
             <h4 className="show-date">Date and Time: {event.date}</h4>
             <h5 className="show-capacity">Capacity: {event.capacity}</h5>
+            <div id = "show-photo">
+                <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+            </div>
             <br/>
             <h6 className="show-event">
                 <CreateRsvpFormContainer eventId={event.id} />
@@ -34,6 +37,9 @@ class EventShow extends React.Component {
                 <h3 className="show-location">Location: {event.location}</h3>
                 <h4 className="show-date">Date and Time: {event.date}</h4>
                 <h5 className="show-capacity">Capacity: {event.capacity}</h5>
+                <div id = "show-photo">
+                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                </div>
                 <br/>
                 <Link to={`/events/${event.id}/edit`} className="event-edit">Edit Event</Link>
                 <br/>

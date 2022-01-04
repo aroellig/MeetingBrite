@@ -910,7 +910,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-date"
         }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "show-capacity"
-        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          id: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "show-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           eventId: event.id
@@ -930,7 +937,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-date"
         }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "show-capacity"
-        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          id: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/events/".concat(event.id, "/edit"),
           className: "event-edit"
         }, "Edit Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -2369,6 +2383,7 @@ var eventsReducer = function eventsReducer() {
       return action.events;
 
     case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_EVENT:
+      debugger;
       newState[action.event.id] = action.event;
       return newState;
 
