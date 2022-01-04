@@ -5,6 +5,7 @@ export const fetchEvents = () => (
 )
 
 export const fetchEvent = eventId => {
+    debugger
    return $.ajax({
         url:`/api/events/${eventId}`
     })

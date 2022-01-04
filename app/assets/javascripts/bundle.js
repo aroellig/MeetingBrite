@@ -80,6 +80,7 @@ var fetchEvents = function fetchEvents() {
 };
 var fetchEvent = function fetchEvent(eventId) {
   return function (dispatch) {
+    debugger;
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchEvent(eventId).then(function (event) {
       return dispatch(receiveEvent(event));
     });
@@ -416,6 +417,7 @@ var mSTP = function mSTP(state) {
       title: '',
       capacity: '',
       location: '',
+      photoURL: '',
       creatorId: state.session.id
     },
     formType: 'Create Event'
@@ -2687,6 +2689,7 @@ var fetchEvents = function fetchEvents() {
   });
 };
 var fetchEvent = function fetchEvent(eventId) {
+  debugger;
   return $.ajax({
     url: "/api/events/".concat(eventId)
   });

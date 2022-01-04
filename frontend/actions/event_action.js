@@ -48,6 +48,7 @@ export const fetchEvents = () => dispatch => (
 )
 
 export const fetchEvent = eventId => dispatch => {
+    debugger
     return APIUtil.fetchEvent(eventId)
     .then(event => dispatch(receiveEvent(event)))
 }

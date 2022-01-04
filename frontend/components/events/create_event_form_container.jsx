@@ -9,6 +9,7 @@ const mSTP = state => ({
         title: '',
         capacity: '',
         location: '',
+        photoURL: '',
         creatorId: state.session.id
     },
     formType: 'Create Event'
