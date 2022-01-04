@@ -14,6 +14,7 @@ const receiveEvents = events => {
 }
 
 const receiveEvent = ({event, reviews }) => {
+    debugger
     return{
         type: RECEIVE_EVENT,
         event,
@@ -46,10 +47,10 @@ export const fetchEvents = () => dispatch => (
     .then(events => dispatch(receiveEvents(events)))
 )
 
-export const fetchEvent = eventId => dispatch => (
-    APIUtil.fetchEvent(eventId)
+export const fetchEvent = eventId => dispatch => {
+    return APIUtil.fetchEvent(eventId)
     .then(event => dispatch(receiveEvent(event)))
-)
+}
 
 export const createEvent = event => dispatch => (
     APIUtil.createEvent(event)

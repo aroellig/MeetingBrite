@@ -1,4 +1,4 @@
-json.merge! event.attributes
+json.extract! event, :id, :title, :description, :location, :date, :creator_id
 if event.photo.attachment == nil
    json.photoUrl = ""
 else

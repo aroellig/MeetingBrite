@@ -42,6 +42,7 @@ var receiveEvents = function receiveEvents(events) {
 var receiveEvent = function receiveEvent(_ref) {
   var event = _ref.event,
       reviews = _ref.reviews;
+  debugger;
   return {
     type: RECEIVE_EVENT,
     event: event,
