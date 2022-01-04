@@ -70,6 +70,7 @@ class EventForm extends React.Component{
                     />
                     </label>
                     <br />
+                    
                     <button type='submit' value={this.props.formType} className="submit-event-button">{this.props.formType}</button>
                 </form>
                 </div>
