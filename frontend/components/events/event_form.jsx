@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import PhotoForm from './photos'
 
 class EventForm extends React.Component{
     constructor(props){
@@ -13,6 +14,18 @@ class EventForm extends React.Component{
         this.props.submitEvent(this.state)
         .then(() => this.props.history.push("/events"));
     }
+
+    handleFile(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+          this.setState({ photoFile: file, photoURL: fileReader.result });
+        };
+        
+        if (file) {
+          fileReader.readAsDataURL(file);
+        }
+      }
 
     update(field){
         return e => this.setState({ [field]: e.currentTarget.value })
@@ -70,7 +83,14 @@ class EventForm extends React.Component{
                     />
                     </label>
                     <br />
-                    
+                    <label> Photo Form
+                        <PhotoForm
+                        handlePhoto={this.handleFile}
+                        photoURL={this.state.photoURL}
+                        photoFile={this.state.photoFile}
+                        handleFile={this.handleFile}
+                        />
+                    </label>
                     <button type='submit' value={this.props.formType} className="submit-event-button">{this.props.formType}</button>
                 </form>
                 </div>

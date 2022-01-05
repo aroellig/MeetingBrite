@@ -7,7 +7,6 @@ return(
     <br/>
     <div >
       <h1 id='photo-title'>Upload an image for you event </h1>
-     
     {props.photoURL ? <img className="upload-photo" height="200px" width="200px" src={props.photoURL} /> : null}
     
       <label for="form-photo-upload">
