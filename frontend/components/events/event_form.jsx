@@ -7,6 +7,7 @@ class EventForm extends React.Component{
         super(props);
         this.state = this.props.event;
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFile = this.handleFile.bind(this)
     }
 
     handleSubmit(e){
