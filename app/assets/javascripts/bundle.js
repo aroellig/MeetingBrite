@@ -1015,7 +1015,8 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   return {
     event: state.entities.events[ownProps.match.params.eventId],
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    reviews: Object.values(state.entities.reviews)
   };
 };
 
@@ -1026,7 +1027,20 @@ var mDTP = function mDTP(dispatch, ownProps) {
     },
     deleteEvent: function deleteEvent(eventId) {
       return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.deleteEvent)(eventId));
-    }
+    },
+    fetchReviews: function (_fetchReviews) {
+      function fetchReviews(_x) {
+        return _fetchReviews.apply(this, arguments);
+      }
+
+      fetchReviews.toString = function () {
+        return _fetchReviews.toString();
+      };
+
+      return fetchReviews;
+    }(function (eventId) {
+      return dispatch(fetchReviews(eventId));
+    })
   };
 };
 
