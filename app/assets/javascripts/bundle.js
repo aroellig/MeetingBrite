@@ -2753,12 +2753,12 @@ var fetchEvents = function fetchEvents() {
   });
 };
 var fetchEvent = function fetchEvent(eventId) {
-  debugger;
   return $.ajax({
     url: "/api/events/".concat(eventId)
   });
 };
 var createEvent = function createEvent(event) {
+  debugger;
   return $.ajax({
     url: '/api/events',
     method: 'POST',

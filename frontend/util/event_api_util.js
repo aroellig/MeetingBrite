@@ -5,20 +5,20 @@ export const fetchEvents = () => (
 )
 
 export const fetchEvent = eventId => {
-    debugger
    return $.ajax({
         url:`/api/events/${eventId}`
     })
 
 }
 
-export const createEvent = event => (
-    $.ajax({
+export const createEvent = event => {
+    debugger
+   return $.ajax({
         url: '/api/events',
         method: 'POST',
         data: { event }
     })
-)
+}
 export const updateEvent = event => (
     $.ajax({
         url: `/api/events/${event.id}`,
