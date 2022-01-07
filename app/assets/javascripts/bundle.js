@@ -925,7 +925,8 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           event = _this$props.event,
           eventId = _this$props.eventId,
           currentUser = _this$props.currentUser,
-          deleteEvent = _this$props.deleteEvent;
+          deleteEvent = _this$props.deleteEvent,
+          reviews = _this$props.reviews;
       var total_score = 0;
 
       for (var i = 0; i < reviews.length; i++) {
