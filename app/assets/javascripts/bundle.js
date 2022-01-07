@@ -926,6 +926,20 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId = _this$props.eventId,
           currentUser = _this$props.currentUser,
           deleteEvent = _this$props.deleteEvent;
+      var total_score = 0;
+
+      for (var i = 0; i < reviews.length; i++) {
+        var review = reviews[i];
+        total_score += review.score;
+      }
+
+      var avg_score = 0;
+
+      if (reviews.length === 0) {
+        avg_score = 0;
+      } else {
+        avg_score = Number(total_score / reviews.length).toFixed(1);
+      }
 
       if (parseInt(currentUser) !== event.creator_id) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

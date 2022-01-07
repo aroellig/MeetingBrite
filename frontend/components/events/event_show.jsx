@@ -11,6 +11,17 @@ class EventShow extends React.Component {
     render(){
         if (!this.props.event) return null
         const { event, eventId, currentUser, deleteEvent } = this.props;
+        let total_score = 0;
+        for (let i = 0; i < reviews.length; i++) {
+          let review = reviews[i];
+          total_score += review.score;
+        }
+        let avg_score = 0;
+        if (reviews.length === 0){
+          avg_score = 0
+        }else{
+          avg_score = Number(total_score / reviews.length).toFixed(1)
+        }
         if (parseInt(currentUser) !== event.creator_id){
         return(
             <div className="event-info">
