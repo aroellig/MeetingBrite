@@ -916,6 +916,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchEvent(this.props.match.params.eventId);
+      this.props.fetchReviews(this.props.event_id);
     }
   }, {
     key: "render",

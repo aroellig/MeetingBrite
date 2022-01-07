@@ -7,6 +7,7 @@ import CreateRsvpFormContainer from '../rsvp/create_rsvp_container';
 class EventShow extends React.Component {
     componentDidMount(){
         this.props.fetchEvent(this.props.match.params.eventId)
+        this.props.fetchReviews(this.props.event_id)
     }
     render(){
         if (!this.props.event) return null
