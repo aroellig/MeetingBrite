@@ -39,6 +39,7 @@ class EventShow extends React.Component {
                 <CreateRsvpFormContainer eventId={event.id} />
                 <CreateReviewFormContainer eventId={event.id} />
             </h6>
+            <h7 className="average-score"> Average Rating: {avg_score}</h7>
             </div>
         )
         } else {
@@ -52,6 +53,7 @@ class EventShow extends React.Component {
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                 </div>
+                <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <br/>
                 <Link to={`/events/${event.id}/edit`} className="event-edit">Edit Event</Link>
                 <br/>
