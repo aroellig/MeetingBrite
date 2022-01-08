@@ -969,7 +969,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           eventId: event.id
-        })));
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
+          className: "average-score"
+        }, " Average Rating: ", avg_score));
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
@@ -990,7 +992,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           width: "925",
           height: "300",
           alt: "coverphoto"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+          className: "average-score"
+        }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/events/".concat(event.id, "/edit"),
           className: "event-edit"
         }, "Edit Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -2773,6 +2777,7 @@ var fetchEvents = function fetchEvents() {
   });
 };
 var fetchEvent = function fetchEvent(eventId) {
+  debugger;
   return $.ajax({
     url: "/api/events/".concat(eventId)
   });
