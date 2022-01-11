@@ -17,7 +17,7 @@ export const createEvent = event => {
    return $.ajax({
         url: '/api/events',
         method: 'POST',
-        data: { event }
+        data: event 
     })
 }
 export const updateEvent = event => (

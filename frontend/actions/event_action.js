@@ -13,12 +13,11 @@ const receiveEvents = events => {
     }
 }
 
-const receiveEvent = ({event, reviews }) => {
+const receiveEvent = (event) => {
     debugger
     return{
         type: RECEIVE_EVENT,
-        event,
-        reviews
+        event
     }
 }
 

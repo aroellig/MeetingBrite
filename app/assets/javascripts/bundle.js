@@ -39,14 +39,11 @@ var receiveEvents = function receiveEvents(events) {
   };
 };
 
-var receiveEvent = function receiveEvent(_ref) {
-  var event = _ref.event,
-      reviews = _ref.reviews;
+var receiveEvent = function receiveEvent(event) {
   debugger;
   return {
     type: RECEIVE_EVENT,
-    event: event,
-    reviews: reviews
+    event: event
   };
 };
 
@@ -2787,9 +2784,7 @@ var createEvent = function createEvent(event) {
   return $.ajax({
     url: '/api/events',
     method: 'POST',
-    data: {
-      event: event
-    }
+    data: event
   });
 };
 var updateEvent = function updateEvent(event) {
