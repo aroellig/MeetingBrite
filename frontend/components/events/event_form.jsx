@@ -20,12 +20,14 @@ class EventForm extends React.Component{
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
-          this.setState({ photoFile: file, photoURL: fileReader.result });
+          this.setState({ photoFile: file, photoURL: fileReader.result});
         };
         
         if (file) {
           fileReader.readAsDataURL(file);
-        }
+        } else {
+            this.setState({ photoUrl: "", photoFile: null });
+          }
       }
 
     update(field){

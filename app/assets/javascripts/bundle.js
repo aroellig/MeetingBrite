@@ -85,6 +85,7 @@ var fetchEvent = function fetchEvent(eventId) {
 };
 var createEvent = function createEvent(event) {
   return function (dispatch) {
+    debugger;
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.createEvent(event).then(function (event) {
       return dispatch(receiveEvent(event));
     });
@@ -618,6 +619,11 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
 
       if (file) {
         fileReader.readAsDataURL(file);
+      } else {
+        this.setState({
+          photoUrl: "",
+          photoFile: null
+        });
       }
     }
   }, {
