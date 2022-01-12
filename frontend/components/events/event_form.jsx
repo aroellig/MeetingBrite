@@ -12,6 +12,12 @@ class EventForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault()
+        const formData = new FormData();
+        formData.append('event[title]', this.state.title);
+        if (this.state.photoFile) {
+      
+          formData.append('event[photo]', this.state.photoFile);
+        }
         this.props.submitEvent(this.state)
         .then(() => this.props.history.push("/events"));
     }

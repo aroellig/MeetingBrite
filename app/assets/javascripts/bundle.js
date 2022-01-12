@@ -598,6 +598,13 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
+      var formData = new FormData();
+      formData.append('event[title]', this.state.title);
+
+      if (this.state.photoFile) {
+        formData.append('event[photo]', this.state.photoFile);
+      }
+
       this.props.submitEvent(this.state).then(function () {
         return _this2.props.history.push("/events");
       });
