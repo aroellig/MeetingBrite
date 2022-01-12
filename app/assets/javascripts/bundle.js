@@ -2477,7 +2477,6 @@ var eventsReducer = function eventsReducer() {
       return action.events;
 
     case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_EVENT:
-      debugger;
       newState[action.event.id] = action.event;
       return newState;
 
@@ -2790,7 +2789,11 @@ var createEvent = function createEvent(event) {
   return $.ajax({
     url: '/api/events',
     method: 'POST',
-    data: event
+    processData: false,
+    contentType: false,
+    data: {
+      event: event
+    }
   });
 };
 var updateEvent = function updateEvent(event) {

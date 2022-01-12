@@ -9,7 +9,6 @@ const eventsReducer = (state = {}, action) => {
         case RECEIVE_EVENTS:
             return action.events;
         case RECEIVE_EVENT:
-            debugger
             newState[action.event.id] = action.event;
             return newState
         case REMOVE_EVENT:
