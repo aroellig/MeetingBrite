@@ -14,11 +14,16 @@ class EventForm extends React.Component{
         e.preventDefault()
         const formData = new FormData();
         formData.append('event[title]', this.state.title);
+        formData.append('event[description]', this.state.description);
+        formData.append('event[date]', this.state.date);
+        formData.append('event[capacity]', this.state.capacity);
+        formData.append('event[location]', this.state.location);
+        formData.append('event[creatorId]', this.state.creatorId);
         if (this.state.photoFile) {
       
           formData.append('event[photo]', this.state.photoFile);
         }
-        this.props.submitEvent(this.state)
+        this.props.submitEvent(formData)
         .then(() => this.props.history.push("/events"));
     }
 

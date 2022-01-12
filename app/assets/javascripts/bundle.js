@@ -600,12 +600,17 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var formData = new FormData();
       formData.append('event[title]', this.state.title);
+      formData.append('event[description]', this.state.description);
+      formData.append('event[date]', this.state.date);
+      formData.append('event[capacity]', this.state.capacity);
+      formData.append('event[location]', this.state.location);
+      formData.append('event[creatorId]', this.state.creatorId);
 
       if (this.state.photoFile) {
         formData.append('event[photo]', this.state.photoFile);
       }
 
-      this.props.submitEvent(this.state).then(function () {
+      this.props.submitEvent(formData).then(function () {
         return _this2.props.history.push("/events");
       });
     }
@@ -2796,11 +2801,9 @@ var createEvent = function createEvent(event) {
   return $.ajax({
     url: '/api/events',
     method: 'POST',
+    data: event,
     processData: false,
-    contentType: false,
-    data: {
-      event: event
-    }
+    contentType: false
   });
 };
 var updateEvent = function updateEvent(event) {
