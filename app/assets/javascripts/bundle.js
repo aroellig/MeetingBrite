@@ -496,12 +496,14 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           event = _this$props.event,
           formType = _this$props.formType,
-          submitEvent = _this$props.submitEvent;
+          submitEvent = _this$props.submitEvent,
+          currentUser = _this$props.currentUser;
       if (!event) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_event_form__WEBPACK_IMPORTED_MODULE_3__["default"], {
         event: event,
         formType: formType,
-        submitEvent: submitEvent
+        submitEvent: submitEvent,
+        currentUser: currentUser
       });
     }
   }]);
@@ -512,6 +514,7 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
 var mSTP = function mSTP(state, ownProps) {
   return {
     event: state.entities.events[ownProps.match.params.eventId],
+    currentUser: state.session.id,
     formType: 'Update Event'
   };
 };

@@ -10,19 +10,21 @@ class EditEventForm extends React.Component {
   
     render () {
  
-      const { event, formType, submitEvent } = this.props;
+      const { event, formType, submitEvent, currentUser } = this.props;
       if (!event) return null;
       return (
         <EventForm
           event={event}
           formType={formType}
-          submitEvent={submitEvent} />
+          submitEvent={submitEvent}
+          currentUser={currentUser} />
       );
     }
   }
   
   const mSTP = (state, ownProps) => ({
     event: state.entities.events[ownProps.match.params.eventId],
+    currentUser: state.session.id,
     formType: 'Update Event'
   })
   
