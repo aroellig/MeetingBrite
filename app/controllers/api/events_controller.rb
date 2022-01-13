@@ -8,7 +8,6 @@ class Api::EventsController < ApplicationController
     end
   
     def create
-      debugger
       @event = Event.new(event_params)
       if @event.save
         render :show
@@ -23,14 +22,15 @@ class Api::EventsController < ApplicationController
     end
 
     def update
-      @event = Event.find_by(id: params[:id])
+      debugger
+      @event = Event.find(params[:id])
       if @event.update(event_params)
         render :show
       else
-        render json: @event.errors.full_messages, status: 422
+        render json: @event.errors_full_messages
       end
     end
-    
+
     def destroy
       @event = Event.find(params[:id])
       @event.destroy
@@ -41,7 +41,6 @@ class Api::EventsController < ApplicationController
     private
   
     def event_params
-      debugger
       params.require(:event).permit(:title, :description, :capacity, :location, :date, :creator_id, :photo)
     end
 end

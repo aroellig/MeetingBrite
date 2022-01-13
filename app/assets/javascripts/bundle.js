@@ -40,7 +40,6 @@ var receiveEvents = function receiveEvents(events) {
 };
 
 var receiveEvent = function receiveEvent(event) {
-  debugger;
   return {
     type: RECEIVE_EVENT,
     event: event
@@ -77,7 +76,6 @@ var fetchEvents = function fetchEvents() {
 };
 var fetchEvent = function fetchEvent(eventId) {
   return function (dispatch) {
-    debugger;
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchEvent(eventId).then(function (event) {
       return dispatch(receiveEvent(event));
     });
@@ -85,7 +83,6 @@ var fetchEvent = function fetchEvent(eventId) {
 };
 var createEvent = function createEvent(event) {
   return function (dispatch) {
-    debugger;
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.createEvent(event).then(function (event) {
       return dispatch(receiveEvent(event));
     });
@@ -2791,13 +2788,11 @@ var fetchEvents = function fetchEvents() {
   });
 };
 var fetchEvent = function fetchEvent(eventId) {
-  debugger;
   return $.ajax({
     url: "/api/events/".concat(eventId)
   });
 };
 var createEvent = function createEvent(event) {
-  debugger;
   return $.ajax({
     url: '/api/events',
     method: 'POST',
@@ -2808,11 +2803,11 @@ var createEvent = function createEvent(event) {
 };
 var updateEvent = function updateEvent(event) {
   return $.ajax({
-    url: "/api/events/".concat(event.id),
+    url: "/api/events/".concat(event.get('event[id]')),
     method: 'PATCH',
-    data: {
-      event: event
-    }
+    data: event,
+    processData: false,
+    contentType: false
   });
 };
 var removeEvent = function removeEvent(eventId) {
