@@ -55,10 +55,11 @@ export const createEvent = event => dispatch => {
     .then(event => dispatch(receiveEvent(event)))
 }
 
-export const updateEvent = event => dispatch => (
-    APIUtil.updateEvent(event)
+export const updateEvent = event => dispatch => {
+    debugger
+  return  APIUtil.updateEvent(event)
     .then(event => dispatch(receiveEvent(event)))
-)
+}
 
 export const deleteEvent = eventId => dispatch => (
     APIUtil.removeEvent(eventId)

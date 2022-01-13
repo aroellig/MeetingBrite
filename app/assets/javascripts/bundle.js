@@ -90,6 +90,7 @@ var createEvent = function createEvent(event) {
 };
 var updateEvent = function updateEvent(event) {
   return function (dispatch) {
+    debugger;
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.updateEvent(event).then(function (event) {
       return dispatch(receiveEvent(event));
     });
@@ -2802,8 +2803,9 @@ var createEvent = function createEvent(event) {
   });
 };
 var updateEvent = function updateEvent(event) {
+  debugger;
   return $.ajax({
-    url: "/api/events/".concat(event.get('event[id]')),
+    url: "/api/events/".concat(event.id),
     method: 'PATCH',
     data: event,
     processData: false,

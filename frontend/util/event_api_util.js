@@ -19,14 +19,15 @@ export const createEvent = event => {
         processData: false, contentType: false,
     })
 }
-export const updateEvent = event => (
-    $.ajax({
-        url: `/api/events/${event.get('event[id]')}`,
+export const updateEvent = event => {
+    debugger
+   return $.ajax({
+        url: `/api/events/${event.id}`,
         method: 'PATCH',
         data:  event,
         processData: false, contentType: false
     })
-)
+}
 
 export const removeEvent = eventId => (
     $.ajax({
