@@ -32,7 +32,6 @@ const Greeting = ({ currentUser, logout, event }) => {
             </div>
       <div className="events-list">
       <Link to={`/events`}>Events List</Link>
-      <Link to={`/rspvs`}>Rspvs</Link>
       <Link to={`/profile`}>Profile</Link>
       </div>
     </div>

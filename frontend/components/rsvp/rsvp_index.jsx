@@ -22,7 +22,7 @@ class RsvpIndex extends React.Component{
                 </div>
                 <ul>
                     {
-                        rspvs.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id}  key={rsvp.id}/>)
+                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id}  key={rsvp.id}/>)
                     }
                 </ul> 
                 <br/>
