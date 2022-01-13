@@ -13,6 +13,9 @@ class EventForm extends React.Component{
     handleSubmit(e){
         e.preventDefault()
         const formData = new FormData();
+         if (this.props.edit){
+             formData.append('event[id]', this.state.id)
+         }
         formData.append('event[title]', this.state.title);
         formData.append('event[description]', this.state.description);
         formData.append('event[date]', this.state.date);

@@ -503,7 +503,8 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
         event: event,
         formType: formType,
         submitEvent: submitEvent,
-        currentUser: currentUser
+        currentUser: currentUser,
+        edit: true
       });
     }
   }]);
@@ -512,6 +513,7 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 var mSTP = function mSTP(state, ownProps) {
+  console.log(ownProps.match.path.split("/"));
   return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
@@ -600,6 +602,11 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
 
       e.preventDefault();
       var formData = new FormData();
+
+      if (this.props.edit) {
+        formData.append('event[id]', this.state.id);
+      }
+
       formData.append('event[title]', this.state.title);
       formData.append('event[description]', this.state.description);
       formData.append('event[date]', this.state.date);

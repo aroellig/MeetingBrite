@@ -17,16 +17,20 @@ class EditEventForm extends React.Component {
           event={event}
           formType={formType}
           submitEvent={submitEvent}
-          currentUser={currentUser} />
+          currentUser={currentUser}
+          edit={true} />
       );
     }
   }
   
-  const mSTP = (state, ownProps) => ({
+  const mSTP = (state, ownProps) => {
+    console.log(ownProps.match.path.split("/"))
+    return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
     formType: 'Update Event'
-  })
+    }
+  }
   
   const mDTP = dispatch => ({
     fetchEvent: eventId => dispatch(fetchEvent(eventId)),
