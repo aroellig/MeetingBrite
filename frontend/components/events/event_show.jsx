@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { logoutCurrentUser } from '../../actions/session_actions';
 import CreateReviewFormContainer from '../reviews/review_form_container';
 import CreateRsvpFormContainer from '../rsvp/create_rsvp_container';
+import ReviewIndexContainer from '../reviews/review_index_container'
 
 class EventShow extends React.Component {
     componentDidMount(){
@@ -40,6 +41,9 @@ class EventShow extends React.Component {
                 <CreateReviewFormContainer eventId={event.id} />
             </h6>
             <h7 className="average-score"> Average Rating: {avg_score}</h7>
+            <h8 className= "reviews">
+            <ReviewIndexContainer eventId={event._id} />
+            </h8>
             </div>
         )
         } else {
@@ -58,6 +62,9 @@ class EventShow extends React.Component {
                 <Link to={`/events/${event.id}/edit`} className="event-edit">Edit Event</Link>
                 <br/>
                 <button className="delete-event-button" onClick={() => deleteEvent(event.id)}>Delete Event</button>
+                <h5 className= "reviews">
+                <ReviewIndexContainer eventId={event.id} />
+                </h5>
             </div>
             )
         }
