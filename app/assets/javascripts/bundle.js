@@ -957,10 +957,11 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
 
       for (var i = 0; i < reviews.length; i++) {
         var review = reviews[i];
-        total_score += review.score;
+        total_score += review.rating;
       }
 
       var avg_score = 0;
+      debugger;
 
       if (reviews.length === 0) {
         avg_score = 0;
@@ -1687,7 +1688,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     reviews: Object.values(state.entities.reviews),
     user_id: state.session.id,

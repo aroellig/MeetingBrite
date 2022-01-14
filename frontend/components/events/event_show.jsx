@@ -16,9 +16,10 @@ class EventShow extends React.Component {
         let total_score = 0;
         for (let i = 0; i < reviews.length; i++) {
           let review = reviews[i];
-          total_score += review.score;
+          total_score += review.rating;
         }
         let avg_score = 0;
+        debugger
         if (reviews.length === 0){
           avg_score = 0
         }else{
