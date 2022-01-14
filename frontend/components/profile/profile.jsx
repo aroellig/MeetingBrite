@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import EventIndexContainer from '../events/event_index_container'
 
 class Profile extends React.Component{
     componentDidMount(){
@@ -30,7 +31,6 @@ class Profile extends React.Component{
             }
           }
         }
-        debugger
         return (
             <div className="profile-outer">
               <div className="profile-username">
@@ -53,23 +53,14 @@ class Profile extends React.Component{
                 ) : (
                   <div className="yes-event-outer">
                     <div className="your-event">
-                      <p className="p-your-event">Your Event</p>
+                      <p className="p-your-event">Your Events</p>
                     </div>
                     {userEvents.map((event, index) => (
                       <div key={event + "b"} className="user-event">
-                        <Link
-                          to={`/events/${event._id}`}
-                          className="link-profile"
-                        >
-                          <div className="profile-recip-title-image">
-                            
-                              
-                            
-                            <div className="event-title-profile">
-                              <p className="event-profile">{event.title}</p>
-                            </div>
-                          </div>
-                        </Link>
+                        <h1>{event.title}</h1>
+                        {/* <div className = "show-photo">
+                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                        </div> */}
                       </div>
                     ))}
                   </div>
