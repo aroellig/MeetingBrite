@@ -607,7 +607,6 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
         formData.append('event[id]', this.props.event.id);
       }
 
-      formData.append('event[id]', this.props.event.id);
       formData.append('event[title]', this.state.title);
       formData.append('event[description]', this.state.description);
       formData.append('event[date]', this.state.date);

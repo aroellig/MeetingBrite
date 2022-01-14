@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import PhotoForm from './photos';
 
-
 class EventForm extends React.Component{
     constructor(props){
         super(props);
@@ -17,7 +16,6 @@ class EventForm extends React.Component{
          if (this.props.formType === 'edit'){
              formData.append('event[id]', this.props.event.id)
          }
-        formData.append('event[id]', this.props.event.id)
         formData.append('event[title]', this.state.title);
         formData.append('event[description]', this.state.description);
         formData.append('event[date]', this.state.date);
