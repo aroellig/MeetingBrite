@@ -1326,7 +1326,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       });
       var userRsvps = [];
       rsvps.forEach(function (rsvp) {
-        if (rsvp.user_id === current_user.id) {
+        if (rsvp.user_id === Number(current_user.id)) {
           userRsvps.push(rsvp);
         }
       });

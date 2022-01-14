@@ -17,7 +17,7 @@ class Profile extends React.Component{
       })
         let userRsvps = [];
         rsvps.forEach((rsvp) => {
-            if(rsvp.user_id === current_user.id){
+            if(rsvp.user_id === Number(current_user.id)){
                 userRsvps.push(rsvp)
             }
         })
@@ -30,7 +30,7 @@ class Profile extends React.Component{
             }
           }
         }
-     debugger
+        debugger
         return (
             <div className="profile-outer">
               <div className="profile-username">
