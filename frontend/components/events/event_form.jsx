@@ -14,7 +14,7 @@ class EventForm extends React.Component{
         e.preventDefault()
         const formData = new FormData();
          if (this.props.edit){
-             formData.append('event[id]', this.state.id)
+             formData.append('event[id]', this.state.event.id)
          }
         formData.append('event[title]', this.state.title);
         formData.append('event[description]', this.state.description);
