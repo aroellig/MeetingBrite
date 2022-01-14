@@ -63,7 +63,37 @@ class Profile extends React.Component{
                         </div> */}
                       </div>
                     ))}
-                  </div>
+                  </div> 
+                )}
+              </div>
+              <div>
+              {userRsvps.length === 0 ? (
+                    <div className="detail-no-rsvp">
+                      <div className="no-details">
+                        <p className="p-no-details">
+                          You have not Rsvp'd to any events
+                        </p>
+                      </div>
+                      <div className="link-create-profile">
+                        <Link to="/events" className="p-search-event">
+                          search for events
+                        </Link>
+                      </div>
+                    </div>
+                ) : (
+                  <div className="yes-rsvp-outer">
+                    <div className="your-rsvp">
+                      <p className="p-your-Rsvps">Your Rsvps</p>
+                    </div>
+                    {rsvpEvents.map((event, index) => (
+                      <div key={event + "b"} className="user-event-rsvp">
+                        <h1>{event.title}</h1>
+                        {/* <div className = "show-photo">
+                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                        </div> */}
+                      </div>
+                    ))}
+                  </div> 
                 )}
               </div>
             </div>
