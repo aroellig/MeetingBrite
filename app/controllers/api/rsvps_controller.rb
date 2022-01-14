@@ -16,8 +16,7 @@ class Api::RsvpsController < ApplicationController
     end
       
     def index 
-      user = User.find(params[:id])
-      @rsvps = user.rsvps
+      @rsvps = Rsvp.all
       render :index
     end
 

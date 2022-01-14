@@ -37,13 +37,13 @@ class EventShow extends React.Component {
                 <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
             </div>
             <br/>
-            <h6 className="show-event">
+            <h6 className="average-score"> Average Rating: {avg_score}</h6>
+            <h7 className="show-event">
                 <CreateRsvpFormContainer eventId={event.id} />
                 <CreateReviewFormContainer eventId={event.id} />
-            </h6>
-            <h7 className="average-score"> Average Rating: {avg_score}</h7>
+            </h7>
             <h8 className= "reviews">
-            <ReviewIndexContainer eventId={event._id} />
+            <ReviewIndexContainer eventId={event.id} />
             </h8>
             </div>
         )

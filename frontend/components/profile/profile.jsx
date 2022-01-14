@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Profile extends React.Component{
     componentDidMount(){
         this.props.fetchEvents()
-        this.props.fetchRsvps()
+        this.props.fetchRsvps().then(response => console.log(response))
     }
 
     render(){

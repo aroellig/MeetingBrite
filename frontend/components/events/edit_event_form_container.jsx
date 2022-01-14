@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { fetchEvent, updateEvent } from '../../actions/event_action';
 import EventForm from './event_form';
 
@@ -37,4 +38,4 @@ class EditEventForm extends React.Component {
     submitEvent: event => dispatch(updateEvent(event))
   })
   
-  export default connect(mSTP, mDTP)(EditEventForm)
+  export default withRouter(connect(mSTP, mDTP)(EditEventForm))
