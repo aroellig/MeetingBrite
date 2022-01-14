@@ -28,7 +28,7 @@ class EditEventForm extends React.Component {
     return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
-    formType: 'Update Event'
+    formType: 'edit'
     }
   }
   

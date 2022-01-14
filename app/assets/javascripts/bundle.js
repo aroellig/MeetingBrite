@@ -414,7 +414,7 @@ var mSTP = function mSTP(state) {
       capacity: '',
       location: '',
       photoURL: '',
-      creatorId: state.session.id
+      creator_id: state.session.id
     },
     formType: 'Create Event'
   };
@@ -517,7 +517,7 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
-    formType: 'Update Event'
+    formType: 'edit'
   };
 };
 
@@ -603,16 +603,17 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var formData = new FormData();
 
-      if (this.props.edit) {
-        formData.append('event[id]', this.state.event.id);
+      if (this.props.formType === 'edit') {
+        formData.append('event[id]', this.props.event.id);
       }
 
+      formData.append('event[id]', this.props.event.id);
       formData.append('event[title]', this.state.title);
       formData.append('event[description]', this.state.description);
       formData.append('event[date]', this.state.date);
       formData.append('event[capacity]', this.state.capacity);
       formData.append('event[location]', this.state.location);
-      formData.append('event[creatorId]', this.state.creatorId);
+      formData.append('event[creator_id]', this.state.creator_id);
 
       if (this.state.photoFile) {
         formData.append('event[photo]', this.state.photoFile);
