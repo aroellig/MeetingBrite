@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import PhotoForm from './photos'
+import PhotoForm from './photos';
+
 
 class EventForm extends React.Component{
     constructor(props){
