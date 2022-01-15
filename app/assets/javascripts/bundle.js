@@ -15,12 +15,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "REMOVE_EVENT": () => (/* binding */ REMOVE_EVENT),
 /* harmony export */   "RECEIVE_REVIEW": () => (/* binding */ RECEIVE_REVIEW),
 /* harmony export */   "RECEIVE_REVIEWS": () => (/* binding */ RECEIVE_REVIEWS),
+/* harmony export */   "REMOVR_REVIEW": () => (/* binding */ REMOVR_REVIEW),
+/* harmony export */   "RECEIVE_EVENT_ERRORS": () => (/* binding */ RECEIVE_EVENT_ERRORS),
+/* harmony export */   "RECEIVE_REVIEW_ERRORS": () => (/* binding */ RECEIVE_REVIEW_ERRORS),
+/* harmony export */   "receiveEventErrors": () => (/* binding */ receiveEventErrors),
+/* harmony export */   "receiveReviewErrors": () => (/* binding */ receiveReviewErrors),
 /* harmony export */   "fetchEvents": () => (/* binding */ fetchEvents),
 /* harmony export */   "fetchEvent": () => (/* binding */ fetchEvent),
 /* harmony export */   "createEvent": () => (/* binding */ createEvent),
 /* harmony export */   "updateEvent": () => (/* binding */ updateEvent),
 /* harmony export */   "deleteEvent": () => (/* binding */ deleteEvent),
 /* harmony export */   "createReview": () => (/* binding */ createReview),
+/* harmony export */   "updateReview": () => (/* binding */ updateReview),
+/* harmony export */   "deleteReview": () => (/* binding */ deleteReview),
 /* harmony export */   "fetchReviews": () => (/* binding */ fetchReviews),
 /* harmony export */   "fetchReview": () => (/* binding */ fetchReview)
 /* harmony export */ });
@@ -31,6 +38,9 @@ var RECEIVE_EVENT = "RECEIVE_EVENT";
 var REMOVE_EVENT = 'REMOVE_EVENT';
 var RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 var RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+var REMOVR_REVIEW = 'REMOVE_REVIEW';
+var RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
+var RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 var receiveEvents = function receiveEvents(events) {
   return {
@@ -67,6 +77,18 @@ var receiveReviews = function receiveReviews(reviews) {
   };
 };
 
+var receiveEventErrors = function receiveEventErrors(errors) {
+  return {
+    type: RECEIVE_EVENT_ERRORS,
+    errors: errors
+  };
+};
+var receiveReviewErrors = function receiveReviewErrors(errors) {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors: errors
+  };
+};
 var fetchEvents = function fetchEvents() {
   return function (dispatch) {
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchEvents().then(function (events) {
@@ -85,14 +107,17 @@ var createEvent = function createEvent(event) {
   return function (dispatch) {
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.createEvent(event).then(function (event) {
       return dispatch(receiveEvent(event));
+    }, function (errors) {
+      return dispatch(receiveEventErrors(errors.responseJSON));
     });
   };
 };
 var updateEvent = function updateEvent(event) {
   return function (dispatch) {
-    debugger;
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.updateEvent(event).then(function (event) {
       return dispatch(receiveEvent(event));
+    }, function (errors) {
+      return dispatch(receiveEventErrors(errors.responseJSON));
     });
   };
 };
@@ -107,6 +132,22 @@ var createReview = function createReview(review) {
   return function (dispatch) {
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.createReview(review).then(function (review) {
       return dispatch(receiveReview(review));
+    });
+  };
+};
+var updateReview = function updateReview(review) {
+  return function (dispatch) {
+    return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.updateReview(review).then(function (review) {
+      return dispatch(receiveReview(review));
+    }, function (errors) {
+      return dispatch(receiveReviewErrors(errors.responseJSON));
+    });
+  };
+};
+var deleteReview = function deleteReview(reviewId) {
+  return function (dispatch) {
+    return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.removeReview(reviewId).then(function () {
+      return dispatch(removeReview(reviewId));
     });
   };
 };
@@ -218,6 +259,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "receiveCurrentUser": () => (/* binding */ receiveCurrentUser),
 /* harmony export */   "logoutCurrentUser": () => (/* binding */ logoutCurrentUser),
 /* harmony export */   "receiveErrors": () => (/* binding */ receiveErrors),
+/* harmony export */   "clearErrors": () => (/* binding */ clearErrors),
 /* harmony export */   "signup": () => (/* binding */ signup),
 /* harmony export */   "login": () => (/* binding */ login),
 /* harmony export */   "logout": () => (/* binding */ logout)
@@ -243,6 +285,11 @@ var receiveErrors = function receiveErrors(errors) {
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
+  };
+};
+var clearErrors = function clearErrors() {
+  return {
+    type: CLEAR_ERRORS
   };
 };
 var signup = function signup(user) {
@@ -400,7 +447,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_event_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/event_action */ "./frontend/actions/event_action.js");
-/* harmony import */ var _event_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./event_form */ "./frontend/components/events/event_form.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _event_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./event_form */ "./frontend/components/events/event_form.jsx");
+
 
 
 
@@ -416,7 +465,8 @@ var mSTP = function mSTP(state) {
       photoURL: '',
       creator_id: state.session.id
     },
-    formType: 'Create Event'
+    formType: 'Create Event',
+    errors: state.errors.event
   };
 };
 
@@ -424,11 +474,14 @@ var mDTP = function mDTP(dispatch) {
   return {
     submitEvent: function submitEvent(event) {
       return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.createEvent)(event));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__.clearErrors)());
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_event_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_0__.connect)(mSTP, mDTP)(_event_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
 
 /***/ }),
 
@@ -598,6 +651,15 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(EventForm, [{
+    key: "renderEventErrors",
+    value: function renderEventErrors() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          key: "error ".concat(i)
+        }, error);
+      }));
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       var _this2 = this;
@@ -669,7 +731,7 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
         className: "Event-Form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+      }, this.renderEventErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
         type: "text",
         value: this.state.title,
         onChange: this.update('title'),
@@ -2487,14 +2549,55 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _session_errors_reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./session_errors_reducer */ "./frontend/reducers/session_errors_reducer.js");
+/* harmony import */ var _event_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./event_errors_reducer */ "./frontend/reducers/event_errors_reducer.js");
 
 
-var errorsReducer = (0,redux__WEBPACK_IMPORTED_MODULE_1__.combineReducers)({
-  sessionErrors: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_0__["default"]
+
+
+var errorsReducer = (0,redux__WEBPACK_IMPORTED_MODULE_2__.combineReducers)({
+  sessionErrors: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_0__["default"],
+  event: _event_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (errorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/event_errors_reducer.js":
+/*!***************************************************!*\
+  !*** ./frontend/reducers/event_errors_reducer.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _actions_event_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/event_action */ "./frontend/actions/event_action.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+
+
+var eventErrorsReducer = function eventErrorsReducer() {
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(oldState);
+
+  switch (action.type) {
+    case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_EVENT_ERRORS:
+      return action.errors;
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_1__.CLEAR_ERRORS:
+      return [];
+
+    default:
+      return oldState;
+  }
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (eventErrorsReducer);
 
 /***/ }),
 
@@ -2818,6 +2921,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "updateEvent": () => (/* binding */ updateEvent),
 /* harmony export */   "removeEvent": () => (/* binding */ removeEvent),
 /* harmony export */   "createReview": () => (/* binding */ createReview),
+/* harmony export */   "removeReview": () => (/* binding */ removeReview),
+/* harmony export */   "updateReview": () => (/* binding */ updateReview),
 /* harmony export */   "fetchReviews": () => (/* binding */ fetchReviews),
 /* harmony export */   "fetchReview": () => (/* binding */ fetchReview)
 /* harmony export */ });
@@ -2841,7 +2946,6 @@ var createEvent = function createEvent(event) {
   });
 };
 var updateEvent = function updateEvent(event) {
-  debugger;
   return $.ajax({
     url: "/api/events/".concat(event.id),
     method: 'PATCH',
@@ -2863,6 +2967,19 @@ var createReview = function createReview(review) {
     data: {
       review: review
     }
+  });
+};
+var removeReview = function removeReview(reviewId) {
+  return $.ajax({
+    url: "/api/reviews/".concat(reviewId),
+    method: 'DELETE'
+  });
+};
+var updateReview = function updateReview(review) {
+  return $.ajax({
+    url: "/api/reviews/".concat(review.id),
+    method: 'PATCH',
+    data: review
   });
 };
 var fetchReviews = function fetchReviews(eventId) {

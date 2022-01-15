@@ -20,7 +20,6 @@ export const createEvent = event => {
     })
 }
 export const updateEvent = event => {
-    debugger
    return $.ajax({
         url: `/api/events/${event.id}`,
         method: 'PATCH',
@@ -43,6 +42,21 @@ export const createReview = review => (
         data: { review }
     })
 )
+
+export const removeReview = reviewId => (
+    $.ajax({
+        url: `/api/reviews/${reviewId}`,
+        method: 'DELETE'
+    })
+)
+
+export const updateReview = review => {
+   return $.ajax({
+        url: `/api/reviews/${review.id}`,
+        method: 'PATCH',
+        data:   review
+    })
+}
 
 export const fetchReviews = eventId => (
     $.ajax({

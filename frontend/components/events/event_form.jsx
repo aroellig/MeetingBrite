@@ -10,6 +10,16 @@ class EventForm extends React.Component{
         this.handleFile = this.handleFile.bind(this)
     }
 
+    renderEventErrors() {
+        return (
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li key={`error ${i}`}>{error}</li>
+            ))}
+          </ul>
+        );
+      }
+
     handleSubmit(e){
         e.preventDefault()
         const formData = new FormData();
@@ -56,6 +66,7 @@ class EventForm extends React.Component{
                 </div>
                 <div className="Event-Form">
                 <form onSubmit={this.handleSubmit}>
+                {this.renderEventErrors()}
                     <br/>
                     <label>
                     <input 

@@ -5,6 +5,9 @@ export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const REMOVE_EVENT = 'REMOVE_EVENT';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+export const REMOVR_REVIEW = 'REMOVE_REVIEW';
+export const RECEIVE_EVENT_ERRORS = "RECEIVE_EVENT_ERRORS";
+export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 
 const receiveEvents = events => {
     return{
@@ -40,6 +43,17 @@ const receiveReviews = reviews => {
     }
 }
 
+export const receiveEventErrors = (errors) => {
+    return{ type: RECEIVE_EVENT_ERRORS,
+    errors,
+  }};
+  
+  export const receiveReviewErrors = (errors) => {
+    return{ type: RECEIVE_REVIEW_ERRORS,
+    errors,
+  }};
+  
+
 export const fetchEvents = () => dispatch => (
     APIUtil.fetchEvents()
     .then(events => dispatch(receiveEvents(events)))
@@ -50,16 +64,17 @@ export const fetchEvent = eventId => dispatch => {
     .then(event => dispatch(receiveEvent(event)))
 }
 
-export const createEvent = event => dispatch => {
-    return APIUtil.createEvent(event)
-    .then(event => dispatch(receiveEvent(event)))
-}
+export const createEvent = (event) => (dispatch) =>
+  APIUtil.createEvent(event).then(
+    (event) => dispatch(receiveEvent(event)),
+    (errors) => dispatch(receiveEventErrors(errors.responseJSON))
+  );
 
-export const updateEvent = event => dispatch => {
-    debugger
-  return  APIUtil.updateEvent(event)
-    .then(event => dispatch(receiveEvent(event)))
-}
+  export const updateEvent = (event) => (dispatch) =>
+  APIUtil.updateEvent(event).then(
+    (event) => dispatch(receiveEvent(event)),
+    (errors) => dispatch(receiveEventErrors(errors.responseJSON))
+  );
 
 export const deleteEvent = eventId => dispatch => (
     APIUtil.removeEvent(eventId)
@@ -69,6 +84,17 @@ export const deleteEvent = eventId => dispatch => (
 export const createReview = review => dispatch => (
     APIUtil.createReview(review)
     .then(review => dispatch(receiveReview(review)))
+)
+
+export const updateReview = (review) => (dispatch) =>
+APIUtil.updateReview(review).then(
+  (review) => dispatch(receiveReview(review)),
+  (errors) => dispatch(receiveReviewErrors(errors.responseJSON))
+);
+
+export const deleteReview = reviewId => dispatch => (
+    APIUtil.removeReview(reviewId)
+    .then(() => dispatch(removeReview(reviewId)))
 )
 
 export const fetchReviews = eventId => dispatch => (
