@@ -6,7 +6,7 @@ import rsvpErrorsReducer from './rsvp_errors_reducer';
 
 const errorsReducer = combineReducers({
 
-  sessionErrors: session_errors_reducer,
+  session: session_errors_reducer,
   event: eventErrorsReducer,
   rsvp: rsvpErrorsReducer
 });

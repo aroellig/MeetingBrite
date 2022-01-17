@@ -316,8 +316,8 @@ var login = function login(user) {
   return function (dispatch) {
     return _util_sessions_api_util__WEBPACK_IMPORTED_MODULE_0__.login(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
-    }, function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -2288,7 +2288,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    errors: state.errors.sessionErrors,
+    errors: state.errors.session,
     formType: 'Log in',
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: "/signup"
@@ -2600,7 +2600,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var errorsReducer = (0,redux__WEBPACK_IMPORTED_MODULE_3__.combineReducers)({
-  sessionErrors: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_0__["default"],
+  session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_0__["default"],
   event: _event_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   rsvp: _rsvp_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
@@ -2876,6 +2876,9 @@ var session_errors_reducer = function session_errors_reducer() {
       return action.errors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_CURRENT_USER:
+      return [];
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.CLEAR_ERRORS:
       return [];
 
     default:
