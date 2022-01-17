@@ -16,10 +16,10 @@ import {
         return { id: action.currentUser.id };
       case LOGOUT_CURRENT_USER:
         return _nullUser;
-      // case RECEIVE_RSVP:
-      //   debugger
-      //   newState[action.rsvp.user.id] = action.rsvp.user;
-      //   return newState 
+      case RECEIVE_RSVP:
+        debugger
+        newState[action.rsvp.user.id] = action.rsvp.user;
+        return newState 
       default:
         return state;
     }

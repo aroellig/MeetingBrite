@@ -2929,10 +2929,11 @@ var sessionReducer = function sessionReducer() {
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.LOGOUT_CURRENT_USER:
       return _nullUser;
-    // case RECEIVE_RSVP:
-    //   debugger
-    //   newState[action.rsvp.user.id] = action.rsvp.user;
-    //   return newState 
+
+    case _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.RECEIVE_RSVP:
+      debugger;
+      newState[action.rsvp.user.id] = action.rsvp.user;
+      return newState;
 
     default:
       return state;
