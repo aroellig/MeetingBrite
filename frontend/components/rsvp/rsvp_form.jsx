@@ -10,6 +10,10 @@ class RsvpForm extends React.Component{
         this.renderErrors = this.renderErrors.bind(this);
     }
 
+    componentDidMount(){
+      this.props.fetchRsvps()
+  }
+
     handleSubmit(e){
         e.preventDefault()
         // const rsvps = Object.assign({}, this.state, {
@@ -50,7 +54,24 @@ class RsvpForm extends React.Component{
     
 
     render(){
-        return (
+      debugger
+      const {currentUser, rsvps, event} = this.props
+      let userRsvps = [];
+      rsvps.forEach((rsvp) => {
+          if(rsvp.user_id === Number(currentUser.id)){
+              userRsvps.push(rsvp)
+          }
+      })
+      let responded = false
+      for(let i = 0; i < userRsvps.length; i++){
+        let rsvp = userRsvps[i];
+        debugger
+        if(event.id === rsvp.event_id){
+          responded = true
+        }
+      }
+        return ( <div>
+          {responded === false ? (
         <div className="rsvp-form">
             <form onSubmit={this.handleSubmit}>
                     <input 
@@ -69,6 +90,10 @@ class RsvpForm extends React.Component{
             <br />
                     <button type='submit' value={this.props.formType} className="rsvp-button">{this.props.formType}</button>
             </form>
+        </div>
+        ) : (
+          <p>you have already rsvp'd to this event</p>
+        )}  
         </div>
         )
     }

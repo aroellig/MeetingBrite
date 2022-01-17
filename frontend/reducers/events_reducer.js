@@ -14,9 +14,9 @@ const eventsReducer = (state = {}, action) => {
         case REMOVE_EVENT:
             delete newState[action.eventId];
             return newState
-        case RECEIVE_RSVP:
-            newState[action.rsvp.event.id] = action.rsvp.event;
-            return newState 
+        // case RECEIVE_RSVP:
+        //     newState[action.rsvp.event.id] = action.rsvp.event;
+        //     return newState 
         default:
             return state
     }

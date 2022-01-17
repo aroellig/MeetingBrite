@@ -91,6 +91,7 @@ class Profile extends React.Component{
                         {/* <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                         </div> */}
+                        
                       </div>
                     ))}
                   </div> 

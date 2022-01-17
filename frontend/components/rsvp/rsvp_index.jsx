@@ -9,7 +9,8 @@ class RsvpIndex extends React.Component{
         this.props.fetchRsvps(this.props.user_id, this.props.event_id)
     }
     render(){
-        const { rsvps, user_id, event_id, events } = this.props
+        if(!this.props.rsvps) return null
+        const { rsvps, user_id, event_id, events, deleteRsvp } = this.props
         for(let i = 0; i < rsvps.length; i++){
             let response = rsvps[i];
             for(let j = 0; j < events.length; j++ ){
