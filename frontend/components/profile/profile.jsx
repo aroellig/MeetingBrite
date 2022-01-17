@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EventIndexContainer from '../events/event_index_container'
+import EventIndexContainer from '../events/event_index_container';
+import RSVPIndexContainer from '../rsvp/rsvp_index_container'
 
 class Profile extends React.Component{
     componentDidMount(){
@@ -91,7 +92,7 @@ class Profile extends React.Component{
                         {/* <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                         </div> */}
-                        
+                      <RSVPIndexContainer eventId={event.id} />
                       </div>
                     ))}
                   </div> 

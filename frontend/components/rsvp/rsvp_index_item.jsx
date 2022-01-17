@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom"
 
 
-class RsvpIndexItem extends React.Component{
-   render(){
-       return (
-           <h1>hi</h1>
-       )
-   }
-}
-
+const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP }) => {
+  return (
+    <div>
+          <button onClick={() => deleteRSVP(rsvp._id)}>
+              Delete rsvp
+            </button>
+    </div>
+  );
+};
 export default RsvpIndexItem

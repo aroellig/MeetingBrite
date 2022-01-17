@@ -1203,15 +1203,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  debugger;
   return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
     reviews: Object.values(state.entities.reviews),
-    rsvps: Object.values(state.entities.rsvps)
+    rsvps: Object.values(state.entities.rsvps),
+    rsvp: state.entities.rsvps[ownProps.match.params.rsvpId]
   };
 };
 
-var mDTP = function mDTP(dispatch, ownProps) {
+var mDTP = function mDTP(dispatch) {
   return {
     fetchEvent: function fetchEvent(eventId) {
       return dispatch((0,_actions_event_action__WEBPACK_IMPORTED_MODULE_1__.fetchEvent)(eventId));
@@ -1403,8 +1405,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _events_event_index_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../events/event_index_container */ "./frontend/components/events/event_index_container.jsx");
+/* harmony import */ var _rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../rsvp/rsvp_index_container */ "./frontend/components/rsvp/rsvp_index_container.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1426,6 +1429,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -1493,7 +1497,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "p-no-details"
       }, "You have not yet created any events")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "link-create-profile"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
         to: "/events/new",
         className: "p-create-event"
       }, "Create Event"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1515,7 +1519,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "p-no-details"
       }, "You have not Rsvp'd to any events")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "link-create-profile"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
         to: "/events",
         className: "p-search-event"
       }, "search for events"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1528,7 +1532,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           key: event + "b",
           className: "user-event-rsvp"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, event.title));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          eventId: event.id
+        }));
       }))));
     }
   }]);
@@ -2166,6 +2172,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _rsvp_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./rsvp_index_item */ "./frontend/components/rsvp/rsvp_index_item.jsx");
+/* harmony import */ var _util_rsvp_api_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/rsvp_api_util */ "./frontend/util/rsvp_api_util.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2187,6 +2194,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -2217,7 +2225,7 @@ var RsvpIndex = /*#__PURE__*/function (_React$Component) {
           user_id = _this$props.user_id,
           event_id = _this$props.event_id,
           events = _this$props.events,
-          deleteRsvp = _this$props.deleteRsvp;
+          deleteRSVP = _this$props.deleteRSVP;
 
       for (var i = 0; i < rsvps.length; i++) {
         var response = rsvps[i];
@@ -2235,6 +2243,7 @@ var RsvpIndex = /*#__PURE__*/function (_React$Component) {
                 rsvp: rsvp,
                 user_id: user_id,
                 event_id: event_id,
+                deleteRSVP: deleteRSVP,
                 key: rsvp.id
               });
             })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
@@ -2275,7 +2284,7 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     rsvps: Object.values(state.entities.rsvps),
     user_id: state.session.id,
-    event_id: ownProps.match.params.eventId,
+    event_id: ownProps.eventId,
     events: Object.values(state.entities.events),
     currentUser: state.session.id
   };
@@ -2314,51 +2323,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
-
-var RsvpIndexItem = /*#__PURE__*/function (_React$Component) {
-  _inherits(RsvpIndexItem, _React$Component);
-
-  var _super = _createSuper(RsvpIndexItem);
-
-  function RsvpIndexItem() {
-    _classCallCheck(this, RsvpIndexItem);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(RsvpIndexItem, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "hi");
+var RsvpIndexItem = function RsvpIndexItem(_ref) {
+  var rsvp = _ref.rsvp,
+      currentUser = _ref.currentUser,
+      deleteRSVP = _ref.deleteRSVP;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: function onClick() {
+      return deleteRSVP(rsvp._id);
     }
-  }]);
-
-  return RsvpIndexItem;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+  }, "Delete rsvp"));
+};
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RsvpIndexItem);
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import RsvpIndexItem from './rsvp_index_item';
 import { Link } from 'react-router-dom';
+import { deleteRSVP } from '../../util/rsvp_api_util';
 
 
 
@@ -10,7 +11,7 @@ class RsvpIndex extends React.Component{
     }
     render(){
         if(!this.props.rsvps) return null
-        const { rsvps, user_id, event_id, events, deleteRsvp } = this.props
+        const { rsvps, user_id, event_id, events, deleteRSVP } = this.props
         for(let i = 0; i < rsvps.length; i++){
             let response = rsvps[i];
             for(let j = 0; j < events.length; j++ ){
@@ -23,7 +24,7 @@ class RsvpIndex extends React.Component{
                 </div>
                 <ul>
                     {
-                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id}  key={rsvp.id}/>)
+                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id} deleteRSVP={deleteRSVP}  key={rsvp.id}/>)
                     }
                 </ul> 
                 <br/>
