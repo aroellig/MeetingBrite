@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 import PhotoForm from './photos';
 
-class EventForm extends React.Component{
+class EditEventForm extends React.Component{
     constructor(props){
         super(props);
         this.state = this.props.event;
@@ -11,6 +11,7 @@ class EventForm extends React.Component{
     }
 
     renderEventErrors() {
+        debugger
         return (
           <ul>
             {this.props.errors.map((error, i) => (
@@ -37,7 +38,6 @@ class EventForm extends React.Component{
           formData.append('event[photo]', this.state.photoFile);
         }
         console.log(this.props)
-        debugger
         this.props.submitEvent(formData)
         .then(() => this.props.history.push("/events"));
     }
@@ -129,4 +129,4 @@ class EventForm extends React.Component{
     }
 }
 
-export default withRouter(EventForm)
+export default withRouter(EditEventForm)

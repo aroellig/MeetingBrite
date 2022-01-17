@@ -664,14 +664,12 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
     _this.state = _this.props.event;
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_this));
-    _this.renderEventErrors = _this.renderEventErrors.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(EventForm, [{
     key: "renderEventErrors",
     value: function renderEventErrors() {
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
           key: "error ".concat(i)
@@ -702,6 +700,7 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
       }
 
       console.log(this.props);
+      debugger;
       this.props.submitEvent(formData).then(function () {
         return _this2.props.history.push("/events");
       });
@@ -1896,6 +1895,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  debugger;
   return {
     rsvp: {
       attendee_name: '',
@@ -1965,6 +1965,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var RsvpForm = /*#__PURE__*/function (_React$Component) {
   _inherits(RsvpForm, _React$Component);
 
@@ -1998,6 +1999,7 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
       });
 
       if (this.props.currentUser) {
+        debugger;
         this.props.createRsvp(rsvp).then(function () {
           return _this2.props.history.push("/events");
         });
@@ -2497,7 +2499,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    errors: state.errors.sessionErrors,
+    errors: state.errors.session,
     formType: 'Create an account',
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
       to: "/login"
@@ -2509,6 +2511,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__.signup)(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__.clearErrors)());
     }
   };
 };
@@ -2924,10 +2929,10 @@ var sessionReducer = function sessionReducer() {
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.LOGOUT_CURRENT_USER:
       return _nullUser;
-
-    case _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.RECEIVE_RSVP:
-      newState[action.rsvp.user.id] = action.rsvp.user;
-      return newState;
+    // case RECEIVE_RSVP:
+    //   debugger
+    //   newState[action.rsvp.user.id] = action.rsvp.user;
+    //   return newState 
 
     default:
       return state;

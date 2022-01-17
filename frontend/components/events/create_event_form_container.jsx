@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createEvent } from '../../actions/event_action';
-import {clearErrors} from '../../actions/session_actions'
+import {clearErrors} from '../../actions/session_actions';
 import EventForm from './event_form';
 
 const mSTP = state => ({

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { useHistory } from "react-router-dom";
 
 class RsvpForm extends React.Component{
     constructor(props){
@@ -19,9 +20,12 @@ class RsvpForm extends React.Component{
         const rsvp = Object.assign({}, this.state, {
             eventId
         });
+      
         if (this.props.currentUser) {
+          debugger
             this.props.createRsvp(rsvp)
             .then(() => this.props.history.push("/events"));
+            
         }
     }
 

@@ -3,7 +3,9 @@ import { createRsvp } from '../../actions/rsvp_actions';
 import RspvForm from './rsvp_form';
 import { clearErrors } from '../../actions/session_actions'
 
-const mSTP = (state, ownProps) => ({
+const mSTP = (state, ownProps) => {
+    debugger
+    return {
     rsvp: {
         attendee_name: '',
         num_attendees: 0,
@@ -14,11 +16,12 @@ const mSTP = (state, ownProps) => ({
     currentUser: state.session.id,
     event: state.entities.events[ownProps.eventId],
     errors: state.errors.rsvp
-})
+    }
+}
 
 const mDTP = dispatch => ({
     createRsvp: rsvp => dispatch(createRsvp(rsvp)),
     clearErrors: () => dispatch(clearErrors()),
 })
 
-export default connect (mSTP, mDTP)(RspvForm)
+export default connect(mSTP, mDTP)(RspvForm)
