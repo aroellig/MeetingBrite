@@ -6,11 +6,13 @@ class EventForm extends React.Component{
     constructor(props){
         super(props);
         this.state = this.props.event;
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleFile = this.handleFile.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
+        this.renderEventErrors = this.renderEventErrors.bind(this);
     }
 
     renderEventErrors() {
+        debugger
         return (
           <ul>
             {this.props.errors.map((error, i) => (

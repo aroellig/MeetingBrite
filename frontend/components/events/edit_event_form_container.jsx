@@ -2,9 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { fetchEvent, updateEvent } from '../../actions/event_action';
+import {clearErrors} from '../../actions/session_actions';
 import EventForm from './event_form';
 
 class EditEventForm extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
     componentDidMount(){
       this.props.fetchEvent(this.props.match.params.eventId)
   }
@@ -25,17 +30,19 @@ class EditEventForm extends React.Component {
   }
   
   const mSTP = (state, ownProps) => {
-    console.log(ownProps.match.path.split("/"))
+    debugger
     return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
+    errors: state.errors.event,
     formType: 'edit'
     }
   }
   
   const mDTP = dispatch => ({
     fetchEvent: eventId => dispatch(fetchEvent(eventId)),
-    submitEvent: event => dispatch(updateEvent(event))
+    submitEvent: event => dispatch(updateEvent(event)),
+    clearErrors: () => dispatch(clearErrors())
   })
   
   export default withRouter(connect(mSTP, mDTP)(EditEventForm))

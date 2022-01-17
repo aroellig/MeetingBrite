@@ -19,7 +19,6 @@ class EventShow extends React.Component {
           total_score += review.rating;
         }
         let avg_score = 0;
-        debugger
         if (reviews.length === 0){
           avg_score = 0
         }else{

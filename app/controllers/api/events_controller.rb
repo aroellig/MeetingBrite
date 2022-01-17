@@ -26,7 +26,7 @@ class Api::EventsController < ApplicationController
       if @event.update(event_params)
         render :show
       else
-        render json: @event.errors_full_messages
+        render json: @event.errors_full_messages, status:422
       end
     end
 

@@ -1,13 +1,14 @@
 import { combineReducers } from 'redux';
 
 import session_errors_reducer from './session_errors_reducer';
-import event_errors_reducer from './event_errors_reducer';
 import eventErrorsReducer from './event_errors_reducer';
+import rsvpErrorsReducer from './rsvp_errors_reducer';
 
 const errorsReducer = combineReducers({
 
   sessionErrors: session_errors_reducer,
-  event: eventErrorsReducer
+  event: eventErrorsReducer,
+  rsvp: rsvpErrorsReducer
 });
 
 export default errorsReducer

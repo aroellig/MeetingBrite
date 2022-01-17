@@ -11,7 +11,7 @@ class Api::RsvpsController < ApplicationController
       if @rsvp.save
           render :show
           else
-          render json: @rsvp, status: :unprocessable_entity
+            render json: @rsvp.errors.full_messages, status: 422
       end
     end
       

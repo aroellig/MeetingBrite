@@ -5,7 +5,8 @@ class RsvpForm extends React.Component{
     constructor(props){
         super(props);
         this.state = this.props.rsvp;
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     handleSubmit(e){
@@ -14,7 +15,6 @@ class RsvpForm extends React.Component{
         //     eventId: this.props.location.state.event_id,
         //   });
         // this.props.createRsvp(rsvps)
-        debugger
         const eventId = this.props.event.id
         const rsvp = Object.assign({}, this.state, {
             eventId
@@ -29,6 +29,22 @@ class RsvpForm extends React.Component{
         return e => this.setState({ [field]: e.currentTarget.value })
     }
     
+    renderErrors() {
+        debugger
+        return (
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li key={`error ${i}`}>{error}</li>
+            ))}
+          </ul>
+        );
+      }
+    
+      componentWillUnmount() {
+        this.props.clearErrors();
+      }
+    
+
     render(){
         return (
         <div className="rsvp-form">
