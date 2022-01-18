@@ -54,7 +54,6 @@ class RsvpForm extends React.Component{
     
 
     render(){
-      debugger
       let userRsvps = [];
       this.props.rsvps.forEach((rsvp) => {
           if(rsvp.user_id === Number(this.props.currentUser)){

@@ -13,10 +13,21 @@ class EditEventForm extends React.Component {
     componentDidMount(){
       this.props.fetchEvent(this.props.match.params.eventId)
   }
+
+  renderEventErrors() {
+    debugger
+      return (
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error ${i}`}>{error}</li>
+          ))}
+        </ul>
+      );
+    }
   
     render () {
- 
-      const { event, formType, submitEvent, currentUser } = this.props;
+      debugger
+      const { event, formType, submitEvent, currentUser, errors } = this.props;
       if (!event) return null;
       return (
         <EventForm
@@ -24,6 +35,7 @@ class EditEventForm extends React.Component {
           formType={formType}
           submitEvent={submitEvent}
           currentUser={currentUser}
+          errors={errors}
           edit={true} />
       );
     }

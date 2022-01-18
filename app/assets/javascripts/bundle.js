@@ -559,19 +559,32 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
       this.props.fetchEvent(this.props.match.params.eventId);
     }
   }, {
+    key: "renderEventErrors",
+    value: function renderEventErrors() {
+      debugger;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
+          key: "error ".concat(i)
+        }, error);
+      }));
+    }
+  }, {
     key: "render",
     value: function render() {
+      debugger;
       var _this$props = this.props,
           event = _this$props.event,
           formType = _this$props.formType,
           submitEvent = _this$props.submitEvent,
-          currentUser = _this$props.currentUser;
+          currentUser = _this$props.currentUser,
+          errors = _this$props.errors;
       if (!event) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_event_form__WEBPACK_IMPORTED_MODULE_5__["default"], {
         event: event,
         formType: formType,
         submitEvent: submitEvent,
         currentUser: currentUser,
+        errors: errors,
         edit: true
       });
     }
@@ -2109,7 +2122,6 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-      debugger;
       var userRsvps = [];
       this.props.rsvps.forEach(function (rsvp) {
         if (rsvp.user_id === Number(_this4.props.currentUser)) {
