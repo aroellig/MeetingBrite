@@ -63,7 +63,6 @@ class RsvpForm extends React.Component{
       let responded = false
       for(let i = 0; i < userRsvps.length; i++){
         let rsvp = userRsvps[i];
-        debugger
         if(this.props.event.id === rsvp.event_id){
           responded = true
         }
@@ -72,7 +71,7 @@ class RsvpForm extends React.Component{
           {responded === false ? (
         <div className="rsvp-form">
             <form onSubmit={this.handleSubmit}>
-                    <input 
+                    {/* <input 
                     type='text'
                     value={this.state.attendee_name}
                     onChange={this.update('attendee_name')}
@@ -84,7 +83,7 @@ class RsvpForm extends React.Component{
                     value={this.state.num_attendees}
                     onChange={this.update('num_attendees')}
                     placeholder="number of attendees"
-                    />
+                    /> */}
             <br />
                     <button type='submit' value={this.props.formType} className="rsvp-button">{this.props.formType}</button>
             </form>

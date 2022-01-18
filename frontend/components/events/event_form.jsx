@@ -11,7 +11,6 @@ class EventForm extends React.Component{
     }
 
     renderEventErrors() {
-      debugger
         return (
           <ul>
             {this.props.errors.map((error, i) => (
@@ -22,7 +21,6 @@ class EventForm extends React.Component{
       }
 
     handleSubmit(e){
-      debugger
         e.preventDefault()
         const formData = new FormData();
          if (this.props.formType === 'edit'){
@@ -107,12 +105,12 @@ class EventForm extends React.Component{
                     </label>
                     <br/>
                     <label>
-                    <input 
+                    {/* <input 
                     type='integer'
                     value={this.state.capacity}
                     onChange={this.update('capacity')}
                     placeholder="capacity"
-                    />
+                    /> */}
                     </label>
                     <br />
                     <label> Photo Form

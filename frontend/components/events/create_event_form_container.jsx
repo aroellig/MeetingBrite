@@ -8,7 +8,7 @@ const mSTP = state => ({
         description: '',
         date: '',
         title: '',
-        capacity: '',
+        // capacity: '',
         location: '',
         photoURL: '',
         creator_id: state.session.id

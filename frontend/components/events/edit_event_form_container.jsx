@@ -15,7 +15,6 @@ class EditEventForm extends React.Component {
   }
 
   renderEventErrors() {
-    debugger
       return (
         <ul>
           {this.props.errors.map((error, i) => (
@@ -26,7 +25,6 @@ class EditEventForm extends React.Component {
     }
   
     render () {
-      debugger
       const { event, formType, submitEvent, currentUser, errors } = this.props;
       if (!event) return null;
       return (

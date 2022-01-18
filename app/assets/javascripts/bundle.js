@@ -471,7 +471,7 @@ var mSTP = function mSTP(state) {
       description: '',
       date: '',
       title: '',
-      capacity: '',
+      // capacity: '',
       location: '',
       photoURL: '',
       creator_id: state.session.id
@@ -561,7 +561,6 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderEventErrors",
     value: function renderEventErrors() {
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
           key: "error ".concat(i)
@@ -571,7 +570,6 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      debugger;
       var _this$props = this.props,
           event = _this$props.event,
           formType = _this$props.formType,
@@ -683,7 +681,6 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
   _createClass(EventForm, [{
     key: "renderEventErrors",
     value: function renderEventErrors() {
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
           key: "error ".concat(i)
@@ -695,7 +692,6 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      debugger;
       e.preventDefault();
       var formData = new FormData();
 
@@ -783,12 +779,7 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
         value: this.state.location,
         onChange: this.update('location'),
         placeholder: "location"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        type: "integer",
-        value: this.state.capacity,
-        onChange: this.update('capacity'),
-        placeholder: "capacity"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, " Photo Form", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_photos__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", null, " Photo Form", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_photos__WEBPACK_IMPORTED_MODULE_1__["default"], {
         handlePhoto: this.handleFile,
         photoURL: this.state.photoURL,
         photoFile: this.state.photoFile,
@@ -1098,9 +1089,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
-          className: "show-capacity"
-        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1131,9 +1120,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
-          className: "show-capacity"
-        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1162,9 +1149,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
-          className: "show-capacity"
-        }, "Capacity: ", event.capacity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -2133,7 +2118,6 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
 
       for (var i = 0; i < userRsvps.length; i++) {
         var rsvp = userRsvps[i];
-        debugger;
 
         if (this.props.event.id === rsvp.event_id) {
           responded = true;
@@ -2144,17 +2128,7 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
         className: "rsvp-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
         onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        type: "text",
-        value: this.state.attendee_name,
-        onChange: this.update('attendee_name'),
-        placeholder: "name"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
-        type: "number",
-        value: this.state.num_attendees,
-        onChange: this.update('num_attendees'),
-        placeholder: "number of attendees"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
         type: "submit",
         value: this.props.formType,
         className: "rsvp-button"
