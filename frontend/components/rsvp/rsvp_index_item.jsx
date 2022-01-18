@@ -11,10 +11,13 @@ const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP, event, event_id }) => {
             ) : (
               <div className="rsvp-index-item">
                   <Link to={`/events/${event_id}`}>{event.title}</Link>
+                  <button onClick={() => deleteRSVP(rsvp.id)}>
+                  Delete rsvp
+                </button>
               </div>
             )}
           </div>
-          <div>
+          {/* <div>
             {currentUser  === rsvp.user_id.toString() ? (
               <div>
                 <button onClick={() => deleteRSVP(rsvp.id)}>
@@ -24,7 +27,7 @@ const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP, event, event_id }) => {
             ) : (
               ""
             )}
-          </div>
+          </div> */}
         </div>
       );
 };
