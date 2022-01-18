@@ -55,10 +55,9 @@ class RsvpForm extends React.Component{
 
     render(){
       debugger
-      const {currentUser, rsvps, event} = this.props
       let userRsvps = [];
-      rsvps.forEach((rsvp) => {
-          if(rsvp.user_id === Number(currentUser.id)){
+      this.props.rsvps.forEach((rsvp) => {
+          if(rsvp.user_id === Number(this.props.currentUser)){
               userRsvps.push(rsvp)
           }
       })
@@ -66,7 +65,7 @@ class RsvpForm extends React.Component{
       for(let i = 0; i < userRsvps.length; i++){
         let rsvp = userRsvps[i];
         debugger
-        if(event.id === rsvp.event_id){
+        if(this.props.event.id === rsvp.event_id){
           responded = true
         }
       }

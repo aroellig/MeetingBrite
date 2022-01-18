@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import { createRsvp, fetchRsvps } from '../../actions/rsvp_actions';
-import RspvForm from './rsvp_form';
+import RsvpForm from './rsvp_form';
 import { clearErrors } from '../../actions/session_actions'
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
     rsvp: {
         attendee_name: '',
@@ -26,4 +25,4 @@ const mDTP = dispatch => ({
     fetchRsvps: () => dispatch(fetchRsvps())
 })
 
-export default connect(mSTP, mDTP)(RspvForm)
+export default connect(mSTP, mDTP)(RsvpForm)

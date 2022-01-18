@@ -670,6 +670,7 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
   _createClass(EventForm, [{
     key: "renderEventErrors",
     value: function renderEventErrors() {
+      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
           key: "error ".concat(i)
@@ -1203,7 +1204,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
@@ -1962,7 +1962,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     rsvp: {
       attendee_name: '',
@@ -2108,14 +2107,12 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       debugger;
-      var _this$props = this.props,
-          currentUser = _this$props.currentUser,
-          rsvps = _this$props.rsvps,
-          event = _this$props.event;
       var userRsvps = [];
-      rsvps.forEach(function (rsvp) {
-        if (rsvp.user_id === Number(currentUser.id)) {
+      this.props.rsvps.forEach(function (rsvp) {
+        if (rsvp.user_id === Number(_this4.props.currentUser)) {
           userRsvps.push(rsvp);
         }
       });
@@ -2125,7 +2122,7 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
         var rsvp = userRsvps[i];
         debugger;
 
-        if (event.id === rsvp.event_id) {
+        if (this.props.event.id === rsvp.event_id) {
           responded = true;
         }
       }

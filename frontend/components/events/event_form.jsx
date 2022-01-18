@@ -11,6 +11,7 @@ class EventForm extends React.Component{
     }
 
     renderEventErrors() {
+      debugger
         return (
           <ul>
             {this.props.errors.map((error, i) => (
