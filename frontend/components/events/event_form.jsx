@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import PhotoForm from './photos';
 
 class EventForm extends React.Component{
@@ -22,6 +22,7 @@ class EventForm extends React.Component{
       }
 
     handleSubmit(e){
+      debugger
         e.preventDefault()
         const formData = new FormData();
          if (this.props.formType === 'edit'){
@@ -40,7 +41,7 @@ class EventForm extends React.Component{
         console.log(this.props)
         debugger
         this.props.submitEvent(formData)
-        .then(() => this.props.history.push("/events"));
+        .then(() => this.props.history.push(`/events`));
     }
 
     handleFile(e) {
