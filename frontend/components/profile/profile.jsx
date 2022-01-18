@@ -82,13 +82,15 @@ class Profile extends React.Component{
                       </div>
                     </div>
                 ) : (
+                  
                   <div className="yes-rsvp-outer">
                     <div className="your-rsvp">
                       <p className="p-your-Rsvps">Your Rsvps</p>
                     </div>
-                    {rsvpEvents.map((event, index) => (
-                      <div key={event + "b"} className="user-event-rsvp">
-                        {/* <h1>{event.title}</h1> */}
+                    {rsvpEvents.map((event) => (
+
+                      <div key={event} className="user-event-rsvp">
+                        
                         {/* <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                         </div> */}

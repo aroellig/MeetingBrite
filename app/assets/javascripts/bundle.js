@@ -1529,9 +1529,9 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "your-rsvp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "p-your-Rsvps"
-      }, "Your Rsvps")), rsvpEvents.map(function (event, index) {
+      }, "Your Rsvps")), rsvpEvents.map(function (event) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          key: event + "b",
+          key: event,
           className: "user-event-rsvp"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           eventId: event.id
