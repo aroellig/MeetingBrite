@@ -1532,7 +1532,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           key: event + "b",
           className: "user-event-rsvp"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
           eventId: event.id
         }));
       }))));
@@ -2224,20 +2224,21 @@ var RsvpIndex = /*#__PURE__*/function (_React$Component) {
           rsvps = _this$props.rsvps,
           user_id = _this$props.user_id,
           event_id = _this$props.event_id,
-          events = _this$props.events,
+          event = _this$props.event,
           deleteRSVP = _this$props.deleteRSVP,
           currentUser = _this$props.currentUser;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "rsvp-list-class"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "title-of-all-rsvps"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "RSVPs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvps.map(function (rsvp) {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvps.map(function (rsvp) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           rsvp: rsvp,
           user_id: user_id,
           event_id: event_id,
           deleteRSVP: deleteRSVP,
           currentUser: currentUser,
+          event: event,
           key: rsvp.id
         });
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
@@ -2277,7 +2278,8 @@ var mSTP = function mSTP(state, ownProps) {
     user_id: state.session.id,
     event_id: ownProps.eventId,
     events: Object.values(state.entities.events),
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    event: state.entities.events[ownProps.eventId]
   };
 };
 
@@ -2322,6 +2324,7 @@ var RsvpIndexItem = function RsvpIndexItem(_ref) {
   var rsvp = _ref.rsvp,
       currentUser = _ref.currentUser,
       deleteRSVP = _ref.deleteRSVP,
+      event = _ref.event,
       event_id = _ref.event_id;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rsvp-index-item"
@@ -2329,7 +2332,7 @@ var RsvpIndexItem = function RsvpIndexItem(_ref) {
     className: "rsvp-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: "/events/".concat(event_id)
-  }, "event"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, currentUser === rsvp.user_id.toString() ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+  }, event.title))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, currentUser === rsvp.user_id.toString() ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
       return deleteRSVP(rsvp.id);
     }

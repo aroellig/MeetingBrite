@@ -9,7 +9,8 @@ const mSTP = (state, ownProps) => {
       user_id: state.session.id,
       event_id: ownProps.eventId,
       events: Object.values(state.entities.events),
-      currentUser: state.session.id
+      currentUser: state.session.id,
+      event: state.entities.events[ownProps.eventId]
       }
     }
 

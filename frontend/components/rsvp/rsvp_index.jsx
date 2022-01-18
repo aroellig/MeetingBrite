@@ -11,15 +11,14 @@ class RsvpIndex extends React.Component{
     }
     render(){
         if(!this.props.rsvps) return null
-        const { rsvps, user_id, event_id, events, deleteRSVP, currentUser } = this.props
+        const { rsvps, user_id, event_id, event, deleteRSVP, currentUser } = this.props
             return (
             <div className="rsvp-list-class">
                 <div className="title-of-all-rsvps">
-                <h1>RSVPs</h1>
                 </div>
                 <ul>
                     {
-                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id} deleteRSVP={deleteRSVP} currentUser={currentUser}  key={rsvp.id}/>)
+                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id} deleteRSVP={deleteRSVP} currentUser={currentUser} event={event}  key={rsvp.id}/>)
                     }
                 </ul> 
                 <br/>

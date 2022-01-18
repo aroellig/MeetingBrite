@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom"
 
 
-const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP, event_id }) => {
+const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP, event, event_id }) => {
     return (
         <div>
           <div className="rsvp-index-item">
@@ -10,7 +10,7 @@ const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP, event_id }) => {
               ""
             ) : (
               <div className="rsvp-index-item">
-                  <Link to={`/events/${event_id}`}>event</Link>
+                  <Link to={`/events/${event_id}`}>{event.title}</Link>
               </div>
             )}
           </div>
