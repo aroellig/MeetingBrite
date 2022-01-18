@@ -11,30 +11,21 @@ class RsvpIndex extends React.Component{
     }
     render(){
         if(!this.props.rsvps) return null
-        const { rsvps, user_id, event_id, events, deleteRSVP } = this.props
-        for(let i = 0; i < rsvps.length; i++){
-            let response = rsvps[i];
-            for(let j = 0; j < events.length; j++ ){
-                let event = events[j]
-                if(response.event_id === event.id ){
-                            return (
+        const { rsvps, user_id, event_id, events, deleteRSVP, currentUser } = this.props
+            return (
             <div className="rsvp-list-class">
                 <div className="title-of-all-rsvps">
                 <h1>RSVPs</h1>
                 </div>
                 <ul>
                     {
-                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id} deleteRSVP={deleteRSVP}  key={rsvp.id}/>)
+                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id} deleteRSVP={deleteRSVP} currentUser={currentUser}  key={rsvp.id}/>)
                     }
                 </ul> 
                 <br/>
             </div>
         )
-                }
+                
             }
         }
-
-    }
-}
-
 export default RsvpIndex

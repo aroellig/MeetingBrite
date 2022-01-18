@@ -21,7 +21,7 @@ class Api::RsvpsController < ApplicationController
     end
 
     def destroy
-      @rsvp = RSVP.find(params[:id])
+      @rsvp = Rsvp.find(params[:id])
       @rsvp.destroy
   
       render :show

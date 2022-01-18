@@ -2,13 +2,30 @@ import React from 'react';
 import { Link } from "react-router-dom"
 
 
-const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP }) => {
-  return (
-    <div>
-          <button onClick={() => deleteRSVP(rsvp._id)}>
-              Delete rsvp
-            </button>
-    </div>
-  );
+const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP, event_id }) => {
+    return (
+        <div>
+          <div className="rsvp-index-item">
+            {currentUser  !== rsvp.user_id.toString() ? (
+              ""
+            ) : (
+              <div className="rsvp-index-item">
+                  <Link to={`/events/${event_id}`}>event</Link>
+              </div>
+            )}
+          </div>
+          <div>
+            {currentUser  === rsvp.user_id.toString() ? (
+              <div>
+                <button onClick={() => deleteRSVP(rsvp.id)}>
+                  Delete rsvp
+                </button>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        </div>
+      );
 };
 export default RsvpIndexItem

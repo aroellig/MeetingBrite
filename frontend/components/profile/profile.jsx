@@ -95,6 +95,7 @@ class Profile extends React.Component{
                       <RSVPIndexContainer eventId={event.id} />
                       </div>
                     ))}
+                    
                   </div> 
                 )}
               </div>

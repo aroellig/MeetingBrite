@@ -2225,31 +2225,22 @@ var RsvpIndex = /*#__PURE__*/function (_React$Component) {
           user_id = _this$props.user_id,
           event_id = _this$props.event_id,
           events = _this$props.events,
-          deleteRSVP = _this$props.deleteRSVP;
-
-      for (var i = 0; i < rsvps.length; i++) {
-        var response = rsvps[i];
-
-        for (var j = 0; j < events.length; j++) {
-          var event = events[j];
-
-          if (response.event_id === event.id) {
-            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-              className: "rsvp-list-class"
-            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-              className: "title-of-all-rsvps"
-            }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "RSVPs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvps.map(function (rsvp) {
-              return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                rsvp: rsvp,
-                user_id: user_id,
-                event_id: event_id,
-                deleteRSVP: deleteRSVP,
-                key: rsvp.id
-              });
-            })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
-          }
-        }
-      }
+          deleteRSVP = _this$props.deleteRSVP,
+          currentUser = _this$props.currentUser;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "rsvp-list-class"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "title-of-all-rsvps"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "RSVPs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvps.map(function (rsvp) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          rsvp: rsvp,
+          user_id: user_id,
+          event_id: event_id,
+          deleteRSVP: deleteRSVP,
+          currentUser: currentUser,
+          key: rsvp.id
+        });
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
     }
   }]);
 
@@ -2323,18 +2314,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
 
 var RsvpIndexItem = function RsvpIndexItem(_ref) {
   var rsvp = _ref.rsvp,
       currentUser = _ref.currentUser,
-      deleteRSVP = _ref.deleteRSVP;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      deleteRSVP = _ref.deleteRSVP,
+      event_id = _ref.event_id;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "rsvp-index-item"
+  }, currentUser !== rsvp.user_id.toString() ? "" : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "rsvp-index-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    to: "/events/".concat(event_id)
+  }, "event"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, currentUser === rsvp.user_id.toString() ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
-      return deleteRSVP(rsvp._id);
+      return deleteRSVP(rsvp.id);
     }
-  }, "Delete rsvp"));
+  }, "Delete rsvp")) : ""));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RsvpIndexItem);
