@@ -35,7 +35,7 @@ class Profile extends React.Component{
         return (
             <div className="profile-outer">
               <div className="profile-username">
-                <p>Welcome {current_user.username}!!</p>
+                <p>Welcome!!</p>
               </div>
               <div>
                 {userEvents.length === 0 ? (
@@ -52,16 +52,14 @@ class Profile extends React.Component{
                       </div>
                     </div>
                 ) : (
-                  <div className="yes-event-outer">
+                  <div className="user-events">
                     <div className="your-event">
                       <p className="p-your-event">Your Events</p>
                     </div>
                     {userEvents.map((event, index) => (
                       <div key={event + "b"} className="user-event">
                          <Link to={`/events/${event.id}`}>{event.title}</Link>
-                        {/* <div className = "show-photo">
-                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
-                        </div> */}
+                         <img src={event.photoURL} width="300" height = '240' alt="coverphoto" />
                       </div>
                     ))}
                   </div> 

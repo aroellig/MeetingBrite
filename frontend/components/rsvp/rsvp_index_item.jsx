@@ -14,6 +14,7 @@ const RsvpIndexItem = ({ rsvp,  currentUser, deleteRSVP, event, event_id }) => {
                           {/* <div className = "rsvp-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                         </div> */}
+                        <br/>
                   <button onClick={() => deleteRSVP(rsvp.id)}>
                   Delete rsvp
                 </button>

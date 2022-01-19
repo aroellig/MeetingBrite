@@ -1,0 +1,35 @@
+.profile-username{
+    color: #39364f;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+}
+
+.p-your-event{
+    color: #39364f;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-event{
+    display: block;
+    align-self: center;
+    width: 300px;
+    height: 300px;
+    margin-top: 56px;
+    font-size: xx-large;
+    line-height: 2.5rem;
+    letter-spacing: 1px;
+    margin-right: -1px;
+    font-weight: 800;
+    border-style: groove; 
+    border-width: 5px;
+    border-color: white;
+    border-radius: 5px;
+}
+
+.user-events{
+    float: left;
+    padding: 50px;
+}
