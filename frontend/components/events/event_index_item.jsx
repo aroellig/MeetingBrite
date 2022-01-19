@@ -11,11 +11,9 @@ const EventIndexItem = ({ event, deleteEvent, current_user }) => {
                 <Link to={`/events/${event.id}`} className="event-title">{event.title}</Link>
             </div>
             <br/>
-            <h1 className="date">{event.date}</h1>
-            <br />
-            <h2 className="location">location: {event.location}</h2>
-            <br/>
-                <Link to={`/events/${event.id}/reviews`} className="reviews">Reviews</Link>
+            <div className = "event-index-photo">
+                <img src={event.photoURL} width="300" height = '240' alt="coverphoto" />
+                </div>
             </div>
         </li>
         </div>
