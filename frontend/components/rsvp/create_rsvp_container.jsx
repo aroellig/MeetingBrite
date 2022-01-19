@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createRsvp, fetchRsvps } from '../../actions/rsvp_actions';
+import { createRsvp, fetchRsvps, deleteRSVP } from '../../actions/rsvp_actions';
 import RsvpForm from './rsvp_form';
 import { clearErrors } from '../../actions/session_actions'
 
@@ -21,6 +21,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     createRsvp: rsvp => dispatch(createRsvp(rsvp)),
+    deleteRSVP: (rsvpId) => dispatch(deleteRSVP(rsvpId)),
     clearErrors: () => dispatch(clearErrors()),
     fetchRsvps: () => dispatch(fetchRsvps())
 })

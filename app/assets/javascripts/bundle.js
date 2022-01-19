@@ -1535,14 +1535,11 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "your-rsvp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "p-your-Rsvps"
-      }, "Your Rsvps")), rsvpEvents.map(function (event) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          key: event,
-          className: "user-event-rsvp"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          eventId: event.id
-        }));
-      }))));
+      }, "Your Rsvps")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        rsvpEvents: rsvpEvents
+      })) // ))}
+      // </div> 
+      ));
     }
   }]);
 
@@ -1989,6 +1986,9 @@ var mDTP = function mDTP(dispatch) {
     createRsvp: function createRsvp(rsvp) {
       return dispatch((0,_actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.createRsvp)(rsvp));
     },
+    deleteRSVP: function deleteRSVP(rsvpId) {
+      return dispatch((0,_actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_1__.deleteRSVP)(rsvpId));
+    },
     clearErrors: function clearErrors() {
       return dispatch((0,_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__.clearErrors)());
     },
@@ -2140,7 +2140,7 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
         type: "submit",
         value: this.props.formType,
         className: "rsvp-button"
-      }, this.props.formType))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "you have already rsvp'd to this event"));
+      }, this.props.formType))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "you have already rsvp'd to this event")));
     }
   }]);
 
@@ -2206,7 +2206,7 @@ var RsvpIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(RsvpIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchRsvps(this.props.user_id, this.props.event_id);
+      this.props.fetchRsvps();
     }
   }, {
     key: "render",
@@ -2215,25 +2215,27 @@ var RsvpIndex = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           rsvps = _this$props.rsvps,
           user_id = _this$props.user_id,
-          event_id = _this$props.event_id,
-          event = _this$props.event,
           deleteRSVP = _this$props.deleteRSVP,
-          currentUser = _this$props.currentUser;
+          currentUser = _this$props.currentUser,
+          rsvpEvents = _this$props.rsvpEvents;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "rsvp-list-class"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "title-of-all-rsvps"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvps.map(function (rsvp) {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvpEvents.map(function (rsvpEvent) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          rsvp: rsvp,
+          rsvpEvent: rsvpEvent,
           user_id: user_id,
-          event_id: event_id,
+          event_id: rsvpEvent.id,
           deleteRSVP: deleteRSVP,
           currentUser: currentUser,
-          event: event,
-          key: rsvp.id
+          rsvps: rsvps,
+          key: rsvpEvent.id
         });
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+      }) // rsvpEvents.forEach(rsvpEvent => {
+      //     console.log(rsvps[rsvpEvent])
+      // })
+      ), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
     }
   }]);
 
@@ -2268,10 +2270,12 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     rsvps: Object.values(state.entities.rsvps),
     user_id: state.session.id,
-    event_id: ownProps.eventId,
+    // event_id: ownProps.eventId,
     events: Object.values(state.entities.events),
     currentUser: state.session.id,
-    event: state.entities.events[ownProps.eventId]
+    rsvpEvents: ownProps.rsvpEvents // event: state.entities.events[ownProps.eventId],
+    // rsvp: state.entities.rsvp[ownProps.eventId],
+
   };
 };
 
@@ -2313,22 +2317,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var RsvpIndexItem = function RsvpIndexItem(_ref) {
-  var rsvp = _ref.rsvp,
+  var rsvps = _ref.rsvps,
       currentUser = _ref.currentUser,
       deleteRSVP = _ref.deleteRSVP,
-      event = _ref.event,
+      rsvpEvent = _ref.rsvpEvent,
       event_id = _ref.event_id;
+  var userRsvps = [];
+  rsvps.forEach(function (rsvp) {
+    if (rsvp.user_id === Number(currentUser)) {
+      userRsvps.push(rsvp);
+    }
+  });
+  console.log(userRsvps);
+  console.log(rsvpEvent);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rsvp-index-item"
-  }, currentUser !== rsvp.user_id.toString() ? "" : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rsvp-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: "/events/".concat(event_id)
-  }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    onClick: function onClick() {
-      return deleteRSVP(rsvp.id);
-    }
-  }, "Delete rsvp"))));
+  }, rsvpEvent.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RsvpIndexItem);

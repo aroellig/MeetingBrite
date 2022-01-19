@@ -7,10 +7,12 @@ const mSTP = (state, ownProps) => {
     return {
       rsvps: Object.values(state.entities.rsvps),
       user_id: state.session.id,
-      event_id: ownProps.eventId,
+      // event_id: ownProps.eventId,
       events: Object.values(state.entities.events),
       currentUser: state.session.id,
-      event: state.entities.events[ownProps.eventId]
+      rsvpEvents: ownProps.rsvpEvents,
+      // event: state.entities.events[ownProps.eventId],
+      // rsvp: state.entities.rsvp[ownProps.eventId],
       }
     }
 

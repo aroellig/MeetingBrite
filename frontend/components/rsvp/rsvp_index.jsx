@@ -7,18 +7,23 @@ import { deleteRSVP } from '../../util/rsvp_api_util';
 
 class RsvpIndex extends React.Component{
     componentDidMount(){
-        this.props.fetchRsvps(this.props.user_id, this.props.event_id)
+        this.props.fetchRsvps()
     }
     render(){
         if(!this.props.rsvps) return null
-        const { rsvps, user_id, event_id, event, deleteRSVP, currentUser } = this.props
+        const { rsvps, user_id, deleteRSVP, currentUser, rsvpEvents } = this.props
+     
             return (
             <div className="rsvp-list-class">
                 <div className="title-of-all-rsvps">
                 </div>
                 <ul>
                     {
-                        rsvps.map(rsvp => <RsvpIndexItem rsvp={rsvp} user_id={user_id} event_id={event_id} deleteRSVP={deleteRSVP} currentUser={currentUser} event={event}  key={rsvp.id}/>)
+                        rsvpEvents.map(rsvpEvent => <RsvpIndexItem rsvpEvent={rsvpEvent} user_id={user_id} event_id={rsvpEvent.id} deleteRSVP={deleteRSVP} currentUser={currentUser} rsvps={rsvps}   key={rsvpEvent.id}/>)
+                        // rsvpEvents.forEach(rsvpEvent => {
+                        //     console.log(rsvps[rsvpEvent])
+                        // })
+                       
                     }
                 </ul> 
                 <br/>

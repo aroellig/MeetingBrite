@@ -89,7 +89,9 @@ class RsvpForm extends React.Component{
             </form>
         </div>
         ) : (
+          <div>
           <p>you have already rsvp'd to this event</p>
+                </div>
         )}  
         </div>
         )
