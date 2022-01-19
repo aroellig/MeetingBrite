@@ -592,7 +592,6 @@ var EditEventForm = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
@@ -1166,7 +1165,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           onClick: function onClick() {
             return deleteEvent(event.id);
           }
-        }, "Delete Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
+          to: '/'
+        }, " Delete Event ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id

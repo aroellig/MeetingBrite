@@ -40,7 +40,6 @@ class EditEventForm extends React.Component {
   }
   
   const mSTP = (state, ownProps) => {
-    debugger
     return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
