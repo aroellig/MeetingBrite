@@ -81,7 +81,7 @@ class Profile extends React.Component{
                     </div>
                 ) : (
                   
-                  <div className="yes-rsvp-outer">
+                  <div className="user-rsvps">
                     <div className="your-rsvp">
                       <p className="p-your-Rsvps">Your Rsvps</p>
                     </div>

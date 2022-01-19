@@ -1529,7 +1529,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         to: "/events",
         className: "p-search-event"
       }, "search for events"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "yes-rsvp-outer"
+        className: "user-rsvps"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "your-rsvp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
