@@ -9,8 +9,15 @@ const RsvpIndexItem = ({ rsvps,  currentUser, deleteRSVP, rsvpEvent, event_id })
           userRsvps.push(rsvp)
       }
   })
+  let rsvp = "";
+  for(let i = 0; i < userRsvps.length; i++){
+    if(userRsvps[i].event_id === rsvpEvent.id){
+      rsvp = userRsvps[i]
+    }
+  }
   console.log(userRsvps)
   console.log(rsvpEvent)
+  console.log(rsvp)
     return (
         <div>
           <div className="rsvp-index-item">
@@ -23,11 +30,11 @@ const RsvpIndexItem = ({ rsvps,  currentUser, deleteRSVP, rsvpEvent, event_id })
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                         </div> */}
                         <br/>
-                  {/* <button onClick={() => deleteRSVP(rsvpEvent.id)}> */}
-                  {/* Delete rsvp
-                </button> */}
+                  <button onClick={() => deleteRSVP(rsvp.id)}> 
+                  Delete rsvp
+                </button>
               </div>
-            {/* )} */}
+            
           </div>
           {/* <div>
             {currentUser  === rsvp.user_id.toString() ? (

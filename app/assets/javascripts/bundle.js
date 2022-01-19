@@ -2328,15 +2328,28 @@ var RsvpIndexItem = function RsvpIndexItem(_ref) {
       userRsvps.push(rsvp);
     }
   });
+  var rsvp = "";
+
+  for (var i = 0; i < userRsvps.length; i++) {
+    if (userRsvps[i].event_id === rsvpEvent.id) {
+      rsvp = userRsvps[i];
+    }
+  }
+
   console.log(userRsvps);
   console.log(rsvpEvent);
+  console.log(rsvp);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rsvp-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rsvp-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: "/events/".concat(event_id)
-  }, rsvpEvent.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null))));
+  }, rsvpEvent.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    onClick: function onClick() {
+      return deleteRSVP(rsvp.id);
+    }
+  }, "Delete rsvp"))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RsvpIndexItem);
