@@ -1840,7 +1840,8 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
           reviews = _this$props.reviews,
           event_id = _this$props.event_id,
           user_id = _this$props.user_id,
-          deleteReview = _this$props.deleteReview;
+          deleteReview = _this$props.deleteReview,
+          currentUser = _this$props.currentUser;
       debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "reviews-list-class"
@@ -1852,6 +1853,7 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
           user_id: user_id,
           event_id: event_id,
           deleteReview: deleteReview,
+          currentUser: currentUser,
           key: review.id
         });
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
@@ -1888,7 +1890,8 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     reviews: Object.values(state.entities.reviews),
     user_id: state.session.id,
-    event_id: ownProps.eventId
+    event_id: ownProps.eventId,
+    currentUser: state.session.id
   };
 };
 
@@ -1924,7 +1927,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var ReviewIndexItem = function ReviewIndexItem(_ref) {
   var review = _ref.review,
-      deleteReview = _ref.deleteReview;
+      deleteReview = _ref.deleteReview,
+      currentUser = _ref.currentUser;
   // // const reviews = this.props.reviews
   // let total_score = 0
   // // for(let i = 0; i < reviews.length; i++){
@@ -1932,7 +1936,16 @@ var ReviewIndexItem = function ReviewIndexItem(_ref) {
   // //   total_score += review.score
   // // }
   // const avg_score = total_score / reviews.length
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  debugger;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, review.user_id !== parseInt(currentUser) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "review-index-items"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "review-index-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "review-title"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, review.review)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "review-rating"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, review.rating)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "review-index-items"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "review-index-item"

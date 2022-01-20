@@ -10,7 +10,7 @@ class ReviewIndex extends React.Component{
         this.props.fetchReviews(this.props.event_id)
     }
     render(){
-        const { reviews, event_id, user_id, deleteReview } = this.props
+        const { reviews, event_id, user_id, deleteReview, currentUser } = this.props
         debugger
         return (
             <div className="reviews-list-class">
@@ -19,7 +19,7 @@ class ReviewIndex extends React.Component{
                 </div>
                 <ul>
                     {
-                        reviews.map(review => <ReviewIndexItem review={review} user_id={user_id} event_id={event_id} deleteReview={deleteReview}  key={review.id}/>)
+                        reviews.map(review => <ReviewIndexItem review={review} user_id={user_id} event_id={event_id} deleteReview={deleteReview} currentUser={currentUser}  key={review.id}/>)
                     }
                 </ul> 
                 <br/>
