@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const ReviewIndexItem = ({ review }) => {
+const ReviewIndexItem = ({ review, deleteReview }) => {
     // // const reviews = this.props.reviews
     // let total_score = 0
     // // for(let i = 0; i < reviews.length; i++){
@@ -10,6 +10,7 @@ const ReviewIndexItem = ({ review }) => {
     // //   total_score += review.score
     // // }
     // const avg_score = total_score / reviews.length
+   
     return (
         <div>
             <div className="review-index-items">
@@ -22,6 +23,9 @@ const ReviewIndexItem = ({ review }) => {
                         <div className="review-rating">
                             <p>{review.rating}</p>
                         </div>
+                <button onClick={() => deleteReview(review.id)}> 
+                  Delete review
+                </button>
                     <br/>
                     </div>
                 </li>

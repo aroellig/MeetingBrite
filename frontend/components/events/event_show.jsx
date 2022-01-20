@@ -42,6 +42,20 @@ class EventShow extends React.Component {
             responded = true
           }
         }
+
+        //        let userReviews = [];
+        // this.props.reviews.forEach((review) => {
+        //     if(review.user_id === Number(this.props.currentUser)){
+        //         userReviews.push(review)
+        //     }
+        // })
+        // let reviewed = false
+        // for(let i = 0; i < userReviews.length; i++){
+        //   let review = userReviews[i];
+        //   if(this.props.event.id === review.event_id){
+        //     reviewed = true
+        //   }
+        // }
         if (parseInt(currentUser) !== event.creator_id && responded === false){
         return(
             <div className="event-info">

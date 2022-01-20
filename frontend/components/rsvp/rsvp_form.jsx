@@ -26,7 +26,6 @@ class RsvpForm extends React.Component{
         });
       
         if (this.props.currentUser) {
-          debugger
             this.props.createRsvp(rsvp)
             .then(() => this.props.history.push("/events"));
             
@@ -67,7 +66,8 @@ class RsvpForm extends React.Component{
           responded = true
         }
       }
-        return ( <div>
+        return (
+          <div>
           {responded === false ? (
         <div className="rsvp-form">
             <form onSubmit={this.handleSubmit}>

@@ -32,6 +32,7 @@ class Profile extends React.Component{
             }
           }
         }
+
         return (
             <div className="profile-outer">
               <div className="profile-username">
@@ -83,7 +84,7 @@ class Profile extends React.Component{
                   
                   <div className="user-rsvps">
                     <div className="your-rsvp">
-                      <p className="p-your-Rsvps">Your Rsvps</p>
+  
                     </div>
                     {/* {rsvpEvents.map((event) => ( */}
 

@@ -9,6 +9,7 @@ class ReviewForm extends React.Component{
     }
 
     handleSubmit(e){
+        debugger
         e.preventDefault()
         const eventId = this.props.event.id
         const review = Object.assign({}, this.state, {
@@ -16,7 +17,7 @@ class ReviewForm extends React.Component{
         });
         if (this.props.currentUser) {
             this.props.submitReview(review)
-            .then(() => this.props.history.push("/events"));
+             .then(() => this.props.history.push(`/events`));
         }
     }
 
@@ -24,9 +25,9 @@ class ReviewForm extends React.Component{
         return e => this.setState({ [field]: e.currentTarget.value })
     }
     render(){
-
         if (!this.props.event) return null
         return(
+            <div>
             <div className="Main-Review-Form">
                 <h3>Leave a review</h3>
                 <form onSubmit={this.handleSubmit}>
@@ -49,6 +50,7 @@ class ReviewForm extends React.Component{
                         <button type='submit' value={this.props.formType} className="Create-Review-Button">{this.props.formType}</button>
                 </form>
             </div>
+         </div>
         )
     }
 }

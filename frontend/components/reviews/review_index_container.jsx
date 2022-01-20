@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchReviews, createReview } from '../../actions/event_action'
+import { fetchReviews, deleteReview } from '../../actions/event_action'
 import ReviewIndex from './review_index';
 
 const mSTP = (state, ownProps) => {
@@ -12,6 +12,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     fetchReviews: eventId => dispatch(fetchReviews(eventId)),
+    deleteReview: reviewId => dispatch(deleteReview(reviewId))
 })
 
 export default connect(mSTP, mDTP)(ReviewIndex)

@@ -14,8 +14,9 @@ class RsvpIndex extends React.Component{
         const { rsvps, user_id, deleteRSVP, currentUser, rsvpEvents } = this.props
      
             return (
-            <div className="rsvp-list-class">
-                <div className="title-of-all-rsvps">
+            <div className="rsvp-index-items">
+                 <h1>Your RSVPS</h1>
+                <div >
                 </div>
                 <ul>
                     {

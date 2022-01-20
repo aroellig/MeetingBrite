@@ -15,38 +15,23 @@ const RsvpIndexItem = ({ rsvps,  currentUser, deleteRSVP, rsvpEvent, event_id })
       rsvp = userRsvps[i]
     }
   }
-  console.log(userRsvps)
-  console.log(rsvpEvent)
-  console.log(rsvp)
+
     return (
         <div>
-          <div className="rsvp-index-item">
-            {/* {currentUser  !== rsvp.user_id.toString() ? ( */}
-              {/* "" */}
-            {/* ) : ( */}
+      
+
               <div className="rsvp-index-item">
                   <Link to={`/events/${event_id}`}>{rsvpEvent.title}</Link>
-                          {/* <div className = "rsvp-photo">
-                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
-                        </div> */}
+                          <div className = "rsvp-photo">
+                          <img src={rsvpEvent.photoURL} width="300" height = '240' alt="coverphoto" />
+                        </div>
                         <br/>
-                  <button onClick={() => deleteRSVP(rsvp.id)}> 
+                  <button onClick={() => deleteRSVP(rsvp.id)} className="delete-rsvp-button"> 
                   Delete rsvp
                 </button>
               </div>
             
-          </div>
-          {/* <div>
-            {currentUser  === rsvp.user_id.toString() ? (
-              <div>
-                <button onClick={() => deleteRSVP(rsvp.id)}>
-                  Delete rsvp
-                </button>
-              </div>
-            ) : (
-              ""
-            )}
-          </div> */}
+          
         </div>
       );
 };
