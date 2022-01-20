@@ -43,20 +43,21 @@ class EventShow extends React.Component {
           }
         }
 
-        //        let userReviews = [];
-        // this.props.reviews.forEach((review) => {
-        //     if(review.user_id === Number(this.props.currentUser)){
-        //         userReviews.push(review)
-        //     }
-        // })
-        // let reviewed = false
-        // for(let i = 0; i < userReviews.length; i++){
-        //   let review = userReviews[i];
-        //   if(this.props.event.id === review.event_id){
-        //     reviewed = true
-        //   }
-        // }
-        if (parseInt(currentUser) !== event.creator_id && responded === false){
+               let userReviews = [];
+        this.props.reviews.forEach((review) => {
+            if(review.user_id === Number(this.props.currentUser)){
+                userReviews.push(review)
+            }
+        })
+        let reviewed = false
+        for(let i = 0; i < userReviews.length; i++){
+          let review = userReviews[i];
+          if(this.props.event.id === review.event_id){
+            reviewed = true
+          }
+        }
+        debugger
+        if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
         return(
             <div className="event-info">
             <h1 className="show-title">{event.title}</h1>
@@ -78,7 +79,7 @@ class EventShow extends React.Component {
             </h8>
             </div>
         )
-        } else if (parseInt(currentUser) !== event.creator_id && responded === true) {
+        } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === true) {
             return(
                 <div className="event-info">
                 <h1 className="show-title">{event.title}</h1>
@@ -99,8 +100,53 @@ class EventShow extends React.Component {
                 </h8>
                 </div>
             )
-        } else {
+        } else if ((parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false)) {
+                return(
+                    <div className="event-info">
+                    <h1 className="show-title">{event.title}</h1>
+                    <h2 className="show-description">About: {event.description}</h2>
+                    <h3 className="show-location">Location: {event.location}</h3>
+                    <h4 className="show-date">Date and Time: {event.date}</h4>
+                    {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
+                    <div className = "show-photo">
+                        <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                    </div>
+                    <br/>
+                    <h6 className="average-score"> Average Rating: {avg_score}</h6>
+                    <h7 className="show-event">
+                    <RSVPIndexContainer rsvpId={rsvp.id}/>
+                    <CreateReviewFormContainer eventId={event.id} />
+                    </h7>
+                    <h8 className= "reviews">
+                    <ReviewIndexContainer eventId={event.id} />
+                    </h8>
+                    </div>
+                )
             
+      
+        } else if(((parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true))) {
+            return(
+                <div className="event-info">
+                <h1 className="show-title">{event.title}</h1>
+                <h2 className="show-description">About: {event.description}</h2>
+                <h3 className="show-location">Location: {event.location}</h3>
+                <h4 className="show-date">Date and Time: {event.date}</h4>
+                {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
+                <div className = "show-photo">
+                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                </div>
+                <br/>
+                <h6 className="average-score"> Average Rating: {avg_score}</h6>
+                <h7 className="show-event">
+                    <CreateRsvpFormContainer eventId={event.id} />
+                    <p> you have already reviewed this event</p>
+                </h7>
+                <h8 className= "reviews">
+                <ReviewIndexContainer eventId={event.id} />
+                </h8>
+                </div>
+            )
+        } else {
             return(
                 <div className="event-info">
                 <h1 className="show-title">{event.title}</h1>

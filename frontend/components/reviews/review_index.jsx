@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 class ReviewIndex extends React.Component{
     componentDidMount(){
-        debugger
+      
         this.props.fetchReviews(this.props.event_id)
     }
     render(){
         const { reviews, event_id, user_id, deleteReview, currentUser } = this.props
-        debugger
+        
         return (
             <div className="reviews-list-class">
                 <div className="title-of-all-reviews">

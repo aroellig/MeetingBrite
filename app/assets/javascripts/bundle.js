@@ -1045,6 +1045,8 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       if (!this.props.event) return null;
       var _this$props = this.props,
           event = _this$props.event,
@@ -1083,22 +1085,27 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         if (event.id === _rsvp.event_id) {
           responded = true;
         }
-      } //        let userReviews = [];
-      // this.props.reviews.forEach((review) => {
-      //     if(review.user_id === Number(this.props.currentUser)){
-      //         userReviews.push(review)
-      //     }
-      // })
-      // let reviewed = false
-      // for(let i = 0; i < userReviews.length; i++){
-      //   let review = userReviews[i];
-      //   if(this.props.event.id === review.event_id){
-      //     reviewed = true
-      //   }
-      // }
+      }
 
+      var userReviews = [];
+      this.props.reviews.forEach(function (review) {
+        if (review.user_id === Number(_this.props.currentUser)) {
+          userReviews.push(review);
+        }
+      });
+      var reviewed = false;
 
-      if (parseInt(currentUser) !== event.creator_id && responded === false) {
+      for (var _i2 = 0; _i2 < userReviews.length; _i2++) {
+        var _review = userReviews[_i2];
+
+        if (this.props.event.id === _review.event_id) {
+          reviewed = true;
+        }
+      }
+
+      debugger;
+
+      if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -1129,7 +1136,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
         })));
-      } else if (parseInt(currentUser) !== event.creator_id && responded === true) {
+      } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === true) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
@@ -1154,6 +1161,66 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
           rsvpId: rsvp.id
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
+          className: "reviews"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          eventId: event.id
+        })));
+      } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+          className: "show-title"
+        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+          className: "show-description"
+        }, "About: ", event.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+          className: "show-location"
+        }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+          className: "show-date"
+        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+          className: "average-score"
+        }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
+          className: "show-event"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          rsvpId: rsvp.id
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          eventId: event.id
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
+          className: "reviews"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          eventId: event.id
+        })));
+      } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+          className: "show-title"
+        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+          className: "show-description"
+        }, "About: ", event.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+          className: "show-location"
+        }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+          className: "show-date"
+        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+          className: "average-score"
+        }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
+          className: "show-event"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          eventId: event.id
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, " you have already reviewed this event")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
@@ -1830,7 +1897,6 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
       this.props.fetchReviews(this.props.event_id);
     }
   }, {
@@ -1842,7 +1908,6 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
           user_id = _this$props.user_id,
           deleteReview = _this$props.deleteReview,
           currentUser = _this$props.currentUser;
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "reviews-list-class"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1886,7 +1951,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     reviews: Object.values(state.entities.reviews),
     user_id: state.session.id,
