@@ -1750,6 +1750,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  debugger;
   return {
     review: {
       review: '',
@@ -1883,6 +1884,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  debugger;
   return {
     reviews: Object.values(state.entities.reviews),
     user_id: state.session.id,
