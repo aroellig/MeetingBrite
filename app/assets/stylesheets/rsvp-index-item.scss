@@ -4,17 +4,31 @@
     display: block;
     align-self: center;
     width: 300px;
-    height: 300px;
+    height: 350px;
     margin-top: 56px;
     font-size: xx-large;
     line-height: 2.5rem;
     letter-spacing: 1px;
     margin-right: -1px;
     font-weight: 800;
-    // border-style: groove; 
-    // border-width: 5px;
-    // border-color: white;
-    // border-radius: 5px;
+    border-style: groove; 
+    border-width: 5px;
+    border-color: white;
+    border-radius: 10px;
+    // position: relative;
+    // left: 1000px;
+}
+
+.delete-rsvp-button{
     position: relative;
-    left: 1000px;
+    top: -30px;
+    display: inline-block;
+    background-color: whitesmoke;
+    height: 50px;
+    width: 90px;
+    border: 2px solid #a9a8b3;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    // margin-top: 1px;
 }
