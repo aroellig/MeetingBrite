@@ -21,7 +21,7 @@ const RsvpIndexItem = ({ rsvps,  currentUser, deleteRSVP, rsvpEvent, event_id })
       
 
               <div className="rsvp-index-item">
-                  <Link to={`/events/${event_id}`}>{rsvpEvent.title}</Link>
+                  <Link to={`/events/${event_id}`} className="rsvp-title">{rsvpEvent.title}</Link>
                           <div className = "rsvp-photo">
                           <img src={rsvpEvent.photoURL} width="300" height = '240' alt="coverphoto" />
                         </div>

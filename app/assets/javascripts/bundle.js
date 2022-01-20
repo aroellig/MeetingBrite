@@ -1532,7 +1532,8 @@ var Profile = /*#__PURE__*/function (_React$Component) {
           key: event + "b",
           className: "user-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-          to: "/events/".concat(event.id)
+          to: "/events/".concat(event.id),
+          className: "user-event-title"
         }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
           width: "300",
@@ -1940,7 +1941,8 @@ var ReviewIndexItem = function ReviewIndexItem(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, review.rating)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     onClick: function onClick() {
       return deleteReview(review.id);
-    }
+    },
+    className: "delete-review-button"
   }, "Delete review"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)))));
 };
 
@@ -2369,7 +2371,8 @@ var RsvpIndexItem = function RsvpIndexItem(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rsvp-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    to: "/events/".concat(event_id)
+    to: "/events/".concat(event_id),
+    className: "rsvp-title"
   }, rsvpEvent.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rsvp-photo"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {

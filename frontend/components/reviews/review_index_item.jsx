@@ -23,7 +23,7 @@ const ReviewIndexItem = ({ review, deleteReview }) => {
                         <div className="review-rating">
                             <p>{review.rating}</p>
                         </div>
-                <button onClick={() => deleteReview(review.id)}> 
+                <button onClick={() => deleteReview(review.id)} className="delete-review-button"> 
                   Delete review
                 </button>
                     <br/>

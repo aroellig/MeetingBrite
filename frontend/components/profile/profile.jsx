@@ -59,7 +59,7 @@ class Profile extends React.Component{
                     </div>
                     {userEvents.map((event, index) => (
                       <div key={event + "b"} className="user-event">
-                         <Link to={`/events/${event.id}`}>{event.title}</Link>
+                         <Link to={`/events/${event.id}`} className="user-event-title">{event.title}</Link>
                          <img src={event.photoURL} width="300" height = '240' alt="coverphoto" />
                       </div>
                     ))}
