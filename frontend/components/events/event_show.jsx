@@ -165,7 +165,7 @@ class EventShow extends React.Component {
                    <Link to={'/'}> Delete Event </Link> 
                     </button>
                 <h5 className= "reviews">
-                    <p>you have laready reviewed this event</p>
+                    <p>you have already reviewed this event</p>
                 <ReviewIndexContainer eventId={event.id} />
                 </h5>
             </div>
