@@ -10,7 +10,6 @@ const ReviewIndexItem = ({ review, deleteReview, currentUser }) => {
     // //   total_score += review.score
     // // }
     // const avg_score = total_score / reviews.length
-   debugger
     return (
         <div>
             {review.user_id !== parseInt(currentUser) ? (
