@@ -1257,7 +1257,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           to: '/'
         }, " Delete Event ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "reviews"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "you have already reviewed this event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
         })));
       }
@@ -2000,7 +2000,6 @@ var ReviewIndexItem = function ReviewIndexItem(_ref) {
   // //   total_score += review.score
   // // }
   // const avg_score = total_score / reviews.length
-  debugger;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, review.user_id !== parseInt(currentUser) ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "review-index-items"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2928,6 +2927,10 @@ var reviewsReducer = function reviewsReducer() {
 
     case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_REVIEWS:
       return action.reviews;
+
+    case _actions_event_action__WEBPACK_IMPORTED_MODULE_0__.REMOVE_REVIEW:
+      delete newState[action.id];
+      return newState;
 
     default:
       return state;
