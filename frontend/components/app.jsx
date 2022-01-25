@@ -24,6 +24,7 @@ import CreateRsvpFormContainer from './rsvp/create_rsvp_container';
 import ReviewIndexContainer from './reviews/review_index_container';
 import RsvpIndexContainer from './rsvp/rsvp_index_container';
 import ProfileContainer from './profile/profile_container';
+import NavbarContainer from './nav/navbar_container'
 
 
 const App = () => (
@@ -36,6 +37,7 @@ const App = () => (
     <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/'><button className="Linkedin">Linkedin</button></a>
    <Link to="/" className="homepagea">Homepage</Link>
     </header>
+    <NavbarContainer />
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />

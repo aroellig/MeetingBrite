@@ -4,7 +4,7 @@ import Search from "./search";
 import { withRouter } from "react-router";
 const mapStateToProps = (state) => {
   return {
-    events: Object.values(state.events),
+    events: Object.values(state.entities.events)
   };
 };
 const mapDispatchToProps = (dispatch) => ({

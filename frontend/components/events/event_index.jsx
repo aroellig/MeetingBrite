@@ -1,7 +1,8 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
 import { Link } from 'react-router-dom';
-import CreateReviewFormContainer from '../reviews/review_form_container'
+import CreateReviewFormContainer from '../reviews/review_form_container';
+import SearchContainer from '../search/search_container'
 
 
 class EventIndex extends React.Component{
@@ -15,6 +16,7 @@ class EventIndex extends React.Component{
             <div className="events-list-class">
                 <div className="title-of-all-events">
                 <h1>Events</h1>
+           
                 </div>
                 <ul>
                     {
