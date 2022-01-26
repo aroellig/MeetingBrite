@@ -39,11 +39,11 @@ function Search(props) {
       <div className="searchInputs">
         <input
           type="text"
-          placeholder="SEARCH ENTIRE STORE HERE"
+          placeholder="Search events here"
           onChange={handleChange}
           value={inputWord}
         />
-        <div className="icons">
+        {/* <div className="icons">
           {filteredListing.length === 0 ? (
             <div className="search-icon-div">
               <i className="fas fa-search" id="search-icon"></i>
@@ -57,7 +57,7 @@ function Search(props) {
               ></i>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
       {filteredListing.length !== 0 && (
         <div className="listingResult">

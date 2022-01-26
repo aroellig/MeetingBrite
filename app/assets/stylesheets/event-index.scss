@@ -1,6 +1,16 @@
-.title{
-font-family: Helvetica;
-font-size: xx-large;
+.title-of-all-events{
+    padding: 12px;
+    cursor: pointer;
+    position: absolute;
+    font-size: 50px;
+    color: rgb(65, 61, 61);
+    font-weight: 700;
+    position: absolute;
+    // top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    top: 760px;
 }
 
 .events-list{
@@ -9,5 +19,17 @@ font-size: xx-large;
     padding: 12px;
     cursor: pointer;
     position: absolute;
+    top: 10px
+}
+
+.events-list-class{
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsparetimelansing.com%2Fwp-content%2Fuploads%2F2018%2F03%2FAdobeStock_127994126.jpeg&f=1&nofb=1);
+    height: 40vw;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 70% 65%;
+    position: relative;
+    /* bottom: 1vh; */
 }
 

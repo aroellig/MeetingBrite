@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-    .then(() => this.props.history.push("/"));
+    .then(() => this.props.history.push("/events"));
   }
 
   renderErrors() {
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props
     .loginDemoUser()
-      .then(() => this.props.history.push("/"));
+      .then(() => this.props.history.push("/events"));
   }
 
   render() {

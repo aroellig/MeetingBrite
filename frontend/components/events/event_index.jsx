@@ -18,7 +18,7 @@ class EventIndex extends React.Component{
                 <h1>Events</h1>
            
                 </div>
-                <ul>
+                <ul className="all-events">
                     {
                         events.map(event => <EventIndexItem event={event} deleteEvent={deleteEvent} current_user={current_user} key={event.id}/>)
                     }
