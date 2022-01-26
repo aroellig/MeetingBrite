@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 // import "./search.css";
 import { hashHistory } from "react-router";
+
 function Search(props) {
   useEffect(() => {
     props.fetchEvents();
   }, []);
 
-  if (!props.listings) return null
+  if (!props.events) return null
   
   const { listings } = props;
   const [filteredListing, setFilteredListing] = useState([]);
@@ -29,8 +30,8 @@ function Search(props) {
     setFilteredListing([]);
     setInputWord("");
   };
-  const clearListingShow = (eventId) => {
-    hashHistory.push(`/events/${eventId}`);
+  const clearListingShow = (listingId) => {
+    hashHistory.push(`/recipes/${listingId}`);
     clearField();
   };
   
@@ -39,11 +40,11 @@ function Search(props) {
       <div className="searchInputs">
         <input
           type="text"
-          placeholder="Search events here"
+          placeholder="SEARCH ENTIRE STORE HERE"
           onChange={handleChange}
           value={inputWord}
         />
-        {/* <div className="icons">
+        <div className="icons">
           {filteredListing.length === 0 ? (
             <div className="search-icon-div">
               <i className="fas fa-search" id="search-icon"></i>
@@ -57,7 +58,7 @@ function Search(props) {
               ></i>
             </div>
           )}
-        </div> */}
+        </div>
       </div>
       {filteredListing.length !== 0 && (
         <div className="listingResult">
@@ -66,7 +67,7 @@ function Search(props) {
               <div
                 className="dataItem"
                 onClick={() => clearListingShow(listing._id)}
-                key={listing.id}
+                key={listing._id}
               >
                 <p>{listing.title}</p>
               </div>

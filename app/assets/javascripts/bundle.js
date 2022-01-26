@@ -1123,7 +1123,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1154,7 +1154,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1183,7 +1183,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1214,7 +1214,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1243,7 +1243,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1590,9 +1590,7 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         className: "link-global-nav"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
         className: "text-global"
-      }, "MeetingBrite")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.getLinks()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        "class": "search"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_1__["default"], null)));
+      }, "MeetingBrite")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, this.getLinks()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_search_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
 
@@ -2666,7 +2664,7 @@ function Search(props) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     props.fetchEvents();
   }, []);
-  if (!props.listings) return null;
+  if (!props.events) return null;
   var listings = props.listings;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
@@ -2698,8 +2696,8 @@ function Search(props) {
     setInputWord("");
   };
 
-  var clearListingShow = function clearListingShow(eventId) {
-    react_router__WEBPACK_IMPORTED_MODULE_1__.hashHistory.push("/events/".concat(eventId));
+  var clearListingShow = function clearListingShow(listingId) {
+    react_router__WEBPACK_IMPORTED_MODULE_1__.hashHistory.push("/recipes/".concat(listingId));
     clearField();
   };
 
@@ -2709,10 +2707,23 @@ function Search(props) {
     className: "searchInputs"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    placeholder: "Search events here",
+    placeholder: "SEARCH ENTIRE STORE HERE",
     onChange: handleChange,
     value: inputWord
-  })), filteredListing.length !== 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "icons"
+  }, filteredListing.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "search-icon-div"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+    className: "fas fa-search",
+    id: "search-icon"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "clear-icon-div"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+    className: "fas fa-times",
+    id: "clearBtn",
+    onClick: clearField
+  })))), filteredListing.length !== 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "listingResult"
   }, filteredListing.slice(0, 5).map(function (listing) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2720,7 +2731,7 @@ function Search(props) {
       onClick: function onClick() {
         return clearListingShow(listing._id);
       },
-      key: listing.id
+      key: listing._id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, listing.title));
   })));
 }
