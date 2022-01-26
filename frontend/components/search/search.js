@@ -10,14 +10,14 @@ function Search(props) {
 
   if (!props.events) return null
   
-  const { listings } = props;
+  const { events } = props;
   const [filteredListing, setFilteredListing] = useState([]);
   const [inputWord, setInputWord] = useState("");
 
   const handleChange = (event) => {
     const wordEntered = event.target.value;
     setInputWord(wordEntered);
-    let filteredArray = listings.filter((listing) => {
+    let filteredArray = events.filter((listing) => {
       return listing.title.toLowerCase().includes(wordEntered.toLowerCase());
     });
     if (wordEntered === "") {
@@ -30,8 +30,8 @@ function Search(props) {
     setFilteredListing([]);
     setInputWord("");
   };
-  const clearListingShow = (listingId) => {
-    hashHistory.push(`/recipes/${listingId}`);
+  const clearListingShow = (eventId) => {
+    hashHistory.push(`/events/${eventId}`);
     clearField();
   };
   
@@ -40,23 +40,15 @@ function Search(props) {
       <div className="searchInputs">
         <input
           type="text"
-          placeholder="SEARCH ENTIRE STORE HERE"
+          placeholder="Search for events here"
           onChange={handleChange}
           value={inputWord}
         />
         <div className="icons">
           {filteredListing.length === 0 ? (
-            <div className="search-icon-div">
-              <i className="fas fa-search" id="search-icon"></i>
-            </div>
+            <i className="fas fa-search" id="search-icon"></i>
           ) : (
-            <div className="clear-icon-div">
-              <i
-                className="fas fa-times"
-                id="clearBtn"
-                onClick={clearField}
-              ></i>
-            </div>
+            <i className="fas fa-times" id="clearBtn" onClick={clearField}></i>
           )}
         </div>
       </div>
@@ -66,8 +58,8 @@ function Search(props) {
             return (
               <div
                 className="dataItem"
-                onClick={() => clearListingShow(listing._id)}
-                key={listing._id}
+                onClick={() => clearListingShow(listing.id)}
+                key={listing.id}
               >
                 <p>{listing.title}</p>
               </div>
@@ -78,4 +70,5 @@ function Search(props) {
     </div>
   );
 }
-export default Search;
+
+export default withRouter(Search);

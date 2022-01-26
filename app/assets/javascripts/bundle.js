@@ -2665,7 +2665,7 @@ function Search(props) {
     props.fetchEvents();
   }, []);
   if (!props.events) return null;
-  var listings = props.listings;
+  var events = props.events;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -2680,7 +2680,7 @@ function Search(props) {
   var handleChange = function handleChange(event) {
     var wordEntered = event.target.value;
     setInputWord(wordEntered);
-    var filteredArray = listings.filter(function (listing) {
+    var filteredArray = events.filter(function (listing) {
       return listing.title.toLowerCase().includes(wordEntered.toLowerCase());
     });
 
@@ -2696,8 +2696,8 @@ function Search(props) {
     setInputWord("");
   };
 
-  var clearListingShow = function clearListingShow(listingId) {
-    react_router__WEBPACK_IMPORTED_MODULE_1__.hashHistory.push("/recipes/".concat(listingId));
+  var clearListingShow = function clearListingShow(eventId) {
+    react_router__WEBPACK_IMPORTED_MODULE_1__.hashHistory.push("/events/".concat(eventId));
     clearField();
   };
 
@@ -2707,36 +2707,32 @@ function Search(props) {
     className: "searchInputs"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    placeholder: "SEARCH ENTIRE STORE HERE",
+    placeholder: "Search for events here",
     onChange: handleChange,
     value: inputWord
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "icons"
-  }, filteredListing.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "search-icon-div"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+  }, filteredListing.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
     className: "fas fa-search",
     id: "search-icon"
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "clear-icon-div"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
     className: "fas fa-times",
     id: "clearBtn",
     onClick: clearField
-  })))), filteredListing.length !== 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }))), filteredListing.length !== 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "listingResult"
   }, filteredListing.slice(0, 5).map(function (listing) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "dataItem",
       onClick: function onClick() {
-        return clearListingShow(listing._id);
+        return clearListingShow(listing.id);
       },
-      key: listing._id
+      key: listing.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, listing.title));
   })));
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router__WEBPACK_IMPORTED_MODULE_1__.withRouter)(Search));
 
 /***/ }),
 
