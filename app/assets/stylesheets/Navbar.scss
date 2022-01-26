@@ -1,7 +1,7 @@
 .logoutbtn{
     background-color: grey;
     position: relative;
-    border: 1px solid gray;
+    border: 1px solid black;
     width:8vw;
     height: 4vh;
     display: flex;
@@ -10,5 +10,37 @@
     top: 1vh;
     position: absolute;
     right: 100px;
+    cursor: pointer;
+}
+
+.profile{
+    background-color: grey;
+    position: relative;
+    border: 1px solid black;
+    width:8vw;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1vh;
+    position: absolute;
+    right: 100px;
+    top: 45px;
+    cursor: pointer;
+}
+
+.new-event{
+    background-color: grey;
+    position: relative;
+    border: 1px solid black;
+    width:8vw;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1vh;
+    position: absolute;
+    right: 100px;
+    top: 80px;
     cursor: pointer;
 }

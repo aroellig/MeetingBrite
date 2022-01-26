@@ -27,8 +27,10 @@ class NavBar extends React.Component {
 
       return (
         <div className="Links">
-            <Link to="/events/new" className="all-recipes">Create Event</Link>
-            <Link to="/profile">profile</Link>
+            <Link to="/events/new" className="new-event">Create Event</Link>
+            <br/>
+            <Link to="/profile" className="profile">profile</Link>
+            <br/>
             <div onClick={this.logoutUser} className="logoutbtn">
            <p className="logout-p">Logout</p>
           </div>
