@@ -1057,6 +1057,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           deleteEvent = _this$props.deleteEvent,
           reviews = _this$props.reviews,
           rsvps = _this$props.rsvps;
+      var readableDate = new Date(event.date).toDateString();
       var total_score = 0;
 
       for (var i = 0; i < reviews.length; i++) {
@@ -1105,8 +1106,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }
       }
 
-      debugger;
-
       if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
@@ -1118,7 +1117,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1149,7 +1148,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1178,7 +1177,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1209,7 +1208,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1238,7 +1237,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date and Time: ", event.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        }, "Date and Time: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,

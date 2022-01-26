@@ -16,6 +16,7 @@ class EventShow extends React.Component {
     render(){
         if (!this.props.event) return null
         const { event, eventId, currentUser, deleteEvent, reviews, rsvps } = this.props;
+        let readableDate = new Date(event.date).toDateString();
         let total_score = 0;
         for (let i = 0; i < reviews.length; i++) {
           let review = reviews[i];
@@ -56,14 +57,15 @@ class EventShow extends React.Component {
             reviewed = true
           }
         }
-        debugger
+
+
         if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
         return(
             <div className="event-info">
             <h1 className="show-title">{event.title}</h1>
             <h2 className="show-description">About: {event.description}</h2>
             <h3 className="show-location">Location: {event.location}</h3>
-            <h4 className="show-date">Date and Time: {event.date}</h4>
+            <h4 className="show-date">Date and Time: {readableDate}</h4>
             {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
             <div className = "show-photo">
                 <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
@@ -85,7 +87,7 @@ class EventShow extends React.Component {
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
-                <h4 className="show-date">Date and Time: {event.date}</h4>
+                <h4 className="show-date">Date and Time: {readableDate}</h4>
                 {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
@@ -106,7 +108,7 @@ class EventShow extends React.Component {
                     <h1 className="show-title">{event.title}</h1>
                     <h2 className="show-description">About: {event.description}</h2>
                     <h3 className="show-location">Location: {event.location}</h3>
-                    <h4 className="show-date">Date and Time: {event.date}</h4>
+                    <h4 className="show-date">Date and Time: {readableDate}</h4>
                     {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
                     <div className = "show-photo">
                         <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
@@ -130,7 +132,7 @@ class EventShow extends React.Component {
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
-                <h4 className="show-date">Date and Time: {event.date}</h4>
+                <h4 className="show-date">Date and Time: {readableDate}</h4>
                 {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
@@ -152,7 +154,7 @@ class EventShow extends React.Component {
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
-                <h4 className="show-date">Date and Time: {event.date}</h4>
+                <h4 className="show-date">Date and Time: {readableDate}</h4>
                 {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
