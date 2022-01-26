@@ -42,7 +42,7 @@ class NavBar extends React.Component {
     return (
       <div className="navbar-top">
         <div className="icon-app-name">
-          <div className="homelink-global"><Link to="/events" className="link-global-nav"><p className="text-global">MeetingBrite</p></Link></div>
+          {/* <div className="homelink-global"><Link to="/events" className="link-global-nav"><p className="text-global">MeetingBrite</p></Link></div> */}
         </div>
         <div>{this.getLinks()}</div>
         <SearchContainer />
