@@ -5,6 +5,7 @@ import CreateReviewFormContainer from '../reviews/review_form_container';
 import CreateRsvpFormContainer from '../rsvp/create_rsvp_container';
 import ReviewIndexContainer from '../reviews/review_index_container'
 import RSVPIndexContainer from '../rsvp/rsvp_index_container';
+import NavbarContainer from '../nav/navbar_container'
 
 
 class EventShow extends React.Component {
@@ -62,6 +63,7 @@ class EventShow extends React.Component {
         if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
         return(
             <div className="event-info">
+            <NavbarContainer/>
             <h1 className="show-title">{event.title}</h1>
             <h2 className="show-description">About: {event.description}</h2>
             <h3 className="show-location">Location: {event.location}</h3>
@@ -83,7 +85,9 @@ class EventShow extends React.Component {
         )
         } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === true) {
             return(
+               
                 <div className="event-info">
+                    <NavbarContainer/> 
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
@@ -105,6 +109,7 @@ class EventShow extends React.Component {
         } else if ((parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false)) {
                 return(
                     <div className="event-info">
+                        <NavbarContainer/>
                     <h1 className="show-title">{event.title}</h1>
                     <h2 className="show-description">About: {event.description}</h2>
                     <h3 className="show-location">Location: {event.location}</h3>
@@ -129,6 +134,7 @@ class EventShow extends React.Component {
         } else if(((parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true))) {
             return(
                 <div className="event-info">
+                    <NavbarContainer/>
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
@@ -151,6 +157,7 @@ class EventShow extends React.Component {
         } else {
             return(
                 <div className="event-info">
+                    <NavbarContainer/>
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>

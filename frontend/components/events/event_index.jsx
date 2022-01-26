@@ -2,7 +2,8 @@ import React from 'react';
 import EventIndexItem from './event_index_item';
 import { Link } from 'react-router-dom';
 import CreateReviewFormContainer from '../reviews/review_form_container';
-import SearchContainer from '../search/search_container'
+import SearchContainer from '../search/search_container';
+import NavbarContainer from '../nav/navbar_container'
 
 
 class EventIndex extends React.Component{
@@ -13,7 +14,9 @@ class EventIndex extends React.Component{
         const { events, deleteEvent, current_user } = this.props;
        
         return (
+           
             <div className="events-list-class">
+                 <NavbarContainer/>
                 <div className="title-of-all-events">
                 <h1>Events</h1>
            

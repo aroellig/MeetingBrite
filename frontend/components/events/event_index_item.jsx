@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavbarContainer from '../nav/navbar_container'
 
 
 const EventIndexItem = ({ event, deleteEvent, current_user }) => {
         return (
+            
         <div className="event-index-items">
         <li> 
             <div className="event-index-item">

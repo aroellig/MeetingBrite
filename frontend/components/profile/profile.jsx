@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import EventIndexContainer from '../events/event_index_container';
 import RSVPIndexContainer from '../rsvp/rsvp_index_container'
+import NavbarContainer from '../nav/navbar_container'
 
 class Profile extends React.Component{
     componentDidMount(){
@@ -35,6 +36,7 @@ class Profile extends React.Component{
 
         return (
             <div className="profile-outer">
+              <NavbarContainer />
               <div className="profile-username">
                 <p>Welcome!!</p>
               </div>
