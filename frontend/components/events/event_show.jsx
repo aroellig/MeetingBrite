@@ -63,15 +63,15 @@ class EventShow extends React.Component {
         if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
         return(
             <div className="event-info">
-            <NavbarContainer/>
-            <h1 className="show-title">{event.title}</h1>
-            <h2 className="show-description">About: {event.description}</h2>
-            <h3 className="show-location">Location: {event.location}</h3>
-            <h4 className="show-date">Date: {readableDate}</h4>
-            {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
+            {/* <NavbarContainer/> */}
             <div className = "show-photo">
                 <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
             </div>
+            <br/>
+            <h1 className="show-title">{event.title}</h1>
+                <h2 className="show-description">About: {event.description}</h2>
+                <h3 className="show-location">Location: {event.location}</h3>
+                <h4 className="show-date">Date: {readableDate}</h4>
             <br/>
             <h6 className="average-score"> Average Rating: {avg_score}</h6>
             <h7 className="show-event">
@@ -87,15 +87,15 @@ class EventShow extends React.Component {
             return(
                
                 <div className="event-info">
-                    <NavbarContainer/> 
+                    {/* <NavbarContainer/>  */}
+                <div className = "show-photo">
+                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                </div>
+                <br/>
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
                 <h4 className="show-date">Date: {readableDate}</h4>
-                {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
-                <div className = "show-photo">
-                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
-                </div>
                 <br/>
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
@@ -109,15 +109,14 @@ class EventShow extends React.Component {
         } else if ((parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false)) {
                 return(
                     <div className="event-info">
-                        <NavbarContainer/>
-                    <h1 className="show-title">{event.title}</h1>
-                    <h2 className="show-description">About: {event.description}</h2>
-                    <h3 className="show-location">Location: {event.location}</h3>
-                    <h4 className="show-date">Date: {readableDate}</h4>
-                    {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
+                        {/* <NavbarContainer/> */}
                     <div className = "show-photo">
                         <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                     </div>
+                    <h1 className="show-title">{event.title}</h1>
+                <h2 className="show-description">About: {event.description}</h2>
+                <h3 className="show-location">Location: {event.location}</h3>
+                <h4 className="show-date">Date: {readableDate}</h4>
                     <br/>
                     <h6 className="average-score"> Average Rating: {avg_score}</h6>
                     <h7 className="show-event">
@@ -134,15 +133,14 @@ class EventShow extends React.Component {
         } else if(((parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true))) {
             return(
                 <div className="event-info">
-                    <NavbarContainer/>
+                    {/* <NavbarContainer/> */}
+                <div className = "show-photo">
+                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                </div>
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
                 <h4 className="show-date">Date: {readableDate}</h4>
-                {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
-                <div className = "show-photo">
-                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
-                </div>
                 <br/>
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
@@ -157,15 +155,14 @@ class EventShow extends React.Component {
         } else {
             return(
                 <div className="event-info">
-                    <NavbarContainer/>
+                    {/* <NavbarContainer/> */}
+                <div className = "show-photo">
+                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+                </div>
                 <h1 className="show-title">{event.title}</h1>
                 <h2 className="show-description">About: {event.description}</h2>
                 <h3 className="show-location">Location: {event.location}</h3>
                 <h4 className="show-date">Date: {readableDate}</h4>
-                {/* <h5 className="show-capacity">Capacity: {event.capacity}</h5> */}
-                <div className = "show-photo">
-                    <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
-                </div>
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <br/>
                 <Link to={`/events/${event.id}/edit`} className="event-edit">Edit Event</Link>

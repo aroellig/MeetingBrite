@@ -4,7 +4,6 @@
     line-height: 23px;
     padding: 12px;
     cursor: pointer;
-    position: absolute;
 }
 
 .Rsvp-event{
@@ -12,17 +11,51 @@
     cursor: pointer;
     position: relative;
     top: 100px;
-    left: -5px;
     font-size: large;
     color: whitesmoke;
     background-color: #0D8547;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .show-title{
     color: #1E0A3C;
-    font-weight: 600
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.show-photo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-description{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-location{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.average-score{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .event-edit {
     padding: 30px;
     cursor: pointer;
@@ -31,11 +64,16 @@
     color: #1E0A3C;
     font-weight: 600;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .delete-event-button{
     display: inline-block;
-    background-color: #d1410c;;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #0D8547;
     height: 44px;
     border: 2px solid #a9a8b3;
     border-radius: 4px;
@@ -43,11 +81,23 @@
     position: relative;
     top: 30px;
     font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
 
  .reviews{
      position: relative;
      top: 75px;
      height: 100px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .show-event{
+    display: flex;
+    align-items: center;
+    justify-content: center;
  }
 

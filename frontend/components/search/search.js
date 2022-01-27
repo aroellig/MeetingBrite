@@ -44,13 +44,6 @@ function Search(props) {
           onChange={handleChange}
           value={inputWord}
         />
-        <div className="icons">
-          {filteredListing.length === 0 ? (
-            <i className="fas fa-search" id="search-icon"></i>
-          ) : (
-            <i className="fas fa-times" id="clearBtn" onClick={clearField}></i>
-          )}
-        </div>
       </div>
       {filteredListing.length !== 0 && (
         <div className="listingResult">

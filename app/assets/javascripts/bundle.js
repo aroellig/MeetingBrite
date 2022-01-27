@@ -389,7 +389,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "top"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("header", {
     className: "header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "title"
@@ -401,10 +403,11 @@ var App = function App() {
     href: "https://www.linkedin.com/in/andrew-roellig-a4a0811b7/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
     className: "Linkedin"
-  }, "Linkedin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Link, {
-    to: "/events",
-    className: "homepagea"
-  }, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__.AuthRoute, {
+  }, "Linkedin")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "home"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_17__.Link, {
+    to: "/events"
+  }, "Home")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__.AuthRoute, {
     exact: true,
     path: "/login",
     component: _session_login_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -876,9 +879,9 @@ var EventIndex = /*#__PURE__*/function (_React$Component) {
           events = _this$props.events,
           deleteEvent = _this$props.deleteEvent,
           current_user = _this$props.current_user;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "events-list-class"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "title-of-all-events"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Events")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
         className: "all-events"
@@ -889,7 +892,7 @@ var EventIndex = /*#__PURE__*/function (_React$Component) {
           current_user: current_user,
           key: event.id
         });
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)));
     }
   }]);
 
@@ -1119,7 +1122,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
           className: "show-title"
         }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
           className: "show-description"
@@ -1127,14 +1137,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "show-photo"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          src: event.photoURL,
-          width: "925",
-          height: "300",
-          alt: "coverphoto"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "average-score"
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
@@ -1150,7 +1153,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === true) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
           className: "show-title"
         }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
           className: "show-description"
@@ -1158,14 +1168,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "show-photo"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          src: event.photoURL,
-          width: "925",
-          height: "300",
-          alt: "coverphoto"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "average-score"
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
@@ -1179,7 +1182,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
           className: "show-title"
         }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
           className: "show-description"
@@ -1187,14 +1197,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "show-photo"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          src: event.photoURL,
-          width: "925",
-          height: "300",
-          alt: "coverphoto"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "average-score"
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
@@ -1210,7 +1213,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
           className: "show-title"
         }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
           className: "show-description"
@@ -1218,14 +1228,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "show-photo"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          src: event.photoURL,
-          width: "925",
-          height: "300",
-          alt: "coverphoto"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "average-score"
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
@@ -1239,7 +1242,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
           className: "show-title"
         }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
           className: "show-description"
@@ -1247,14 +1257,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-location"
         }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
           className: "show-date"
-        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "show-photo"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          src: event.photoURL,
-          width: "925",
-          height: "300",
-          alt: "coverphoto"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
           className: "average-score"
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
           to: "/events/".concat(event.id, "/edit"),
@@ -2707,16 +2710,7 @@ function Search(props) {
     placeholder: "Search for events here",
     onChange: handleChange,
     value: inputWord
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "icons"
-  }, filteredListing.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-    className: "fas fa-search",
-    id: "search-icon"
-  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
-    className: "fas fa-times",
-    id: "clearBtn",
-    onClick: clearField
-  }))), filteredListing.length !== 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  })), filteredListing.length !== 0 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "listingResult"
   }, filteredListing.slice(0, 5).map(function (listing) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

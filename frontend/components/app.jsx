@@ -29,15 +29,17 @@ import NavbarContainer from './nav/navbar_container'
 
 const App = () => (
   <div>
+    <div className="top">
     <header className="header">
       <div className="title">
         <h1>Meeting Brite</h1>
         </div>
       <a href='https://github.com/aroellig'><button className="Github">Github</button></a>
     <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/'><button className="Linkedin">Linkedin</button></a>
-   <Link to="/events" className="homepagea">Home</Link>
+    <br/>
+    <button className="home"> <Link to="/events">Home</Link></button>
     </header>
-    
+    </div>
    
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />

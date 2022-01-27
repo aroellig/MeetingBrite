@@ -1,83 +1,79 @@
-// .searchInputs{
-//     display: flex;
-// }
+.searchInputs{
+    display: flex;
+}
 
-// .search input{
-//     background-color: black;
-//     font-size: 0.7vw;
-//     padding: 0.51vw;
-//     height: 1vw;
-//     color:whitesmoke;
-//     width: 15vw;
-//     position: relative;
-//     border: 1px solid gray;
-// }
+.search input{
+    background-color: white;
+    font-size: 0.7vw;
+    padding: 0.51vw;
+    height: 1vw;
+    color:grey;
+    width: 15vw;
+    position: relative;
+    border: 1px solid gray;
+}
 
-// .icons{
-//     height: 1.99vw;
-//     width: 2vw;
-//     background-color: black;
-//     border: 1px solid gray;
 
-// }
+.listingResult{
+    margin-top: 10px;
+    width: 15vw;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* left: 40vw; */
+    position: absolute;
+    z-index: 1;
+    top: 2.2vw;
+    // left: 1vw;
+    font-size: 1vw;
+}
 
-// .listingResult{
-//     margin-top: 10px;
-//     width: 15vw;
-//     background-color: white;
-//     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-//     /* left: 40vw; */
-//     position: absolute;
-//     z-index: 1;
-//     top: 2.2vw;
-//     left: 1vw;
-//     font-size: 1vw;
-// }
+.listingResult .dataItem{
+    width: 100%;
+    height: 2vw;
+    display: flex;
+    align-items: center;
+    color: black;
+    border: 1px solid gray;
 
-// .listingResult .dataItem{
-//     width: 100%;
-//     height: 2vw;
-//     display: flex;
-//     align-items: center;
-//     color: black;
-// }
+}
 
-// .dataItem p {
-//     margin-left: 10px;
-// }
+.dataItem p {
+    margin-left: 10px;
+}
 
-// .dataItem:hover{
-//     background-color: lightgray;
-// }
+.dataItem:hover{
+    background-color: lightgray;
+}
 
-// #clearBtn, #search-icon{
-//     cursor: pointer;
-//     position: relative;
-//     font-size: 1vw;
-//     top: 0.5vw;
-//     color:whitesmoke;
+#clearBtn, #search-icon{
+    cursor: pointer;
+    position: relative;
+    font-size: 1vw;
+    top: 0.5vw;
+    color:whitesmoke;
     
-// }
+}
 
-// .search-icon-div, .clear-icon-div{
-//     display: flex;
-//     justify-content: center;
+.search-icon-div, .clear-icon-div{
+    display: flex;
+    justify-content: center;
 
-// }
+}
 
 
-// .dataItem{
-//     text-decoration: none;
-// }
+.dataItem{
+    text-decoration: none;
+}
 
-// .search{
-//     position: relative;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 3vw;
-//     width: 20vw;
-//     right: 28vw;
-//     top: 4.1vw;
+.search{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: -1000px;
+    width: -50px;
+    top: -50px;
+    // right: 28vw;
+    // top: 4.1vw;
 
-// }
+}

@@ -14,9 +14,9 @@ class EventIndex extends React.Component{
         const { events, deleteEvent, current_user } = this.props;
        
         return (
-           
+            <div>
+                <NavbarContainer/>
             <div className="events-list-class">
-                 <NavbarContainer/>
                 <div className="title-of-all-events">
                 <h1>Events</h1>
            
@@ -28,6 +28,7 @@ class EventIndex extends React.Component{
                 </ul> 
                 <br/>
                 {/* <CreateReviewFormContainer eventId={event.id} /> */}
+            </div>
             </div>
         )
     }
