@@ -2068,20 +2068,31 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
           user_id = _this$props.user_id,
           deleteReview = _this$props.deleteReview,
           currentUser = _this$props.currentUser;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "reviews-list-class"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "title-of-all-reviews"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Reviews")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, reviews.map(function (review) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          review: review,
-          user_id: user_id,
-          event_id: event_id,
-          deleteReview: deleteReview,
-          currentUser: currentUser,
-          key: review.id
-        });
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+      var eventReviews = [];
+      reviews.forEach(function (review) {
+        eventReviews.push(review);
+      });
+
+      if (eventReviews.length > 0) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "reviews-list-class"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "title-of-all-reviews"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Reviews")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, reviews.map(function (review) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_review_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            review: review,
+            user_id: user_id,
+            event_id: event_id,
+            deleteReview: deleteReview,
+            currentUser: currentUser,
+            key: review.id
+          });
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+          className: "no-reviews"
+        }, "No users have reviewed this event yet");
+      }
     }
   }]);
 

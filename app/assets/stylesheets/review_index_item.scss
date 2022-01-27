@@ -1,7 +1,16 @@
-.title-of-all-reviews{
-    margin-top: 250px;
-    height: 23px;
-}
+// .reviews-list-class{
+//          position: relative;
+//      top: 100px;
+//      height: 100px;
+//      display: flex;
+//      align-items: center;
+//      justify-content: center;
+// }
+
+// .title-of-all-reviews{
+//     margin-top: 250px;
+//     height: 23px;
+// }
 
 .review-index-item{
     display: block;
@@ -11,6 +20,10 @@
     width: 100%;
 }
 
+.no-reviews{
+    position: relative;
+    top: -250px;
+}
 .review-title{
     display: block;
     align-self: center;
@@ -53,7 +66,6 @@
     letter-spacing: 1px;
     line-height: 1.5;
     background-color: cadetblue;
-    width: 15%;
     color: whitesmoke;
     font-size: xx-large;
     font-weight: 800;
@@ -61,4 +73,5 @@
     border-width: 5px;
     border-radius: 5px;
     border-color: black;
+    cursor: pointer;
 }

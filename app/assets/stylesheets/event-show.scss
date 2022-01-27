@@ -14,9 +14,9 @@
     font-size: large;
     color: whitesmoke;
     background-color: #0D8547;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
 }
 
 .show-title{
@@ -86,18 +86,19 @@
     justify-content: center;
  }
 
- .reviews{
-     position: relative;
-     top: 75px;
+.reviews{
+             position: relative;
+     top: -250px;
      height: 100px;
      display: flex;
      align-items: center;
      justify-content: center;
- }
+}
 
- .show-event{
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
+//  .show-event{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//  }
+
 

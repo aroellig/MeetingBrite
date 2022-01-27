@@ -2,7 +2,6 @@
     input{
         position: relative;
         margin-top: 32px;
-        left: 500px;
         padding: 36px 24px 12px;
         border: 2px solid #a9a8b3;
         border-radius: 4px;
@@ -15,7 +14,8 @@
 
 .rsvp-button{
     position: relative;
-    left: 650px;
+    left: 550px;
+    top: -150px;
     display: inline-block;
     background-color: whitesmoke;
     height: 100px;
@@ -24,5 +24,5 @@
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-    margin-top: 32px;
+    
 }

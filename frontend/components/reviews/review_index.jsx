@@ -11,7 +11,11 @@ class ReviewIndex extends React.Component{
     }
     render(){
         const { reviews, event_id, user_id, deleteReview, currentUser } = this.props
-        
+        let eventReviews = [];
+        reviews.forEach((review) => {
+            eventReviews.push(review)
+        })
+        if(eventReviews.length > 0){
         return (
             <div className="reviews-list-class">
                 <div className="title-of-all-reviews">
@@ -25,6 +29,11 @@ class ReviewIndex extends React.Component{
                 <br/>
             </div>
         )
+    } else {
+        return (
+            <p className="no-reviews">No users have reviewed this event yet</p>
+        )
+    }
     }
 }
 

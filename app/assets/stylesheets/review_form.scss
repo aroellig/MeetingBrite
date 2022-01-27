@@ -1,7 +1,8 @@
 .Main-Review-Form{
     display: flex;
     position: relative;
-    top: 200px;
+    top: -250px;
+    left: 1150px;
 }
 
 .review-header{
@@ -34,11 +35,20 @@
     textarea{
         width: 600px;
         height: 120px;
-        border: 3px solid #cccccc;
         padding: 5px;
         font-family: Tahoma;
         background-position: bottom right;
         background-repeat: no-repeat;
+        display: block;
+        align-self: center;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        font-weight: 800;
+        border-style: groove; 
+        border-width: 10px;
+        border-radius: 5px;
+        border-color: black;
     }
 
     input{
@@ -47,6 +57,16 @@
         box-sizing: border-box;
         font-family: Helvetica; 
         font-weight: 400;
+        display: block;
+        align-self: center;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        font-weight: 800;
+        border-style: groove; 
+        border-width: 10px;
+        border-radius: 5px;
+        border-color: black;
     }
 }
 
@@ -59,5 +79,15 @@
     font-size: large;
     color: whitesmoke;
     background-color: #0D8547;
+    display: block;
+    align-self: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 800;
+    border-style: groove; 
+    border-width: 10px;
+    border-radius: 5px;
+    border-color: black;
 }
 
