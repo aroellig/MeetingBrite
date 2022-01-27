@@ -9,7 +9,6 @@ class ReviewForm extends React.Component{
     }
 
     handleSubmit(e){
-        debugger
         e.preventDefault()
         const eventId = this.props.event.id
         const review = Object.assign({}, this.state, {

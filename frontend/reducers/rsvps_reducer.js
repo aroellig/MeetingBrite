@@ -12,7 +12,6 @@ const rsvpsReducer = (state = {}, action) => {
         //      newState[action.event.id] = action.event;
         //      return newState
          case RECEIVE_RSVP:
-             debugger
              newState[action.rsvp] = action.rsvp;
              return newState 
         // case RECEIVE_CURRENT_USER:

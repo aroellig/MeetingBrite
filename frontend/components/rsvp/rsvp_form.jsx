@@ -37,7 +37,6 @@ class RsvpForm extends React.Component{
     }
     
     renderErrors() {
-        debugger
         return (
           <ul>
             {this.props.errors.map((error, i) => (
@@ -90,7 +89,7 @@ class RsvpForm extends React.Component{
         </div>
         ) : (
           <div>
-          <p>you have already rsvp'd to this event</p>
+          <p className="already-rsvp">you have already rsvp'd to this event</p>
                 </div>
         )}  
         </div>

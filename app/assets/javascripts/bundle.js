@@ -137,7 +137,6 @@ var deleteEvent = function deleteEvent(eventId) {
 };
 var createReview = function createReview(review) {
   return function (dispatch) {
-    debugger;
     return _util_event_api_util__WEBPACK_IMPORTED_MODULE_0__.createReview(review).then(function (review) {
       return dispatch(receiveReview(review));
     });
@@ -723,7 +722,6 @@ var EventForm = /*#__PURE__*/function (_React$Component) {
       }
 
       console.log(this.props);
-      debugger;
       this.props.submitEvent(formData).then(function () {
         return _this2.props.history.push("/events");
       });
@@ -1096,7 +1094,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
 
       for (var _i = 0; _i < userRsvps.length; _i++) {
         var _rsvp = userRsvps[_i];
-        debugger;
 
         if (event.id === _rsvp.event_id) {
           responded = true;
@@ -1142,9 +1139,11 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          eventId: event.id
+          eventId: event.id,
+          className: "RSVP-form"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          eventId: event.id
+          eventId: event.id,
+          className: "Review-form"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1173,8 +1172,11 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          rsvpId: rsvp.id
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
+          rsvpId: rsvp.id,
+          className: "RSVP-form"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+          className: "already-reviewed"
+        }, " you have already reviewed this event")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
@@ -1202,9 +1204,11 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          rsvpId: rsvp.id
+          rsvpId: rsvp.id,
+          className: "RSVP-form"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          eventId: event.id
+          eventId: event.id,
+          className: "Review-form"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -1233,9 +1237,12 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          eventId: event.id
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, " you have already reviewed this event")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
-          className: "reviews"
+          eventId: event.id,
+          className: "RSVP-form"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+          className: "already-reviewed"
+        }, " you have already reviewed this event")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
+          className: "reviews-a"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
         })));
@@ -1271,7 +1278,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           to: '/'
         }, " Delete Event ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
           className: "reviews"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "you have already reviewed this event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
         })));
       }
@@ -1904,7 +1911,6 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      debugger;
       e.preventDefault();
       var eventId = this.props.event.id;
       var review = Object.assign({}, this.state, {
@@ -1977,7 +1983,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     review: {
       review: '',
@@ -2382,7 +2387,6 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderErrors",
     value: function renderErrors() {
-      debugger;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, this.props.errors.map(function (error, i) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
           key: "error ".concat(i)
@@ -2423,7 +2427,9 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
         type: "submit",
         value: this.props.formType,
         className: "rsvp-button"
-      }, this.props.formType))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "you have already rsvp'd to this event")));
+      }, this.props.formType))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        className: "already-rsvp"
+      }, "you have already rsvp'd to this event")));
     }
   }]);
 
@@ -3356,7 +3362,6 @@ var rsvpsReducer = function rsvpsReducer() {
     //      return newState
 
     case _actions_rsvp_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_RSVP:
-      debugger;
       newState[action.rsvp] = action.rsvp;
       return newState;
     // case RECEIVE_CURRENT_USER:
@@ -3448,7 +3453,6 @@ var sessionReducer = function sessionReducer() {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.LOGOUT_CURRENT_USER:
       return _nullUser;
     // case RECEIVE_RSVP:
-    //   debugger
     //   newState[action.rsvp.user.id] = action.rsvp.user;
     //   return newState 
 

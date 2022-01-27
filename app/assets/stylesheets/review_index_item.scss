@@ -7,15 +7,25 @@
 //      justify-content: center;
 // }
 
-// .title-of-all-reviews{
-//     margin-top: 250px;
-//     height: 23px;
-// }
+.title-of-all-reviews{
+    position: relative;
+    top: 275px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-index-items{
+    position: relative;
+    top: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .review-index-item{
     display: block;
     align-self: center;
-    margin-top: 75px;
     height: 100%;
     width: 100%;
 }

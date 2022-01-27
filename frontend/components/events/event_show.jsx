@@ -39,7 +39,6 @@ class EventShow extends React.Component {
         let responded = false
         for(let i = 0; i < userRsvps.length; i++){
           let rsvp = userRsvps[i];
-          debugger
           if(event.id === rsvp.event_id){
             responded = true
           }
@@ -75,8 +74,8 @@ class EventShow extends React.Component {
             <br/>
             <h6 className="average-score"> Average Rating: {avg_score}</h6>
             <h7 className="show-event">
-                <CreateRsvpFormContainer eventId={event.id} />
-                <CreateReviewFormContainer eventId={event.id} />
+                <CreateRsvpFormContainer eventId={event.id} className="RSVP-form"/>
+                <CreateReviewFormContainer eventId={event.id} className="Review-form"/>
             </h7>
             <h8 className= "reviews">
             <ReviewIndexContainer eventId={event.id} />
@@ -99,7 +98,8 @@ class EventShow extends React.Component {
                 <br/>
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
-                <RSVPIndexContainer rsvpId={rsvp.id}/>
+                <RSVPIndexContainer rsvpId={rsvp.id} className="RSVP-form"/>
+                <p className="already-reviewed"> you have already reviewed this event</p>
                 </h7>
                 <h8 className= "reviews">
                 <ReviewIndexContainer eventId={event.id} />
@@ -120,8 +120,8 @@ class EventShow extends React.Component {
                     <br/>
                     <h6 className="average-score"> Average Rating: {avg_score}</h6>
                     <h7 className="show-event">
-                    <RSVPIndexContainer rsvpId={rsvp.id}/>
-                    <CreateReviewFormContainer eventId={event.id} />
+                    <RSVPIndexContainer rsvpId={rsvp.id} className="RSVP-form"/>
+                    <CreateReviewFormContainer eventId={event.id} className="Review-form"/>
                     </h7>
                     <h8 className= "reviews">
                     <ReviewIndexContainer eventId={event.id} />
@@ -144,10 +144,10 @@ class EventShow extends React.Component {
                 <br/>
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
-                    <CreateRsvpFormContainer eventId={event.id} />
-                    <p> you have already reviewed this event</p>
+                    <CreateRsvpFormContainer eventId={event.id} className="RSVP-form"/>
+                    <p className="already-reviewed"> you have already reviewed this event</p>
                 </h7>
-                <h8 className= "reviews">
+                <h8 className= "reviews-a">
                 <ReviewIndexContainer eventId={event.id} />
                 </h8>
                 </div>
@@ -171,7 +171,6 @@ class EventShow extends React.Component {
                    <Link to={'/'}> Delete Event </Link> 
                     </button>
                 <h5 className= "reviews">
-                    <p>you have already reviewed this event</p>
                 <ReviewIndexContainer eventId={event.id} />
                 </h5>
             </div>
