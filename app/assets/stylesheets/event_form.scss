@@ -1,6 +1,6 @@
 .Main-Event-Form{
     display: flex;
-
+    background-color: grey;
     input{
         position: relative;
         margin-top: 32px;
@@ -12,6 +12,10 @@
         font-size: medium;
         line-height: 2.5rem;
         letter-spacing: 1px;
+        border-style: groove; 
+        border-width: 10px;
+        border-radius: 5px;
+        border-color: black;
     }
 }
 
@@ -22,14 +26,14 @@
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.5;
-    color: #1e0a3c;
+    color: white;
 }
 
 .Event-Form{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: white;
+    background-color: grey;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
@@ -53,4 +57,15 @@
     cursor: pointer;
     position: relative;
     margin-top: 32px;
+}
+
+.photo-title{
+    position: relative;
+    left: 500px;
+    font-size: xx-large;
+}
+
+.upload-photo{
+    position: relative;
+    left: 400px;
 }

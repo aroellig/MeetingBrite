@@ -13,13 +13,16 @@
     top: 760px;
 }
 
+
+
 .events-list{
     line-height: 23px;
     min-height: 23px;
     padding: 12px;
     cursor: pointer;
     position: absolute;
-    top: 10px
+    top: 10px;
+  
 }
 
 .events-list-class{
@@ -32,5 +35,9 @@
     position: relative;
     top: -42px;
     /* bottom: 1vh; */
+}
+
+.all-events{
+    background-color: brown;
 }
 

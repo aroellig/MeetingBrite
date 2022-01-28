@@ -62,7 +62,7 @@ class EventForm extends React.Component{
         return(
             <div className="Main-Event-Form">
                 <div className="header2">
-                <h3>Basic Info</h3>
+                <h3>Event Info</h3>
                 </div>
                 <div className="Event-Form">
                 <form onSubmit={this.handleSubmit}>
@@ -112,7 +112,7 @@ class EventForm extends React.Component{
                     /> */}
                     </label>
                     <br />
-                    <label> Photo Form
+                    <label> 
                         <PhotoForm
                         handlePhoto={this.handleFile}
                         photoURL={this.state.photoURL}

@@ -21,11 +21,13 @@ class EventIndex extends React.Component{
                 <h1>Events</h1>
            
                 </div>
-                <ul className="all-events">
+                <div className="all-events">
+                <ul>
                     {
                         events.map(event => <EventIndexItem event={event} deleteEvent={deleteEvent} current_user={current_user} key={event.id}/>)
                     }
                 </ul> 
+                </div>
                 <br/>
                 {/* <CreateReviewFormContainer eventId={event.id} /> */}
             </div>

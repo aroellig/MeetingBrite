@@ -170,7 +170,7 @@ class EventShow extends React.Component {
                 <button className="delete-event-button" onClick={() => deleteEvent(event.id)}>
                    <Link to={'/'}> Delete Event </Link> 
                     </button>
-                <h5 className= "reviews">
+                <h5 className= "reviews-edit">
                 <ReviewIndexContainer eventId={event.id} />
                 </h5>
             </div>

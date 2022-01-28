@@ -57,16 +57,16 @@
     justify-content: center;
 }
 .event-edit {
-    padding: 30px;
+    left: 550px;
+    top: -120px;
+    display: inline-block;
+    background-color: whitesmoke;
     cursor: pointer;
-    position: absolute;
-    font-size: large;
-    color: #1E0A3C;
-    font-weight: 600;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    background-color: #0D8547;
+    height: 44px;
+    border: 2px solid #a9a8b3;
+    border-radius: 4px;
 }
 
 .delete-event-button{
@@ -79,7 +79,8 @@
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-    top: 30px;
+    left: 550px;
+    top: -100px;
     font-size: large;
     display: flex;
     align-items: center;
@@ -98,6 +99,15 @@
 .reviews-a{
     position: relative;
     top: 10px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reviews-edit{
+    position: relative;
+    top: -200px;
     height: 100px;
     display: flex;
     align-items: center;
