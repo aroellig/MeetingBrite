@@ -62,7 +62,9 @@ class EventShow extends React.Component {
         if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
         return(
             <div className="event-info">
-            {/* <NavbarContainer/> */}
+                <div className="event-show-navbar">
+            <NavbarContainer/>
+            </div>
             <div className = "show-photo">
                 <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
             </div>
@@ -86,7 +88,9 @@ class EventShow extends React.Component {
             return(
                
                 <div className="event-info">
-                    {/* <NavbarContainer/>  */}
+                    <div className="event-show-navbar-with-review">
+                      <NavbarContainer />
+                      </div>
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                 </div>
@@ -109,7 +113,9 @@ class EventShow extends React.Component {
         } else if ((parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false)) {
                 return(
                     <div className="event-info">
-                        {/* <NavbarContainer/> */}
+                        <div className="event-show-navbar">
+                        <NavbarContainer />
+                        </div>
                     <div className = "show-photo">
                         <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                     </div>
@@ -133,7 +139,9 @@ class EventShow extends React.Component {
         } else if(((parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true))) {
             return(
                 <div className="event-info">
-                    {/* <NavbarContainer/> */}
+                    <div className="event-show-navbar-with-review">
+                    <NavbarContainer />
+                    </div>
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                 </div>
@@ -155,7 +163,9 @@ class EventShow extends React.Component {
         } else {
             return(
                 <div className="event-info">
-                    {/* <NavbarContainer/> */}
+                    <div className="event-show-navbar">
+                    <NavbarContainer />
+                    </div>
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                 </div>

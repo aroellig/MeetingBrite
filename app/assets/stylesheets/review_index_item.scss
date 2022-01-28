@@ -31,13 +31,14 @@
 }
 
 .no-reviews{
-        position: relative;
+    position: relative;
      top: -500px;
      left: 700px;
      height: 100px;
      display: flex;
      align-items: center;
      justify-content: center;
+     color: whitesmoke;
 }
 .review-title{
     display: block;
@@ -51,7 +52,7 @@
     border-width: 5px;
     border-radius: 5px;
     border-color: black;
-    background-color: gray;
+    background-color: cadetblue;
     color: whitesmoke;
 }
 
