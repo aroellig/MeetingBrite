@@ -38,7 +38,7 @@ class Profile extends React.Component{
             <div className="profile-outer">
               <NavbarContainer />
               <div className="profile-username">
-                <p>Welcome!!</p>
+                {/* <p>Welcome!!</p> */}
               </div>
               <div>
                 {userEvents.length === 0 ? (

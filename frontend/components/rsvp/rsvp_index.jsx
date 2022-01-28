@@ -15,7 +15,7 @@ class RsvpIndex extends React.Component{
      
             return (
             <div className="rsvp-index-items">
-                 <h1>Your RSVPS</h1>
+                 <h1 className="your-rsvps">Your RSVPS</h1>
                 <div >
                 </div>
                 <ul>

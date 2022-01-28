@@ -1744,7 +1744,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         className: "profile-outer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "profile-username"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Welcome!!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, userEvents.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, userEvents.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "detail-no-event"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "no-details"
@@ -2509,7 +2509,9 @@ var RsvpIndex = /*#__PURE__*/function (_React$Component) {
           rsvpEvents = _this$props.rsvpEvents;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "rsvp-index-items"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, "Your RSVPS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvpEvents.map(function (rsvpEvent) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+        className: "your-rsvps"
+      }, "Your RSVPS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, rsvpEvents.map(function (rsvpEvent) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           rsvpEvent: rsvpEvent,
           user_id: user_id,

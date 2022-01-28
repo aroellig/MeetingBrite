@@ -1,15 +1,24 @@
+.profile-outer{
+    background-color: brown;
+    width: 100%;
+    height: 200vh;
+}
+
 .profile-username{
     color: #39364f;
     font-weight: 600;
     cursor: pointer;
     position: relative;
+  
 }
 
 .p-your-event{
-    color: #39364f;
+    color: white;
+    font-size: x-large;
     font-weight: 600;
     cursor: pointer;
     position: relative;
+
 }
 
 .user-event{
@@ -27,16 +36,19 @@
     border-width: 5px;
     border-color: white;
     border-radius: 5px;
+    background-color: white;
 }
 
 .user-events{
     float: left;
     padding: 50px;
+   
 }
 
 .user-rsvps{
     float: right;
     padding: 50px;
+   
 }
 
 .user-event-title{

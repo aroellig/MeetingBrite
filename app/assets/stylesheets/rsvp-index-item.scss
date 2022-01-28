@@ -15,6 +15,7 @@
     border-width: 5px;
     border-color: white;
     border-radius: 10px;
+    background-color: white;
     // position: relative;
     // left: 1000px;
 }
@@ -40,4 +41,12 @@
     font-size: xx-large;
     color: rgb(65, 61, 61);
     font-weight: 700;
+}
+
+.your-rsvps{
+    color: white;
+    font-size: x-large;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative; 
 }
