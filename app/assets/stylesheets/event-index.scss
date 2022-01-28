@@ -3,7 +3,7 @@
     cursor: pointer;
     position: absolute;
     font-size: 50px;
-    color: rgb(65, 61, 61);
+    color: whitesmoke;
     font-weight: 700;
     position: absolute;
     // top: 50%;
@@ -11,6 +11,12 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     top: 760px;
+}
+
+.index-background{
+    background-color: grey;
+    width: 100%;
+    height: 2000vh;
 }
 
 
@@ -29,6 +35,7 @@
     background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsparetimelansing.com%2Fwp-content%2Fuploads%2F2018%2F03%2FAdobeStock_127994126.jpeg&f=1&nofb=1);
     height: 40vw;
     width: 95vw;
+    left: 45px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 70% 65%;

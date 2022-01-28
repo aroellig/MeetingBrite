@@ -16,6 +16,7 @@ class EventIndex extends React.Component{
         return (
             <div>
                 <NavbarContainer/>
+                <div className="index-background">
             <div className="events-list-class">
                 <div className="title-of-all-events">
                 <h1>Events</h1>
@@ -30,6 +31,7 @@ class EventIndex extends React.Component{
                 </div>
                 <br/>
                 {/* <CreateReviewFormContainer eventId={event.id} /> */}
+            </div>
             </div>
             </div>
         )

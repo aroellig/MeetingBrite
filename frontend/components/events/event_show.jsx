@@ -99,10 +99,10 @@ class EventShow extends React.Component {
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
                 <RSVPIndexContainer rsvpId={rsvp.id} className="RSVP-form"/>
-                <p className="already-reviewed"> you have already reviewed this event</p>
                 </h7>
+                <p className="already-reviewed"> you have already reviewed this event</p>
                 <h8 className= "reviews">
-                <ReviewIndexContainer eventId={event.id} />
+                <ReviewIndexContainer eventId={event.id}  />
                 </h8>
                 </div>
             )
@@ -145,8 +145,8 @@ class EventShow extends React.Component {
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
                     <CreateRsvpFormContainer eventId={event.id} className="RSVP-form"/>
-                    <p className="already-reviewed"> you have already reviewed this event</p>
                 </h7>
+                <p className="already-reviewed"> you have already reviewed this event</p>
                 <h8 className= "reviews-a">
                 <ReviewIndexContainer eventId={event.id} />
                 </h8>

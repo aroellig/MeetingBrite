@@ -65,14 +65,18 @@
 //     left: 1000px;
 // }
 
+.p-no-details{
+    color:whitesmoke;
+}
+
 .link-create-profile{
     display: inline-block;
-    background-color: #d1410c;;
-    height: 44px;
-    padding: 0 30px 1px;
-    border: 2px solid #a9a8b3;
-    border-radius: 4px;
+    background-color: whitesmoke;
     cursor: pointer;
     position: relative;
+    background-color: #0D8547;
+    height: 44px;
+    border: 2px solid #a9a8b3;
+    border-radius: 4px;
     
 }

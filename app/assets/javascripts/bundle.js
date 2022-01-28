@@ -873,6 +873,8 @@ var EventIndex = /*#__PURE__*/function (_React$Component) {
           deleteEvent = _this$props.deleteEvent,
           current_user = _this$props.current_user;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "index-background"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "events-list-class"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "title-of-all-events"
@@ -885,7 +887,7 @@ var EventIndex = /*#__PURE__*/function (_React$Component) {
           current_user: current_user,
           key: event.id
         });
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null)));
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null))));
     }
   }]);
 
@@ -1169,9 +1171,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
           rsvpId: rsvp.id,
           className: "RSVP-form"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
           className: "already-reviewed"
-        }, " you have already reviewed this event")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
+        }, " you have already reviewed this event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
@@ -1234,9 +1236,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_create_rsvp_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           eventId: event.id,
           className: "RSVP-form"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
           className: "already-reviewed"
-        }, " you have already reviewed this event")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
+        }, " you have already reviewed this event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews-a"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
           eventId: event.id
@@ -1781,7 +1783,7 @@ var Profile = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
         to: "/events",
         className: "p-search-event"
-      }, "search for events"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      }, "Search for events"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "user-rsvps"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "your-rsvp"

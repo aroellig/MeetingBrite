@@ -78,7 +78,7 @@ class Profile extends React.Component{
                       </div>
                       <div className="link-create-profile">
                         <Link to="/events" className="p-search-event">
-                          search for events
+                          Search for events
                         </Link>
                       </div>
                     </div>

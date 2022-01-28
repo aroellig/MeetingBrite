@@ -47,16 +47,22 @@
 .entry-page{
     position: relative;
     left: 1250px;
+    color: whitesmoke;
+    position: relative;
+    top: -40px;
 }
 
 .Login-entry{
-    color: #6F7287;
+    color: whitesmoke;
     font-size: 24px;
+    position: relative;
 }
 
 .Signup-entry{
-    color: #6F7287;
+    color: whitesmoke;
     font-size: 24px;
+    position: relative;
+
 }
 
 .entry-photo{
@@ -64,4 +70,5 @@
     right: 1200px;
     height: 700px;
     width: 1500px;
+    top: 100px;
 }
