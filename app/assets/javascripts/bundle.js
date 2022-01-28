@@ -1413,7 +1413,9 @@ var Greeting = function Greeting(_ref) {
       className: "entry-photo"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       className: "cover-photo",
-      src: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontent.ticketarena.co.uk%2Fmedia%2F15419%2F69096385_2914891898585163_3454151439771762688_o.jpg&f=1&nofb=1"
+      src: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcontent.ticketarena.co.uk%2Fmedia%2F15419%2F69096385_2914891898585163_3454151439771762688_o.jpg&f=1&nofb=1",
+      width: "925",
+      height: "300"
     })));
   };
 
