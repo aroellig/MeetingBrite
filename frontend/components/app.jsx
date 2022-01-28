@@ -37,7 +37,6 @@ const App = () => (
       <a href='https://github.com/aroellig'><button className="Github">Github</button></a>
     <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/'><button className="Linkedin">Linkedin</button></a>
     <br/>
-    <button className="home"> <Link to="/events">Home</Link></button>
     </header>
     </div>
    

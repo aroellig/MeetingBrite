@@ -29,11 +29,14 @@ class NavBar extends React.Component {
         <div className="Links">
             <Link to="/events/new" className="new-event">Create Event</Link>
             <br/>
-            <Link to="/profile" className="profile">profile</Link>
+            <Link to="/profile" className="profile">Profile</Link>
+            <br/>
+            <Link to="/events" className="home">Home</Link>
             <br/>
             <div onClick={this.logoutUser} className="logoutbtn">
            <p className="logout-p">Logout</p>
           </div>
+           
         </div>
       );
     }
