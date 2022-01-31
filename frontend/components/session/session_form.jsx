@@ -48,9 +48,14 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="main-login-form">
+                  <div classname="login-title">
+          <h1 >Meetingbrite</h1>
+          </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
+          <div className="form-type">
            {this.props.formType} 
+           </div>
           {this.renderErrors()}
           <div className="login-form">
             <br/>
@@ -74,9 +79,9 @@ class SessionForm extends React.Component {
                 className="login-input"
                 placeholder="email address"
               />
-            <input className="submit" type="submit" value="continue" />
+            <input className="submit" type="submit" value={this.props.formType} />
             <div className="divider">
-              <h1>or</h1>
+              <h1 className="or">or</h1>
             </div>
             <div className="login-demo" >
             <button className="demo-login" onClick={this.demoLogin}>Login Demo User</button>
@@ -85,9 +90,9 @@ class SessionForm extends React.Component {
           </div>
           </div>
         </form>
-            <div className="photo">
+            {/* <div className="photo">
             <img className="photo" src="https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"/>
-            </div>
+            </div> */}
         </div>
     );
   }

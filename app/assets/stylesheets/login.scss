@@ -1,16 +1,50 @@
 .main-login-form{
-  display: flex;
-  background-color: grey;
-  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 0;
+  height: 100%;
+  width: 100%;
+  
 }
+
+
+
+.form-type{
+  font-size: 5rem;
+line-height: 2.5rem;
+letter-spacing: 1px;
+margin-right: -1px;
+font-weight: 800;
+color: var(--eds-ui-900,#1e0a3c);
+position: relative;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+left: 300px;
+}
+
+.login-title{
+  color: orange;
+  position: relative;
+  left: 300px;
+}
+
 .login-form-box {
-  width: 500px;
-  margin-top: 56px;
-  font-size: xx-large;
-  line-height: 2.5rem;
-  letter-spacing: 1px;
-  margin-right: -1px;
-  font-weight: 800;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
+  display: flex;
+  letter-spacing: normal;
+font-size: 14px;
+font-family: sans-serif;
+font-weight: 400;
+-moz-osx-font-smoothing: grayscale;
+color: #39364f;
+color: var(--eds-ui-800,#39364f);
+
+
 }
 
 .login-form {
@@ -24,6 +58,9 @@
   font-size: 1.5rem;
   color: #333;
   width: 400px;
+  padding: 18px 12px 6px;
+  position: relative;
+  top: 250px;
 }
   
   .login-input {
@@ -48,23 +85,52 @@
   cursor: pointer;
   position: relative;
   top: 15px;
+  cursor: pointer;
 }
 
-.divider {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-family: Helvetica; 
-  font-weight: 400;
-  color: #39364f;
+.divider{
+  position: relative;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+justify-content: center;
+padding-bottom: 24px;
+letter-spacing: normal;
+font-size: 14px;
+font-family: Neue Plak,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+font-weight: 400;
+-moz-osx-font-smoothing: grayscale;
+color: #39364f;
+color: var(--eds-ui-800,#39364f);
+}
+
+.or {
+  color: #6f7287;
+  border: 1px solid #a9a8b3;
+  border-radius: 100px;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  padding: 0 12px 3px;
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: .875rem;
+  line-height: 1.25rem;
+
+
 }
 
 .photo {
- position: relative;
- left: 100px;
- height: 750px;
- width: 750px;
+ left: 450px;
+ height: 100%;
+ width: 75%;
+
 }
 
 .demo-login-button{
