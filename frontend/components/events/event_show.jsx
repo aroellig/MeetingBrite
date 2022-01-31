@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { logoutCurrentUser } from '../../actions/session_actions';
 import CreateReviewFormContainer from '../reviews/review_form_container';
 import CreateRsvpFormContainer from '../rsvp/create_rsvp_container';
 import ReviewIndexContainer from '../reviews/review_index_container'
@@ -10,9 +9,10 @@ import NavbarContainer from '../nav/navbar_container'
 
 class EventShow extends React.Component {
     componentDidMount(){
+        this.props.fetchRsvps()
         this.props.fetchEvent(this.props.match.params.eventId)
         this.props.fetchReviews(this.props.event_id)
-        this.props.fetchRsvps()
+        
     }
     render(){
         if (!this.props.event) return null
