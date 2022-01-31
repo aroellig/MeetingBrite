@@ -36,7 +36,6 @@
     "postinstall": "webpack",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
-
   },
   "repository": {
     "type": "git",
