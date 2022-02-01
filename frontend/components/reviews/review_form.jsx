@@ -25,6 +25,7 @@ class ReviewForm extends React.Component{
     }
     render(){
         if (!this.props.event) return null
+        if (!this.props.loggedIn) return null
         return(
             <div>
             <div className="Main-Review-Form">

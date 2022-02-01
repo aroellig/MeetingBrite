@@ -15,7 +15,8 @@ const mSTP = (state, ownProps) => {
     currentUser: state.session.id,
     event: state.entities.events[ownProps.eventId],
     errors: state.errors.rsvp,
-    rsvps: Object.values(state.entities.rsvps)
+    rsvps: Object.values(state.entities.rsvps),
+    loggedIn: Boolean(state.session.id)
     }
 }
 

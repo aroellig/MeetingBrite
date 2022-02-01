@@ -160,12 +160,42 @@ class EventShow extends React.Component {
                 </h8>
                 </div>
             )
+        } else if((parseInt(currentUser) === null)){
+            return (
+                <div>
+                <div className="bg-image"></div>
+            <div className="event-info">
+            <div className="event-show-navbar-with-review">
+        <NavbarContainer />
+              </div>
+        <div className = "show-photo">
+            <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+        </div>
+        <br/>
+        <h1 className="show-title">{event.title}</h1>
+        <h2 className="show-description">About: {event.description}</h2>
+        <h3 className="show-location">Location: {event.location}</h3>
+        <h4 className="show-date">Date: {readableDate}</h4>
+        <br/>
+        <h6 className="average-score"> Average Rating: {avg_score}</h6>
+        <h7 className="show-event">
+        <RSVPIndexContainer rsvpId={rsvp.id} className="RSVP-form"/>
+        </h7>
+        <p className="already-reviewed"> you have already reviewed this event</p>
+        <h8 className= "reviews">
+        <ReviewIndexContainer eventId={event.id}  />
+        </h8>
+        </div>
+        </div>
+    )
         } else {
             return(
-                <div className="event-info">
+                <div>
+                <div className="bg-image"></div>
                     <div className="event-show-navbar">
                     <NavbarContainer />
                     </div>
+                 <div className="event-info">
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                 </div>
@@ -183,6 +213,7 @@ class EventShow extends React.Component {
                 <h5 className= "reviews-edit">
                 <ReviewIndexContainer eventId={event.id} />
                 </h5>
+                </div>
             </div>
             )
         }

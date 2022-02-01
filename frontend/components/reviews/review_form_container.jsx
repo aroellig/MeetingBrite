@@ -14,7 +14,8 @@ const mSTP = (state, ownProps) => {
     formType: 'Create Review',
     currentUser: state.session.id,
     event: state.entities.events[ownProps.eventId],
-    reviews: Object.values(state.entities.reviews)
+    reviews: Object.values(state.entities.reviews),
+    loggedIn: Boolean(state.session.id)
     }
 }
 

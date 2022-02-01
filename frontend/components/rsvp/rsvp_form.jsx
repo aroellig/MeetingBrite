@@ -15,6 +15,7 @@ class RsvpForm extends React.Component{
   }
 
     handleSubmit(e){
+      debugger
         e.preventDefault()
         // const rsvps = Object.assign({}, this.state, {
         //     eventId: this.props.location.state.event_id,
@@ -26,10 +27,11 @@ class RsvpForm extends React.Component{
         });
       
         if (this.props.currentUser) {
+          debugger
             this.props.createRsvp(rsvp)
-            .then(() => this.props.history.push("/events"));
-            
-        }
+            .then(() => this.props.history.push("/events")); 
+        } 
+        
     }
 
     update(field){
@@ -65,24 +67,13 @@ class RsvpForm extends React.Component{
           responded = true
         }
       }
+      
+      if(this.props.loggedIn){
         return (
           <div>
           {responded === false ? (
         <div className="rsvp-form">
             <form onSubmit={this.handleSubmit}>
-                    {/* <input 
-                    type='text'
-                    value={this.state.attendee_name}
-                    onChange={this.update('attendee_name')}
-                    placeholder="name"
-                    />
-            <br/>
-                    <input 
-                    type="number"
-                    value={this.state.num_attendees}
-                    onChange={this.update('num_attendees')}
-                    placeholder="number of attendees"
-                    /> */}
             <br />
                     <button type='submit' value={this.props.formType} className="rsvp-button">{this.props.formType}</button>
             </form>
@@ -94,6 +85,9 @@ class RsvpForm extends React.Component{
         )}  
         </div>
         )
+      } else {
+        return null
+      }
     }
 }
 

@@ -24,7 +24,6 @@ class NavBar extends React.Component {
 //   }
 
   getLinks() {
-    debugger
     if(this.props.loggedIn){
       return (
         <div className="Links">
@@ -43,10 +42,11 @@ class NavBar extends React.Component {
     }else{
      
       return(
-        <div>
-                 <Link to="/login" className="Login-entry">Login</Link>
-        &nbsp;or&nbsp;
-        <Link to="/signup" className="Signup-entry">Sign up</Link>
+        <div className="Links">
+        <Link to="/login" className="profile">Login</Link>
+        <br/>
+        <br/>
+        <Link to="/signup" className="logoutbtn">Sign up</Link>
         </div>
       )
     }
@@ -59,11 +59,13 @@ class NavBar extends React.Component {
           <h1>Meetingbrite</h1>
         </div>
         <div>{this.getLinks()}</div>
-        <SearchContainer />
-        
+        <div className="search-container"><SearchContainer /></div>
+
       </div>
     );
   }
+
+
 }
 
 export default withRouter(NavBar);
