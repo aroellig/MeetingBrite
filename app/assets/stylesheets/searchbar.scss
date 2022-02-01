@@ -1,9 +1,11 @@
 .search{
-    background-color: black;
+    position: relative;
+    right: 500px;
 }
 
 .searchInputs{
     display: flex;
+   
 }
 
 .search input{
@@ -29,6 +31,10 @@
     top: 2.2vw;
     // left: 1vw;
     font-size: 1vw;
+    // position: relative;
+    // right: 750px;
+    // top: 100px;
+   
 }
 
 .listingResult .dataItem{
@@ -38,7 +44,7 @@
     align-items: center;
     color: black;
     border: 1px solid gray;
-
+   
 }
 
 .dataItem p {

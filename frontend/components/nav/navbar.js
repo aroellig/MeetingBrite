@@ -27,7 +27,7 @@ class NavBar extends React.Component {
 
       return (
         <div className="Links">
-            <Link to="/events/new" className="new-event">Create Event</Link>
+            <Link to="/events/new" className="new-event">Create an Event</Link>
             <br/>
             <Link to="/profile" className="profile">Profile</Link>
             <br/>
@@ -44,8 +44,8 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="navbar-top">
-        <div className="icon-app-name">
-          {/* <div className="homelink-global"><Link to="/events" className="link-global-nav"><p className="text-global">MeetingBrite</p></Link></div> */}
+        <div className="icon">
+          <h1>Meetingbrite</h1>
         </div>
         <div>{this.getLinks()}</div>
         <SearchContainer />

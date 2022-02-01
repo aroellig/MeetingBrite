@@ -10,7 +10,7 @@
     display: block;
     align-self: center;
     width: 300px;
-    height: 300px;
+    height: 340px;
     margin-top: 56px;
     font-size: xx-large;
     line-height: 2.5rem;
@@ -29,13 +29,32 @@
     padding: 12px;
     cursor: pointer;
     position: absolute;
-    font-size: xx-large;
-    color: rgb(65, 61, 61);
+    font-size: x-large;
+    color: #39364f;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     
+}
+
+.event-date{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    color: #f05537;
+    font-weight: 600;
+    font-size: .875rem;
+line-height: 1.25rem;
+}
+
+.event-location{
+    color:#6f7287;
+    position: relative;
+    top: 25px;
+    left: 10px;
+    font-size: .775rem;
+    line-height: 1.25rem;
 }
 
 

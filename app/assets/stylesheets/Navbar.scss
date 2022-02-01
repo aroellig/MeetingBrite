@@ -1,6 +1,6 @@
-.navbar-top{
-    background-color: black;
-}
+// .navbar-top{
+//     background-color: black;
+// }
 
 .links{
     position: absolute;
@@ -8,9 +8,10 @@
 }
 
 .logoutbtn{
-    background-color: grey;
+    background-color: white;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid white;
+    color: #1E0A3C;
     width:8vw;
     height: 4vh;
     display: flex;
@@ -24,9 +25,10 @@
 }
 
 .profile{
-    background-color: grey;
+    background-color: white;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid white;
+    color: #1E0A3C;
     width:8vw;
     height: 4vh;
     display: flex;
@@ -40,9 +42,10 @@
 }
 
 .new-event{
-    background-color: grey;
+    background-color: white;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid white;
+    color: blue;
     width:8vw;
     height: 4vh;
     display: flex;
@@ -56,9 +59,10 @@
 }
 
 .home{
-    background-color: grey;
+    background-color: white;
     position: relative;
-    border: 1px solid black;
+    border: 1px solid white;
+    color: #1E0A3C;
     width:8vw;
     height: 4vh;
     display: flex;
@@ -69,8 +73,15 @@
     left: 1150px;
     top: 0px;
     cursor: pointer;
-
 }
-// .navbar-top{
-//     background-color: green;
-// }
+.icon{
+    color: #f05537;
+    letter-spacing: normal;
+font-size: xx-large;
+position: relative;
+top: 20px;
+left: 40px;
+font-family:Helvetica,Tahoma,Arial,sans-serif;
+font-weight: 400;
+-moz-osx-font-smoothing: grayscale;
+}

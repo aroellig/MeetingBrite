@@ -9,9 +9,14 @@
 }
 
 
+.login-title{
+  background-color: orange;
+  // position: relative;
+  // left: 300px;
+}
 
 .form-type{
-  font-size: 5rem;
+  font-size: 3.25rem;
 line-height: 2.5rem;
 letter-spacing: 1px;
 margin-right: -1px;
@@ -22,13 +27,12 @@ position: relative;
 -ms-flex-align: center;
 align-items: center;
 left: 300px;
+
+
+
 }
 
-.login-title{
-  color: orange;
-  position: relative;
-  left: 300px;
-}
+
 
 .login-form-box {
   -webkit-box-align: center;
@@ -63,13 +67,44 @@ color: var(--eds-ui-800,#39364f);
   top: 250px;
 }
   
-  .login-input {
+  .login-input{
   padding: 18px 12px 6px;
   border: 2px solid #a9a8b3;
   border-radius: 4px;
   color: #39364f;
   font-size: medium;
 }
+
+.login-input-username{
+  padding: 18px 12px 6px;
+  border: 2px solid #a9a8b3;
+  border-radius: 4px;
+  color: #39364f;
+  font-size: medium;
+ position: relative;
+ top: 0px;
+}
+
+.login-input-password{
+  padding: 18px 12px 6px;
+  border: 2px solid #a9a8b3;
+  border-radius: 4px;
+  color: #39364f;
+  font-size: medium;
+ position: relative;
+ top: 10px;
+}
+
+.login-input-email{
+  padding: 18px 12px 6px;
+  border: 2px solid #a9a8b3;
+  border-radius: 4px;
+  color: #39364f;
+  font-size: medium;
+ position: relative;
+ top: 20px;
+}
+
 
 
 
@@ -84,7 +119,7 @@ color: var(--eds-ui-800,#39364f);
   letter-spacing: .8px;
   cursor: pointer;
   position: relative;
-  top: 15px;
+  top: 30px;
   cursor: pointer;
 }
 
@@ -122,22 +157,31 @@ color: var(--eds-ui-800,#39364f);
   font-weight: 600;
   font-size: .875rem;
   line-height: 1.25rem;
-
+  position: relative;
+  top: 40px;
 
 }
 
 .photo {
+  position: relative;
  left: 450px;
- height: 100%;
- width: 75%;
+ bottom: 200px;
+ height: 100vh;
+ width: 100vh;
 
 }
 
-.demo-login-button{
+.demo-login{
   color: #39364f;
   padding: 12px;
   cursor: pointer;
   position: relative;
-  top: 25px;
+  top: 50px;
   font-size: large;
+}
+
+.alt{
+  position: relative;
+  top: 60px;
+  font-size: small;
 }

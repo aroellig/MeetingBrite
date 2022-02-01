@@ -48,11 +48,12 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="main-login-form">
-                  <div classname="login-title">
-          <h1 >Meetingbrite</h1>
+         <div classname="login-title">
+          <p>Meetingbrite</p>
           </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
+        
           <div className="form-type">
            {this.props.formType} 
            </div>
@@ -62,21 +63,21 @@ class SessionForm extends React.Component {
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"
+                className="login-input-username"
                 placeholder="username"
               />
             <br/>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="login-input-password"
                 placeholder="password"
               />
             <br/>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
-                className="login-input"
+                className="login-input-email"
                 placeholder="email address"
               />
             <input className="submit" type="submit" value={this.props.formType} />
@@ -86,14 +87,17 @@ class SessionForm extends React.Component {
             <div className="login-demo" >
             <button className="demo-login" onClick={this.demoLogin}>Login Demo User</button>
             <br/>
+            <div className="alt">
              {this.props.navLink}
+             </div>
           </div>
           </div>
         </form>
-            {/* <div className="photo">
-            <img className="photo" src="https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"/>
-            </div> */}
+        <div className="photo">
+          <img className="photo" src="https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"/>
+          </div>
         </div>
+         
     );
   }
 }
