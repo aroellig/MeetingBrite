@@ -4,6 +4,7 @@ import {clearErrors} from '../../actions/session_actions';
 import EventForm from './event_form';
 
 const mSTP = state => ({
+    
     event: {
         description: '',
         date: '',

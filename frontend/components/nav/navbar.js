@@ -24,7 +24,8 @@ class NavBar extends React.Component {
 //   }
 
   getLinks() {
-
+    debugger
+    if(this.props.loggedIn){
       return (
         <div className="Links">
             <Link to="/events/new" className="new-event">Create an Event</Link>
@@ -39,6 +40,16 @@ class NavBar extends React.Component {
            
         </div>
       );
+    }else{
+     
+      return(
+        <div>
+                 <Link to="/login" className="Login-entry">Login</Link>
+        &nbsp;or&nbsp;
+        <Link to="/signup" className="Signup-entry">Sign up</Link>
+        </div>
+      )
+    }
     }
   
   render() {

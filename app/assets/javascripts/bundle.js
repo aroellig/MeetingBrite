@@ -1571,23 +1571,35 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getLinks",
     value: function getLinks() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "Links"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        to: "/events/new",
-        className: "new-event"
-      }, "Create an Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        to: "/profile",
-        className: "profile"
-      }, "Profile"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-        to: "/events",
-        className: "home"
-      }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        onClick: this.logoutUser,
-        className: "logoutbtn"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "logout-p"
-      }, "Logout")));
+      debugger;
+
+      if (this.props.loggedIn) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "Links"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          to: "/events/new",
+          className: "new-event"
+        }, "Create an Event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          to: "/profile",
+          className: "profile"
+        }, "Profile"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          to: "/events",
+          className: "home"
+        }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          onClick: this.logoutUser,
+          className: "logoutbtn"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+          className: "logout-p"
+        }, "Logout")));
+      } else {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          to: "/login",
+          className: "Login-entry"
+        }, "Login"), "\xA0or\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
+          to: "/signup",
+          className: "Signup-entry"
+        }, "Sign up"));
+      }
     }
   }, {
     key: "render",
@@ -1628,8 +1640,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapStateToProps = function mapStateToProps(state) {
+  debugger;
   return {
-    loggedIn: state.session.isAuthenticated
+    loggedIn: Boolean(state.session.id)
   };
 };
 
@@ -3063,6 +3076,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _events_event_show_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../events/event_show_container */ "./frontend/components/events/event_show_container.jsx");
 /* harmony import */ var _events_edit_event_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../events/edit_event_form_container */ "./frontend/components/events/edit_event_form_container.jsx");
 /* harmony import */ var _events_create_event_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../events/create_event_form_container */ "./frontend/components/events/create_event_form_container.jsx");
+/* harmony import */ var _events_event_index_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../events/event_index_container */ "./frontend/components/events/event_index_container.jsx");
+
 
 
 
@@ -3072,7 +3087,7 @@ __webpack_require__.r(__webpack_exports__);
 var Splash = function Splash() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "homepage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_greeting_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_events_event_index_container__WEBPACK_IMPORTED_MODULE_5__["default"], null));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Splash);

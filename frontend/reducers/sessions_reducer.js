@@ -8,6 +8,7 @@ import {
     id: null
   });
   
+  
   const sessionReducer = (state = [], action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state)
