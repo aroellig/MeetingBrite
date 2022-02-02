@@ -1046,6 +1046,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      debugger;
       if (!this.props.event) return null;
       var _this$props = this.props,
           event = _this$props.event,
@@ -1104,6 +1105,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       }
 
       if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
+        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "no-response-no-review-show"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1144,6 +1146,8 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === true) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "response-review"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-show-navbar-with-review"
@@ -1175,15 +1179,17 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           eventId: event.id
-        })));
+        }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "rsvp-no-review"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "bg-image"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-show-navbar"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1215,10 +1221,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          classname: "no-response-review"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "bg-image"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "navbar"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "event-show-navbar-with-review"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1246,7 +1256,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "reviews-a"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           eventId: event.id
-        })));
+        }))));
       } else if (parseInt(currentUser) === null) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "not-logged-in-show"
