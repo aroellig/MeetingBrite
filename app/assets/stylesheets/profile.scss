@@ -73,7 +73,11 @@
 // }
 
 .p-no-details{
-    color:whitesmoke;
+    color:rgb(65, 61, 61);
+    position: relative;
+    left: 250px;
+    top: 80px;
+    font-size: x-large;
 }
 
 .link-create-profile{
@@ -85,5 +89,8 @@
     height: 44px;
     border: 2px solid #a9a8b3;
     border-radius: 4px;
+    position: relative;
+    left: 250px;
+    top: 100px;
     
 }

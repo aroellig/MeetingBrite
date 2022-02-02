@@ -1,6 +1,6 @@
 .Main-Event-Form{
     display: flex;
-    background-color: grey;
+    // background-color: grey;
     input{
         position: relative;
         margin-top: 32px;
@@ -26,14 +26,14 @@
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.5;
-    color: white;
+    color:rgb(65, 61, 61);
 }
 
 .Event-Form{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: grey;
+    // background-color: grey;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;

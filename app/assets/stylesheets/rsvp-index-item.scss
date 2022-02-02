@@ -1,10 +1,18 @@
 
+.rsvp-index-items{
+    float: right;
+    padding: 50px;
+    position: relative;
+   top: -50px;
+   right: 50px;
+    
+}
 
 .rsvp-index-item{
     display: block;
     align-self: center;
     width: 300px;
-    height: 350px;
+    height: 340px;
     margin-top: 56px;
     font-size: xx-large;
     line-height: 2.5rem;
@@ -18,13 +26,24 @@
     background-color: white;
     // position: relative;
     // left: 1000px;
+    .event-date{
+       position: relative;
+       top: 5px; 
+    }
+    .event-location{
+        position: relative;
+       top: 10px; 
+    }
 }
 
 .delete-rsvp-button{
     position: relative;
-    top: -30px;
+    top: -80px;
+    left: 210px;
     display: inline-block;
-    background-color: whitesmoke;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #0D8547;
     height: 50px;
     width: 90px;
     border: 2px solid #a9a8b3;

@@ -66,7 +66,7 @@ class Profile extends React.Component{
                          <br/>
                          <div className="event-date">
                 <h1>{new Date(event.date).toDateString()}</h1>
-           </div>
+                </div>
 
             <div className="event-location">
                 <h2>location: {event.location}</h2>
