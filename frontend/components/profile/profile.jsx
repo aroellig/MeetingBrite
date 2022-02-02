@@ -33,7 +33,7 @@ class Profile extends React.Component{
             }
           }
         }
-
+   
         return (
             <div className="profile-outer">
               <NavbarContainer />
@@ -61,8 +61,16 @@ class Profile extends React.Component{
                     </div>
                     {userEvents.map((event, index) => (
                       <div key={event + "b"} className="user-event">
-                         <Link to={`/events/${event.id}`} className="user-event-title">{event.title}</Link>
                          <img src={event.photoURL} width="300" height = '240' alt="coverphoto" />
+                         <Link to={`/events/${event.id}`} className="user-event-title">{event.title}</Link>
+                         <br/>
+                         <div className="event-date">
+                <h1>{new Date(event.date).toDateString()}</h1>
+           </div>
+
+            <div className="event-location">
+                <h2>location: {event.location}</h2>
+            </div>
                       </div>
                     ))}
                   </div> 

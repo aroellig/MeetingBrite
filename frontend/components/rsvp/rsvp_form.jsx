@@ -15,7 +15,7 @@ class RsvpForm extends React.Component{
   }
 
     handleSubmit(e){
-      debugger
+
         e.preventDefault()
         // const rsvps = Object.assign({}, this.state, {
         //     eventId: this.props.location.state.event_id,
@@ -27,7 +27,7 @@ class RsvpForm extends React.Component{
         });
       
         if (this.props.currentUser) {
-          debugger
+      
             this.props.createRsvp(rsvp)
             .then(() => this.props.history.push("/events")); 
         } 

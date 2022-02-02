@@ -15,6 +15,7 @@ class EventShow extends React.Component {
         
     }
     render(){
+        debugger
         if (!this.props.event) return null
         const { event, eventId, currentUser, deleteEvent, reviews, rsvps } = this.props;
         let readableDate = new Date(event.date).toDateString();
@@ -58,13 +59,14 @@ class EventShow extends React.Component {
           }
         }
 
-
         if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
         return(
-            <div className="event-info">
-                <div className="event-show-navbar">
+            <div className="no-response-no-review-show">
+                <div className="bg-image"></div>
+                   <div className="event-show-navbar">
             <NavbarContainer/>
             </div>
+            <div className="event-info">
             <div className = "show-photo">
                 <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
             </div>
@@ -82,6 +84,7 @@ class EventShow extends React.Component {
             <h8 className= "reviews">
             <ReviewIndexContainer eventId={event.id} />
             </h8>
+            </div>
             </div>
         )
         } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === true) {
@@ -112,6 +115,7 @@ class EventShow extends React.Component {
             )
         } else if ((parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false)) {
                 return(
+                    <div className="rsvp-no-review">
                     <div className="event-info">
                         <div className="event-show-navbar">
                         <NavbarContainer />
@@ -132,6 +136,7 @@ class EventShow extends React.Component {
                     <h8 className= "reviews">
                     <ReviewIndexContainer eventId={event.id} />
                     </h8>
+                    </div>
                     </div>
                 )
             
@@ -162,8 +167,8 @@ class EventShow extends React.Component {
             )
         } else if((parseInt(currentUser) === null)){
             return (
-                <div>
-                <div className="bg-image"></div>
+            <div className="not-logged-in-show">
+            <div className="bg-image"></div>
             <div className="event-info">
             <div className="event-show-navbar-with-review">
         <NavbarContainer />
@@ -190,7 +195,7 @@ class EventShow extends React.Component {
     )
         } else {
             return(
-                <div>
+                <div className="own-event">
                 <div className="bg-image"></div>
                     <div className="event-show-navbar">
                     <NavbarContainer />

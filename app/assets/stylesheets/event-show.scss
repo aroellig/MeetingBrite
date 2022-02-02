@@ -17,6 +17,14 @@
     position: relative;
     left: 600px;
     top: -700px;
+    color: #39364f;
+    .no-reviews{
+        position: relative;
+        position: relative;
+        left: 600px;
+        top: -500px;
+        color: #39364f;
+    }
 }
 
 
@@ -71,7 +79,7 @@
     justify-content: center;
 }
 .event-edit {
-    top: -120px;
+    top: -10px;
     display: inline-block;
     background-color: whitesmoke;
     cursor: pointer;
@@ -81,7 +89,7 @@
     border: 2px solid #a9a8b3;
     border-radius: 4px;
     position: relative;
-    left: 30px;
+    left: 180px;
 
 }
 
@@ -95,8 +103,8 @@
     border-radius: 4px;
     cursor: pointer;
     position: relative;
-    left: 25px;
-    top: -100px;
+    left: 160px;
+    top: 30px;
     font-size: large;
     display: flex;
     align-items: center;
@@ -116,7 +124,7 @@
 .reviews-edit{
     .no-reviews{
         position: relative;
-        top: -120px;
+        top: 0px;
         left: 40px;
         display: flex;
         align-items: center;

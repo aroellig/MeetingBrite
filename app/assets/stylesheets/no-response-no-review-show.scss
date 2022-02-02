@@ -1,0 +1,64 @@
+.no-response-no-review-show{
+    .bg-image{
+        background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsparetimelansing.com%2Fwp-content%2Fuploads%2F2018%2F03%2FAdobeStock_127994126.jpeg&f=1&nofb=1);
+        position: relative;
+        top: 70px;
+        height: 40vw;
+        filter: blur(15px);
+    }
+
+    .event-info{
+        position: relative;
+        left: 300px;
+        top: -700px;
+    }
+
+    .rsvp-button{
+        position: relative;
+        left: 140px;
+        top: -40px;
+        margin-top: 32px;
+        font-weight: 600;
+        color: #FFF;
+        background-color: #0D8547;
+        height: 44px;
+        border: 2px solid transparent;
+        padding: 0 30px;
+          padding-right: 30px;
+          padding-left: 30px;
+        box-sizing: border-box;
+        text-align: center;
+        text-decoration: none;
+        line-height: 26px;
+        font-weight: 600;
+        font-size: 15px;
+        text-transform: capitalize;
+        border-radius: 4px;
+      
+    }
+
+    .no-reviews{
+    position: relative;
+    top: -1000px;
+    left: 80px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #39364f;
+}
+.Main-Review-Form{
+display: flex;
+justify-content: left;
+flex-direction: column;
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+margin-bottom: 0.5rem;
+font-size: 24px;
+color: #333;
+width: 500px;
+position: relative;
+left: 470px;
+top: -572px;
+    }
+}

@@ -1046,6 +1046,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      debugger;
       if (!this.props.event) return null;
       var _this$props = this.props,
           event = _this$props.event,
@@ -1104,10 +1105,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
 
       if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "event-info"
+          className: "no-response-no-review-show"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "bg-image"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-show-navbar"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1136,7 +1141,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           eventId: event.id
-        })));
+        }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === true) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
@@ -1173,6 +1178,8 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         })));
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "rsvp-no-review"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-show-navbar"
@@ -1205,7 +1212,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "reviews"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           eventId: event.id
-        })));
+        }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
@@ -1241,7 +1248,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         })));
       } else if (parseInt(currentUser) === null) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "not-logged-in-show"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "bg-image"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-info"
@@ -1277,7 +1286,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         }))));
       } else {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "own-event"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "bg-image"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-show-navbar"
@@ -1816,15 +1827,19 @@ var Profile = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           key: event + "b",
           className: "user-event"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/events/".concat(event.id),
-          className: "user-event-title"
-        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
           width: "300",
           height: "240",
           alt: "coverphoto"
-        }));
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/events/".concat(event.id),
+          className: "user-event-title"
+        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-date"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, new Date(event.date).toDateString())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-location"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "location: ", event.location)));
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, userRsvps.length === 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "detail-no-rsvp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -2413,7 +2428,6 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       var _this2 = this;
 
-      debugger;
       e.preventDefault(); // const rsvps = Object.assign({}, this.state, {
       //     eventId: this.props.location.state.event_id,
       //   });
@@ -2425,7 +2439,6 @@ var RsvpForm = /*#__PURE__*/function (_React$Component) {
       });
 
       if (this.props.currentUser) {
-        debugger;
         this.props.createRsvp(rsvp).then(function () {
           return _this2.props.history.push("/events");
         });
