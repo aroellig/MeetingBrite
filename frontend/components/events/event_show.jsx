@@ -15,9 +15,9 @@ class EventShow extends React.Component {
         
     }
     render(){
-        debugger
         if (!this.props.event) return null
         const { event, eventId, currentUser, deleteEvent, reviews, rsvps } = this.props;
+        debugger
         let readableDate = new Date(event.date).toDateString();
         let total_score = 0;
         for (let i = 0; i < reviews.length; i++) {

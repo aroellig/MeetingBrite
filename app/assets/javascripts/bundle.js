@@ -1046,7 +1046,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      debugger;
       if (!this.props.event) return null;
       var _this$props = this.props,
           event = _this$props.event,
@@ -1055,6 +1054,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           deleteEvent = _this$props.deleteEvent,
           reviews = _this$props.reviews,
           rsvps = _this$props.rsvps;
+      debugger;
       var readableDate = new Date(event.date).toDateString();
       var total_score = 0;
 
