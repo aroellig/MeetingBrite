@@ -1072,8 +1072,9 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         avg_score = Number(total_score / reviews.length).toFixed(1);
       }
 
+      debugger;
       var userRsvps = [];
-      rsvps.forEach(function (rsvp) {
+      this.props.rsvps.forEach(function (rsvp) {
         if (rsvp.user_id === Number(currentUser)) {
           userRsvps.push(rsvp);
         }
@@ -1081,13 +1082,14 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       var responded = false;
 
       for (var _i = 0; _i < userRsvps.length; _i++) {
-        var _rsvp = userRsvps[_i];
+        var rsvp = userRsvps[_i];
 
-        if (event.id === _rsvp.event_id) {
+        if (event.id === rsvp.event_id) {
           responded = true;
         }
       }
 
+      debugger;
       var userReviews = [];
       this.props.reviews.forEach(function (review) {
         if (review.user_id === Number(_this.props.currentUser)) {
@@ -1104,7 +1106,41 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }
       }
 
-      if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
+      if (currentUser === undefined || currentUser === null) {
+        debugger;
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "not-logged-in-show"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "bg-image"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-show-navbar-with-review"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "show-photo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+          src: event.photoURL,
+          width: "925",
+          height: "300",
+          alt: "coverphoto"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
+          className: "show-title"
+        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+          className: "show-description"
+        }, "About: ", event.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+          className: "show-location"
+        }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+          className: "show-date"
+        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
+          className: "average-score"
+        }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
+          className: "show-event"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
+          className: "reviews"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          eventId: event.id
+        }))));
+      } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
         debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "no-response-no-review-show"
@@ -1170,10 +1206,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "average-score"
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          rsvpId: rsvp.id,
-          className: "RSVP-form"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "you have already rsvp'd to this event")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
           className: "already-reviewed"
         }, " you have already reviewed this event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews"
@@ -1181,6 +1214,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false) {
+        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "rsvp-no-review"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1208,10 +1242,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "average-score"
         }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
           className: "show-event"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          rsvpId: rsvp.id,
-          className: "RSVP-form"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "you have already rsvp'd to this event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_form_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
           eventId: event.id,
           className: "Review-form"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
@@ -1220,6 +1251,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true) {
+        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           classname: "no-response-review"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1257,45 +1289,8 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
           eventId: event.id
         }))));
-      } else if (parseInt(currentUser) === null) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "not-logged-in-show"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "bg-image"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "event-show-navbar-with-review"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "show-photo"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-          src: event.photoURL,
-          width: "925",
-          height: "300",
-          alt: "coverphoto"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
-          className: "show-title"
-        }, event.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
-          className: "show-description"
-        }, "About: ", event.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
-          className: "show-location"
-        }, "Location: ", event.location), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
-          className: "show-date"
-        }, "Date: ", readableDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h6", {
-          className: "average-score"
-        }, " Average Rating: ", avg_score), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h7", {
-          className: "show-event"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_rsvp_rsvp_index_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          rsvpId: rsvp.id,
-          className: "RSVP-form"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-          className: "already-reviewed"
-        }, " you have already reviewed this event"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
-          className: "reviews"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          eventId: event.id
-        }))));
       } else {
+        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "own-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1368,6 +1363,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  debugger;
   return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
@@ -2639,6 +2635,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
+  debugger;
   return {
     rsvps: Object.values(state.entities.rsvps),
     user_id: state.session.id,

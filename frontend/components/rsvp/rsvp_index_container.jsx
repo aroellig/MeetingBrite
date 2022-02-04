@@ -4,6 +4,7 @@ import { fetchEvents, fetchEvent } from '../../actions/event_action'
 import RsvpIndex from './rsvp_index';
 
 const mSTP = (state, ownProps) => {
+  debugger
     return {
       rsvps: Object.values(state.entities.rsvps),
       user_id: state.session.id,

@@ -32,8 +32,9 @@ class EventShow extends React.Component {
           avg_score = Number(total_score / reviews.length).toFixed(1)
         }
 
+        debugger
         let userRsvps = [];
-        rsvps.forEach((rsvp) => {
+        this.props.rsvps.forEach((rsvp) => {
             if(rsvp.user_id === Number(currentUser)){
                 userRsvps.push(rsvp)
             }
@@ -45,7 +46,7 @@ class EventShow extends React.Component {
             responded = true
           }
         }
-
+          debugger
                let userReviews = [];
         this.props.reviews.forEach((review) => {
             if(review.user_id === Number(this.props.currentUser)){
@@ -59,8 +60,35 @@ class EventShow extends React.Component {
             reviewed = true
           }
         }
-
-        if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
+        
+     if((currentUser === undefined || currentUser === null)){
+        debugger
+            return (
+            <div className="not-logged-in-show">
+            <div className="bg-image"></div>
+            <div className="event-info">
+            <div className="event-show-navbar-with-review">
+        <NavbarContainer />
+              </div>
+        <div className = "show-photo">
+            <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
+        </div>
+        <br/>
+        <h1 className="show-title">{event.title}</h1>
+        <h2 className="show-description">About: {event.description}</h2>
+        <h3 className="show-location">Location: {event.location}</h3>
+        <h4 className="show-date">Date: {readableDate}</h4>
+        <br/>
+        <h6 className="average-score"> Average Rating: {avg_score}</h6>
+        <h7 className="show-event">
+        </h7>
+        <h8 className= "reviews">
+        <ReviewIndexContainer eventId={event.id}  />
+        </h8>
+        </div>
+        </div>
+    )
+        }  else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false){
             debugger
         return(
             <div className="no-response-no-review-show">
@@ -109,7 +137,7 @@ class EventShow extends React.Component {
                 <br/>
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
-                <RSVPIndexContainer rsvpId={rsvp.id} className="RSVP-form"/>
+                <p>you have already rsvp'd to this event</p>
                 </h7>
                 <p className="already-reviewed"> you have already reviewed this event</p>
                 <h8 className= "reviews">
@@ -119,6 +147,7 @@ class EventShow extends React.Component {
                 </div>
             )
         } else if ((parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false)) {
+            debugger
                 return(
                     <div className="rsvp-no-review">
                         <div className="bg-image"></div>
@@ -137,7 +166,7 @@ class EventShow extends React.Component {
                     <br/>
                     <h6 className="average-score"> Average Rating: {avg_score}</h6>
                     <h7 className="show-event">
-                    <RSVPIndexContainer rsvpId={rsvp.id} className="RSVP-form"/>
+                    <p>you have already rsvp'd to this event</p>
                     <CreateReviewFormContainer eventId={event.id} className="Review-form"/>
                     </h7>
                     <h8 className= "reviews">
@@ -149,6 +178,7 @@ class EventShow extends React.Component {
             
       
         } else if(((parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true))) {
+            debugger
             return(
                 <div classname="no-response-review">
                         <div className="bg-image"></div>
@@ -175,35 +205,8 @@ class EventShow extends React.Component {
                 </div>
                 </div>
             )
-        } else if((parseInt(currentUser) === null)){
-            return (
-            <div className="not-logged-in-show">
-            <div className="bg-image"></div>
-            <div className="event-info">
-            <div className="event-show-navbar-with-review">
-        <NavbarContainer />
-              </div>
-        <div className = "show-photo">
-            <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
-        </div>
-        <br/>
-        <h1 className="show-title">{event.title}</h1>
-        <h2 className="show-description">About: {event.description}</h2>
-        <h3 className="show-location">Location: {event.location}</h3>
-        <h4 className="show-date">Date: {readableDate}</h4>
-        <br/>
-        <h6 className="average-score"> Average Rating: {avg_score}</h6>
-        <h7 className="show-event">
-        <RSVPIndexContainer rsvpId={rsvp.id} className="RSVP-form"/>
-        </h7>
-        <p className="already-reviewed"> you have already reviewed this event</p>
-        <h8 className= "reviews">
-        <ReviewIndexContainer eventId={event.id}  />
-        </h8>
-        </div>
-        </div>
-    )
         } else {
+            debugger
             return(
                 <div className="own-event">
                 <div className="bg-image"></div>

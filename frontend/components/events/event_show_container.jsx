@@ -4,6 +4,7 @@ import {fetchRsvps } from '../../actions/rsvp_actions'
 import EventShow from './event_show';
 
 const mSTP = (state, ownProps) => {
+    debugger
     return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
