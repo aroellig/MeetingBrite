@@ -6,18 +6,14 @@
         height: 40vw;
         filter: blur(15px);
     }
-    .navbar{
-    position: relative;
-    top: 50px;
+
+    .navbar-no-response-no-review{
+        position: relative;
+        top: 500px;
     }
-
-   .navbar-top{
-       position: relative;
-       top: 250px;
-   }
-
-   .show-event{
+  .show-event{
        position: relative;
        left: 200px;
    }
 }
+   

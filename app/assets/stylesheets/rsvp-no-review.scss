@@ -1,13 +1,23 @@
 .rsvp-no-review{
+   .event-info{
+       position: relative;
+      left: 400px;
     .Main-Review-Form{
         position: relative;
         left: 470px;
-        top: -500px;
+        top: -473px;
     }
 
     .already-rsvp{
         position: relative;
         top: 50px;
-        color: orange;
+        color: #39364f
+    }
+
+    .no-reviews{
+        position: relative;
+        top: -850px;
+        left: 50px;
+    }
     }
 }
