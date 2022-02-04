@@ -119,10 +119,11 @@ class EventShow extends React.Component {
             return(
                
                 <div className="response-review">
+                <div className="bg-image"></div>
+                   <div className="event-show-navbar">
+            <NavbarContainer/>
+            </div>
                 <div className="event-info">
-                    <div className="event-show-navbar-with-review">
-                      <NavbarContainer />
-                      </div>
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                 </div>
@@ -134,7 +135,7 @@ class EventShow extends React.Component {
                 <br/>
                 <h6 className="average-score"> Average Rating: {avg_score}</h6>
                 <h7 className="show-event">
-                <p>you have already rsvp'd to this event</p>
+                <p className="already-rsvp">you have already rsvp'd to this event</p>
                 </h7>
                 <p className="already-reviewed"> you have already reviewed this event</p>
                 <h8 className= "reviews">
