@@ -3064,7 +3064,12 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         onClick: this.demoLogin
       }, "Login Demo User"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         className: "alt"
-      }, this.props.navLink)))));
+      }, this.props.navLink)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+        className: "photo"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        className: "photo",
+        src: "https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"
+      })));
     }
   }]);
 
