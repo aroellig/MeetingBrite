@@ -34,7 +34,7 @@ class EventShow extends React.Component {
 
         let userRsvps = [];
         rsvps.forEach((rsvp) => {
-            if(rsvp.user_id === Number(currentUser.id)){
+            if(rsvp.user_id === Number(currentUser)){
                 userRsvps.push(rsvp)
             }
         })

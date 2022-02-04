@@ -93,9 +93,9 @@ class SessionForm extends React.Component {
           </div>
           </div>
         </form>
-        <div className="photo">
+        {/* <div className="photo">
           <img className="photo" src="https://www.tasteofhome.com/wp-content/uploads/2017/12/shutterstock_633405500.jpg"/>
-          </div>
+          </div> */}
         </div>
          
     );
