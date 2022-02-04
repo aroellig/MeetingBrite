@@ -7,7 +7,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all' %> <%= csrf_meta_tags %>
     <% if current_user %>
+    2:15
     <script>
       window.currentUser = {
         "id": "<%= current_user.id %>",

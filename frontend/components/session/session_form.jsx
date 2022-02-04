@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
     return (
       <div className="main-login-form">
          <div classname="login-title">
-          <p>Meetingbrite</p>
+       
           </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>

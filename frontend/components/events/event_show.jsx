@@ -80,7 +80,7 @@ class EventShow extends React.Component {
         <h7 className="show-event">
         </h7>
         <h8 className= "reviews">
-        <ReviewIndexContainer eventId={event.id}  />
+        <p>Log in or sign up to review and respond to events</p>
         </h8>
         </div>
         </div>

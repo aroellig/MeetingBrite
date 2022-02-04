@@ -431,7 +431,21 @@ var App = function App() {
     exact: true,
     path: "/profile",
     component: _profile_profile_container__WEBPACK_IMPORTED_MODULE_15__["default"]
-  })));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "icons"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("footer", {
+    className: "header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "https://github.com/aroellig",
+    className: "Github"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+    "class": "fab fa-github"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: "https://www.linkedin.com/in/andrew-roellig-a4a0811b7/",
+    className: "Linkedin"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", {
+    "class": "fab fa-linkedin"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -1134,9 +1148,7 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           className: "show-event"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h8", {
           className: "reviews"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_reviews_review_index_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          eventId: event.id
-        }))));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Log in or sign up to review and respond to events"))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "no-response-no-review-show"
@@ -3032,7 +3044,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
         className: "main-login-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         classname: "login-title"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Meetingbrite")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "login-form-box"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

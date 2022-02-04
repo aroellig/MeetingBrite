@@ -29,17 +29,6 @@ import NavbarContainer from './nav/navbar_container'
 
 const App = () => (
   <div>
-    {/* <div className="top">
-    <header className="header">
-      <div className="title">
-        <h1>Meeting Brite</h1>
-        </div>
-      <a href='https://github.com/aroellig'><button className="Github">Github</button></a>
-    <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/'><button className="Linkedin">Linkedin</button></a>
-    <br/>
-    </header>
-    </div> */}
-   
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -54,7 +43,16 @@ const App = () => (
       <Route exact path="/rspvs" component={RsvpIndexContainer}/>
       <Route exact path="/profile" component={ProfileContainer}/>
     </Switch>
+
+        <div className="icons">
+    <footer className="header">
+      <a href='https://github.com/aroellig' className="Github"><i class="fab fa-github"></i></a>
+    <a href='https://www.linkedin.com/in/andrew-roellig-a4a0811b7/' className="Linkedin"><i class="fab fa-linkedin"></i></a>
+    <br/>
+    </footer>
+    </div>
   </div>
+  
 );
 
 export default App;
