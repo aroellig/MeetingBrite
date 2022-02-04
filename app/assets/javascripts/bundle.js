@@ -1046,7 +1046,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      debugger;
       if (!this.props.event) return null;
       var _this$props = this.props,
           event = _this$props.event,
@@ -1055,7 +1054,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           deleteEvent = _this$props.deleteEvent,
           reviews = _this$props.reviews,
           rsvps = _this$props.rsvps;
-      debugger;
       var readableDate = new Date(event.date).toDateString();
       var total_score = 0;
 
@@ -1072,7 +1070,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         avg_score = Number(total_score / reviews.length).toFixed(1);
       }
 
-      debugger;
       var userRsvps = [];
       this.props.rsvps.forEach(function (rsvp) {
         if (rsvp.user_id === Number(currentUser)) {
@@ -1089,7 +1086,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
         }
       }
 
-      debugger;
       var userReviews = [];
       this.props.reviews.forEach(function (review) {
         if (review.user_id === Number(_this.props.currentUser)) {
@@ -1107,16 +1103,15 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
       }
 
       if (currentUser === undefined || currentUser === null) {
-        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "not-logged-in-show"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "bg-image"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-          className: "event-info"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "event-show-navbar-with-review"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_nav_navbar_container__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+          className: "event-info"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "show-photo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
           src: event.photoURL,
@@ -1141,7 +1136,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === false && reviewed === false) {
-        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "no-response-no-review-show"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1214,7 +1208,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         }))));
       } else if (parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false) {
-        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "rsvp-no-review"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1290,7 +1283,6 @@ var EventShow = /*#__PURE__*/function (_React$Component) {
           eventId: event.id
         }))));
       } else {
-        debugger;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
           className: "own-event"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -1363,7 +1355,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     event: state.entities.events[ownProps.match.params.eventId],
     currentUser: state.session.id,
@@ -2141,6 +2132,7 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      debugger;
       var _this$props = this.props,
           reviews = _this$props.reviews,
           event_id = _this$props.event_id,
@@ -2635,7 +2627,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  debugger;
   return {
     rsvps: Object.values(state.entities.rsvps),
     user_id: state.session.id,

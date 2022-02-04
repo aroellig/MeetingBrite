@@ -10,6 +10,7 @@ class ReviewIndex extends React.Component{
         this.props.fetchReviews(this.props.event_id)
     }
     render(){
+        debugger
         const { reviews, event_id, user_id, deleteReview, currentUser } = this.props
         let eventReviews = [];
         reviews.forEach((review) => {

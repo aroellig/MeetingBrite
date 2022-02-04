@@ -1,0 +1,60 @@
+.not-logged-in-show{
+    .bg-image{
+        background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsparetimelansing.com%2Fwp-content%2Fuploads%2F2018%2F03%2FAdobeStock_127994126.jpeg&f=1&nofb=1);
+        position: relative;
+        top: 100px;
+        height: 40vw;
+        filter: blur(15px);
+    }
+
+    .event-show-navbar-with-review{
+        .navbar-top{
+            position: relative;
+           top: 0px;
+        }
+        .icon{
+            position: relative;
+            top: -700px;
+            left: 10px;
+        }
+    
+        .search-container{
+            position:relative;
+            top: -790px;
+        }
+        .logoutbtn{
+            position: relative;
+            left: 1600px;
+            top: -800px;
+            cursor: pointer;
+        }
+        .profile{
+            position: relative;
+            left: 1400px;
+            top: -729px;
+            cursor: pointer;
+        }
+    }
+
+    .event-info{
+        position: relative;
+        top: -750px;
+        left: 650px;
+        height: 150vh;
+    }
+
+    .reviews{
+        .no-reviews{
+            position: relative;
+            top: 75px;
+            left: 60px;
+        }
+
+        .reviews-list-class{
+            position: relative;
+            top: -150px;
+            left: 60px;
+        }
+    }
+
+}
