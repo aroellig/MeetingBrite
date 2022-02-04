@@ -42,7 +42,7 @@ class NavBar extends React.Component {
     }else{
      
       return(
-        <div className="Links">
+        <div className="Links-not-logged-in">
         <Link to="/login" className="profile">Login</Link>
         <br/>
         <br/>
@@ -58,7 +58,7 @@ class NavBar extends React.Component {
         <div className="icon">
           <h1>Meetingbrite</h1>
         </div>
-        <div>{this.getLinks()}</div>
+        <div className="get-links">{this.getLinks()}</div>
         <div className="search-container"><SearchContainer /></div>
 
       </div>

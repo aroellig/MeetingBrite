@@ -31,6 +31,21 @@
   
 }
 
+.index-navbar{
+    position: relative;
+    top: 0px;
+
+    .icon{
+        position: relative;
+        top: 30px;
+    }
+
+    .get-links{
+        position: relative;
+        top: 0px;
+    }
+}
+
 .events-list-class{
     background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsparetimelansing.com%2Fwp-content%2Fuploads%2F2018%2F03%2FAdobeStock_127994126.jpeg&f=1&nofb=1);
     height: 40vw;

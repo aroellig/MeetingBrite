@@ -9,11 +9,37 @@
 
     .navbar-no-response-no-review{
         position: relative;
-        top: 500px;
+        top: -710px;
+  
+
+    .search-container{
+        position: relative;
+        top: -40px;
     }
+    .get-links{
+        position: relative;
+        top: -40px;
+    }
+
+   }
+   .event-info{
+    height: 150vh;
+    position: relative;
+    top: -750px;
+   }
   .show-event{
        position: relative;
-       left: 200px;
+       left: -390px;
+       top: 150px;
+       z-index: 1;
+   }
+   .already-reviewed{
+       position: relative;
+       top: 40px;
+   }
+   .reviews-a{
+       position: relative;
+       top: -13px;
    }
 }
    

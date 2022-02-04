@@ -15,7 +15,9 @@ class EventIndex extends React.Component{
        
         return (
             <div>
+                <div className="index-navbar">
                 <NavbarContainer/>
+                </div>
                 <div className="index-background">
             <div className="events-list-class">
                 <div className="title-of-all-events">

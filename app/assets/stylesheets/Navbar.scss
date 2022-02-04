@@ -7,6 +7,11 @@
     background-color: green;
 }
 
+.links-not-logged-in{
+    position: relative;
+    top: 10px;
+}
+
 .logoutbtn{
     background-color: white;
     position: relative;
@@ -77,14 +82,15 @@
     left: 1150px;
     top: 0px;
     cursor: pointer;
+    z-index: 1;
 }
 .icon{
     color: #f05537;
     letter-spacing: normal;
 font-size: xx-large;
 position: relative;
-top: 20px;
-left: 40px;
+// top: 20px;
+// left: 40px;
 font-family:Helvetica,Tahoma,Arial,sans-serif;
 font-weight: 400;
 -moz-osx-font-smoothing: grayscale;

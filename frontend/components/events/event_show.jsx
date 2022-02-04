@@ -145,7 +145,7 @@ class EventShow extends React.Component {
                 </div>
             )
         } else if ((parseInt(currentUser) !== event.creator_id && responded === true && reviewed === false)) {
-          
+         
                 return(
                     <div className="rsvp-no-review">
                         <div className="bg-image"></div>
@@ -178,12 +178,12 @@ class EventShow extends React.Component {
         } else if(((parseInt(currentUser) !== event.creator_id && responded === false && reviewed === true))) {
             debugger
             return(
-                <div classname="no-response-review">
+                <div className="no-response-review">
                         <div className="bg-image"></div>
                     <div className="navbar-no-response-no-review">
                     <NavbarContainer />
                     </div>
-                    <div className="event-info">
+                <div className="event-info">
                 <div className = "show-photo">
                     <img src={event.photoURL} width="925" height = '300' alt="coverphoto" />
                 </div>
