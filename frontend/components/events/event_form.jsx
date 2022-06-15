@@ -83,7 +83,7 @@ class EventForm extends React.Component{
                     value={this.state.description}
                     onChange={this.update('description')}
                     placeholder="description"
-                    /> //
+                    /> 
                     </label>
                     <br/>
                     <label>
